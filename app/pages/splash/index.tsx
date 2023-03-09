@@ -8,7 +8,7 @@ import {styles} from './style';
 import {assetLogo} from '../../../generated/assets';
 
 const SplashPage = () => {
-  const isLogin = false;
+  const isLogin = true;
   const navigation: any = useNavigation();
 
   useEffect(() => {

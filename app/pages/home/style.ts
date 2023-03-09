@@ -1,7 +1,60 @@
 import {StyleSheet} from 'react-native';
-import {colorTextTitle} from '../../../base/color';
+import {colorDarkGold2, colorGold, colorTextTitle} from '../../../base/color';
 
 export const styles = StyleSheet.create({
+  buttonBuySell: {
+    width: '40%',
+    height: 45,
+    elevation: 3,
+    borderRadius: 5
+  },
+  btnDowload: {
+    bottom: 10,
+    right: 10,
+    paddingTop: 1,
+    paddingLeft: 3,
+    paddingRight: 2,
+    borderRadius: 20,
+    paddingBottom: 3,
+    position: 'absolute',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#FFFFFF50',
+  },
+  textWhite: {
+    color: 'white',
+    fontSize: 16,
+  },
+  textEGold: {
+    fontSize: 48,
+    fontWeight: 'bold',
+    color: colorDarkGold2,
+  },
+  textBold: {
+    fontSize: 13,
+    color: colorTextTitle,
+    fontWeight: 'bold',
+  },
+  textTitleCard: {
+    fontSize: 21,
+    fontWeight: 'bold',
+    marginHorizontal: 15,
+    color: colorDarkGold2,
+  },
+  gold: {
+    height: 20,
+    width: 60,
+    resizeMode: 'stretch',
+  },
+  icon: {
+    resizeMode: 'stretch',
+  },
+  textTitle: {
+    fontSize: 18,
+    marginLeft: 15,
+    fontWeight: 'bold',
+    color: colorTextTitle,
+  },
   boxCradNoti: {
     height: 40,
     width: '100%',
@@ -16,21 +69,23 @@ export const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    padding: 15,
     backgroundColor: 'white',
   },
   boxItemMenu: {
-    flex: 1,
     height: 100,
+    width: '25%',
     alignItems: 'center',
-    justifyContent: 'space-around',
+    justifyContent: 'flex-start',
   },
   boxMenu: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
     width: '100%',
-    height: 200,
+    height: 220,
   },
   textAmount: {
     fontSize: 32,
+    marginLeft: 15,
     fontWeight: 'bold',
     color: colorTextTitle,
   },
@@ -44,6 +99,7 @@ export const styles = StyleSheet.create({
     resizeMode: 'stretch',
   },
   myCard: {
+    flex: 1,
     width: '100%',
     height: 200,
     elevation: 4,

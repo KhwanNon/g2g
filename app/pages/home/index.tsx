@@ -1,6 +1,6 @@
 //? react
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, ScrollView} from 'react-native';
 
 //? components
 import MyCard from './components/card';
@@ -12,12 +12,13 @@ import ButtonIcon from '../../../base/components/ui_component/button_icon';
 
 //? base
 import {styles} from './style';
+import {colorGold} from '../../../base/color';
 import stylesGlobal from '../../../base/styles_global';
-import {colorGold, colorTextTitle} from '../../../base/color';
 
 const HomePage = () => {
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
+      <Box h={15} />
       {styleTextTitle('ยอดคงเหลือ')}
       <View style={stylesGlobal.row}>
         <Text style={styles.textAmount}>{`฿ 0.00`}</Text>
@@ -35,27 +36,23 @@ const HomePage = () => {
       <Notification />
       <Box h={15} />
       {styleTextTitle('บริการของเรา')}
+      <Box h={10} />
       <MenuHome />
       <View
         style={{
           height: 5,
-          marginHorizontal: -15,
           backgroundColor: '#EFEFEF',
         }}
       />
       <Box h={20} />
       {styleTextTitle('ราคาทองวันนี้')}
       <GraphGold />
-    </View>
+    </ScrollView>
   );
 };
 
 const styleTextTitle = (text: string) => {
-  return (
-    <Text style={{fontSize: 18, color: colorTextTitle, fontWeight: 'bold'}}>
-      {text}
-    </Text>
-  );
+  return <Text style={styles.textTitle}>{text}</Text>;
 };
 
 export default HomePage;
