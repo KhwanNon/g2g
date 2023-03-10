@@ -15,4 +15,13 @@ export type RootStackParamList = {
   History: undefined;
   Setting: undefined;
   Withdraw: undefined;
+  VerifyKYC: undefined;
+  FormProfile: undefined;
+  Profile: undefined;
+  MyPhone: undefined;
+  EditPhone: undefined;
+  AddBank: undefined;
+  FormAddBank: undefined;
+  Policy: undefined;
+  Contact: undefined;
 };

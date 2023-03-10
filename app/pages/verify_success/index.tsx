@@ -12,7 +12,7 @@ import {colorGold} from '../../../base/color';
 import stylesGlobal from '../../../base/styles_global';
 import {assetVerifySuccess} from '../../../generated/assets';
 
-const VerifySuccess = (props: any) => {
+const VerifySuccessPage = (props: any) => {
   const navigation: any = useNavigation();
   const state = props.route.params.state;
 
@@ -77,4 +77,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default VerifySuccess;
+export default VerifySuccessPage;
