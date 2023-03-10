@@ -12,8 +12,9 @@ import PinPage from '../pages/pin';
 import AuthPage from '../pages/auth';
 import HomePage from '../pages/home';
 import SplashPage from '../pages/splash';
+import VerifyKYCPage from '../pages/verify_kyc';
 import TermConditionPage from '../pages/auth/term';
-import VerifySuccess from '../pages/verify_success';
+import VerifySuccessPage from '../pages/verify_success';
 import InputPhonePage from '../pages/auth/input_phone';
 
 //? ---- Home
@@ -25,6 +26,16 @@ import WithdrawPage from '../pages/home/withdraw';
 import GoldTradePage from '../pages/home/gold_trade';
 import GoldDepositPage from '../pages/home/gold_deposit';
 import GoldExchangePage from '../pages/home/gold_exchange';
+
+//? Settings
+import FormProfilePage from '../pages/home/settings/profile/form';
+import ProfilePage from '../pages/home/settings/profile';
+import MyPhonePage from '../pages/home/settings/profile/my_phone';
+import EditPhonePage from '../pages/home/settings/profile/my_phone/edit';
+import AddBankPage from '../pages/home/settings/add_bank';
+import FormAddBankPage from '../pages/home/settings/add_bank/form';
+import PolicyPage from '../pages/home/settings/policy';
+import ContactUsPage from '../pages/home/settings/contact';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -57,7 +68,7 @@ const Navigation = () => {
         />
         <Stack.Screen
           name="VerifySuccess"
-          component={VerifySuccess}
+          component={VerifySuccessPage}
           options={noHeader}
         />
         <Stack.Screen
@@ -99,6 +110,51 @@ const Navigation = () => {
           name="Withdraw"
           component={WithdrawPage}
           options={header('ถอนเงิน')}
+        />
+        <Stack.Screen
+          name="VerifyKYC"
+          component={VerifyKYCPage}
+          options={header('การยืนยันตัวตน')}
+        />
+        <Stack.Screen
+          name="FormProfile"
+          component={FormProfilePage}
+          options={noHeader}
+        />
+        <Stack.Screen
+          name="Profile"
+          component={ProfilePage}
+          options={header('ข้อมูลของฉัน')}
+        />
+        <Stack.Screen
+          name="MyPhone"
+          component={MyPhonePage}
+          options={header('หมายเลขโทรศัพท์')}
+        />
+        <Stack.Screen
+          name="EditPhone"
+          component={EditPhonePage}
+          options={header('ยืนยันหมายเลขโทรศัพท์')}
+        />
+        <Stack.Screen
+          name="AddBank"
+          component={AddBankPage}
+          options={header('เพิ่มธนาคาร')}
+        />
+        <Stack.Screen
+          name="FormAddBank"
+          component={FormAddBankPage}
+          options={header('เพิ่มธนาคาร')}
+        />
+        <Stack.Screen
+          name="Policy"
+          component={PolicyPage}
+          options={header('นโยบาย')}
+        />
+        <Stack.Screen
+          name="Contact"
+          component={ContactUsPage}
+          options={header('ติดต่อเรา')}
         />
       </Stack.Navigator>
     </NavigationContainer>

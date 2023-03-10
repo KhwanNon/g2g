@@ -83,12 +83,12 @@ const styles = StyleSheet.create({
     color: colorTextLabel,
   },
   txtTitle: {
-    fontSize: 22,
+    fontSize: 20,
     fontWeight: 'bold',
     color: colorTextLabel,
   },
   txtCaption: {
-    fontSize: 26,
+    fontSize: 24,
     color: colorTextLabel,
   },
   card: {
