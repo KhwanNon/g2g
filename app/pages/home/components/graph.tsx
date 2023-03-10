@@ -2,35 +2,22 @@
 import React from 'react';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {View, Text, TouchableOpacity} from 'react-native';
-import {BarChart, LineChart, PieChart} from 'react-native-gifted-charts';
 
 //? component
+import LineChartComponemt from './line_chart';
 import Box from '../../../../base/components/ui_component/box';
 
 //? base
 import {
-  colorDarkGold,
-  colorGold2,
   colorRed,
+  colorGold2,
+  colorDarkGold,
   colorTextTitle,
 } from '../../../../base/color';
 import {styles} from '../style';
 import stylesGlobal from '../../../../base/styles_global';
-import {DEVICE_WIDTH} from '../../../../base/constant';
 
 const GraphGold = () => {
-  const data: any = [
-    {value: 30000},
-    {value: 29000},
-    {value: 27000},
-    {value: 25000},
-    {value: 25000},
-    {value: 22000},
-    {value: 22000},
-    {value: 25000},
-    {value: 27000},
-    {value: 28000},
-  ];
   return (
     <View>
       <Box h={10} />
@@ -48,28 +35,7 @@ const GraphGold = () => {
         </View>
       </View>
       <View style={{padding: 15}}>
-        <LineChart
-          width={DEVICE_WIDTH * 0.8}
-          height={130}
-          curved={true}
-          areaChart
-          data={data}
-          yAxisColor="#999999"
-          xAxisColor="#999999"
-          noOfSections={5}
-          hideDataPoints
-          startOpacity={0.6}
-          endOpacity={0.6}
-          color="#D5BD90"
-          spacing={40}
-          showVerticalLines
-          rulesType="solid"
-          initialSpacing={0}
-          rulesColor="#E2E2E2"
-          endFillColor={'#FFF0D2'}
-          startFillColor={'#FFF0D2'}
-          yAxisTextStyle={{color: colorTextTitle, fontSize: 10}}
-        />
+        <LineChartComponemt />
       </View>
       <View style={{...stylesGlobal.rowEvenly, marginTop: -10}}>
         {buttonBuySell('buy', '25,000.00')}
