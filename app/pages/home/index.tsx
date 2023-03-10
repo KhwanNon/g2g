@@ -38,12 +38,7 @@ const HomePage = () => {
       {styleTextTitle('บริการของเรา')}
       <Box h={10} />
       <MenuHome />
-      <View
-        style={{
-          height: 5,
-          backgroundColor: '#EFEFEF',
-        }}
-      />
+      {divider()}
       <Box h={20} />
       {styleTextTitle('ราคาทองวันนี้')}
       <GraphGold />
@@ -53,6 +48,17 @@ const HomePage = () => {
 
 const styleTextTitle = (text: string) => {
   return <Text style={styles.textTitle}>{text}</Text>;
+};
+
+const divider = () => {
+  return (
+    <View
+      style={{
+        height: 5,
+        backgroundColor: '#EFEFEF',
+      }}
+    />
+  );
 };
 
 export default HomePage;
