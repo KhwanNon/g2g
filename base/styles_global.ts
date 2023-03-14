@@ -2,6 +2,10 @@ import {StyleSheet} from 'react-native';
 import {colorTextLabel} from './color';
 
 const stylesGlobal = StyleSheet.create({
+  containerWhite: {
+    flex: 1,
+    backgroundColor: 'white',
+  },
   textHeader: {
     fontSize: 20,
     fontWeight: 'bold',
