@@ -99,7 +99,6 @@ export const styles = StyleSheet.create({
     resizeMode: 'stretch',
   },
   myCard: {
-    flex: 1,
     width: '100%',
     height: 200,
     elevation: 4,
