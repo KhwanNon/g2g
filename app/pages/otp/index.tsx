@@ -25,6 +25,7 @@ const OTPPage = (props: any) => {
   const [textButton, setTextButton] = useState<string>('');
   const [state, setState] = useState<'default' | 'pending'>('default');
 
+  //! set appbar layout
   useLayoutEffect(() => {
     navigation.setOptions({
       headerShadowVisible: true,
@@ -34,6 +35,7 @@ const OTPPage = (props: any) => {
     });
   }, []);
 
+  //! when open page request otp 
   useEffect(() => {
     if (state == 'pending') return;
     setTextButton('ยังไม่ได้รับ SMS OTP ต้องการขออีกครั้ง');
@@ -42,6 +44,7 @@ const OTPPage = (props: any) => {
     }, 300);
   }, []);
 
+  //! set time interval
   useEffect(() => {
     if (time == 0) return setState('default');
 
