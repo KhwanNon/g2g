@@ -1,7 +1,11 @@
 import {StyleSheet} from 'react-native';
-import {colorEgg, colorTextLabel} from '../../../../base/color';
+import {colorEgg, colorTextLabel, colorTextTitle} from '../../../../base/color';
 
 const styleSetting = StyleSheet.create({
+  textTitle: {
+    fontSize: 18,
+    color: colorTextTitle,
+  },
   boxIcon: {
     height: 42,
     width: 42,
@@ -21,7 +25,7 @@ const styleSetting = StyleSheet.create({
     height: 80,
     width: '100%',
     elevation: 5,
-    padding:20,
+    padding: 20,
     borderTopLeftRadius: 22,
     borderTopRightRadius: 22,
     backgroundColor: 'white',

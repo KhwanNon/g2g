@@ -145,7 +145,7 @@ const Navigation = () => {
         <Stack.Screen
           name="FormAddBank"
           component={FormAddBankPage}
-          options={header('เพิ่มธนาคาร')}
+          options={header('บัญชีของคุณ')}
         />
         <Stack.Screen
           name="Policy"
