@@ -20,6 +20,7 @@ const HomePage = () => {
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
       <Box h={15} />
       {styleTextTitle('ยอดคงเหลือ')}
+      
       <View style={stylesGlobal.row}>
         <Text style={styles.textAmount}>{`฿ 0.00`}</Text>
         <Box w={15} />
@@ -30,15 +31,21 @@ const HomePage = () => {
           name={'add-circle-outline'}
         />
       </View>
+
       <Box h={15} />
       <MyCard />
+
       <Box h={15} />
       <Notification />
+
       <Box h={15} />
       {styleTextTitle('บริการของเรา')}
+
       <Box h={10} />
       <MenuHome />
+
       {divider()}
+
       <Box h={20} />
       {styleTextTitle('ราคาทองวันนี้')}
       <GraphGold />

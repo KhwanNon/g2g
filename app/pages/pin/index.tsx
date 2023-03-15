@@ -52,7 +52,9 @@ const PinPage = () => {
           backgroundColor={colorGold}
         />
       </View>
+
       <NumberPad number={pincode} maxLength={6} setNumber={setPincode} />
+      
       {openAlert ? (
         <DialogAlert
           txtButton={'ปิด'}

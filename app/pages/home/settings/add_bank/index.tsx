@@ -1,7 +1,8 @@
 import React from 'react';
 import styleSetting from '../style';
-import {View, Text} from 'react-native';
+import {View, Text, TouchableOpacity} from 'react-native';
 import stylesGlobal from '../../../../../base/styles_global';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import {useNavigation} from '@react-navigation/native';
 import Box from '../../../../../base/components/ui_component/box';
@@ -44,6 +45,15 @@ const AddBankPage = () => {
           />
         );
       })}
+
+      <Box h={30} />
+      <Text style={styleSetting.textTitle}>ช่องทางบริการอื่นๆ</Text>
+      <Box h={15} />
+      <TouchableOpacity style={styleSetting.boxAddCard}>
+        <Ionicons size={22} color={'black'} name={'add'} />
+        <Box w={5} />
+        <Text style={styleSetting.textTitle}>เพิ่มบัตร</Text>
+      </TouchableOpacity>
     </View>
   );
 };

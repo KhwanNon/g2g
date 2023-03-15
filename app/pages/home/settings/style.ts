@@ -2,6 +2,16 @@ import {StyleSheet} from 'react-native';
 import {colorEgg, colorTextLabel, colorTextTitle} from '../../../../base/color';
 
 const styleSetting = StyleSheet.create({
+  boxAddCard: {
+    height: 35,
+    width: '100%',
+    borderWidth: 1,
+    borderRadius: 5,
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: 15,
+    borderColor: 'lightgrey'
+  },
   textTitle: {
     fontSize: 18,
     color: colorTextTitle,
