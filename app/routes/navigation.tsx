@@ -26,6 +26,7 @@ import WithdrawPage from '../pages/home/withdraw';
 import GoldTradePage from '../pages/home/gold_trade';
 import GoldDepositPage from '../pages/home/gold_deposit';
 import GoldExchangePage from '../pages/home/gold_exchange';
+import WithdrawBankPage from '../pages/home/deposit/withdraw';
 
 //? Settings
 import FormProfilePage from '../pages/home/settings/profile/form';
@@ -155,6 +156,11 @@ const Navigation = () => {
           name="Contact"
           component={ContactUsPage}
           options={header('ติดต่อเรา')}
+        />
+        <Stack.Screen
+          name="WithdrawBank"
+          component={WithdrawBankPage}
+          options={header('ถอนเงิน')}
         />
       </Stack.Navigator>
     </NavigationContainer>

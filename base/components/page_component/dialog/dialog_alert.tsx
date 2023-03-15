@@ -35,7 +35,7 @@ const DialogAlert = (props: Props) => {
             width={'45%'}
             onTap={onConfirm}
             title={txtButton}
-            colorTxt={'white'}
+            colorTxt={'black'}
             backgroundColor={colorLightGrey}
           />
           <Box h={10} />

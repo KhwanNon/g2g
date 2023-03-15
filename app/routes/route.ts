@@ -24,4 +24,5 @@ export type RootStackParamList = {
   FormAddBank: undefined;
   Policy: undefined;
   Contact: undefined;
+  WithdrawBank: undefined;
 };

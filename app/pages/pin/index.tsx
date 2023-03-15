@@ -36,7 +36,7 @@ const PinPage = () => {
 
 
   return (
-    <View style={{backgroundColor: 'white', flex: 1}}>
+    <View style={stylesGlobal.containerWhite}>
       <View style={{flex: 1, ...stylesGlobal.columnBetween, padding: 15}}>
         <View style={stylesGlobal.columnCenter}>
           <Text style={{fontSize: 20}}>ใส่รหัสผ่าน</Text>
