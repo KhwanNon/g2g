@@ -1,12 +1,11 @@
 //? react
 import React from 'react';
-import {View, ScrollView, Text} from 'react-native';
+import {View, ScrollView} from 'react-native';
 
 //? component
 import InputTrade from './components/input';
 import MyCard from '../components/card';
 import ButtonFilter from './components/button_filter';
-import RowData from '../history/components/row_data';
 import LineChartComponemt from '../components/line_chart';
 import Box from '../../../../base/components/ui_component/box';
 import ButtonStyle from '../../../../base/components/ui_component/button_style';
@@ -20,7 +19,6 @@ import {
 } from '../../../../base/color';
 import stylesGlobal from '../../../../base/styles_global';
 import {DEVICE_WIDTH} from '../../../../base/constant';
-import {styles} from './style';
 import CardSummary from './components/card_summary';
 
 const GoldTradePage = () => {
