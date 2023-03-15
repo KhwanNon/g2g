@@ -15,14 +15,14 @@ type Props = {
 const ListTileBank = ({state, title, onPress}: Props) => {
   return (
     <TouchableOpacity onPress={onPress}>
-      <Box h={10} />
+      <Box h={15} />
       <View style={stylesGlobal.rowBetween}>
         <View style={stylesGlobal.row}>
           <Text>{title}</Text>
         </View>
         <Ionicons size={20} color={'lightgrey'} name={'chevron-forward'} />
       </View>
-      <Box h={10} />
+      <Box h={15} />
       <Divider />
     </TouchableOpacity>
   );
