@@ -41,11 +41,13 @@ const VerifySuccessPage = (props: any) => {
       <View style={{...stylesGlobal.rowCenter, height: 60}}>
         <Text style={stylesGlobal.textHeader}>ยืนยันตัวตน</Text>
       </View>
+
       <View style={styles.box}>
         <Image style={styles.img} source={assetVerifySuccess} />
         <Box h={30} />
         <Text style={stylesGlobal.textHeader}>{caption()}</Text>
       </View>
+      
       <View style={{padding: 15, width: '100%'}}>
         <ButtonStyle
           height={45}

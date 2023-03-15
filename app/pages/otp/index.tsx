@@ -25,8 +25,7 @@ const OTPPage = (props: any) => {
   const [textButton, setTextButton] = useState<string>('');
   const [state, setState] = useState<'default' | 'pending'>('default');
 
-
-
+  //! set appbar layout
   useLayoutEffect(() => {
     navigation.setOptions({
       headerShadowVisible: true,
@@ -36,8 +35,7 @@ const OTPPage = (props: any) => {
     });
   }, []);
 
-
-
+  //! when open page request otp 
   useEffect(() => {
     if (state == 'pending') return;
     setTextButton('ยังไม่ได้รับ SMS OTP ต้องการขออีกครั้ง');
@@ -46,8 +44,7 @@ const OTPPage = (props: any) => {
     }, 300);
   }, []);
 
-
-
+  //! set time interval
   useEffect(() => {
     if (time == 0) return setState('default');
 
@@ -58,31 +55,23 @@ const OTPPage = (props: any) => {
     return () => clearInterval(interval);
   }, [time]);
 
-
-
   const onRequestOtp = () => {
     if (state == 'pending') return;
-    setTextButton('ขอ OTP ได้อีกครั้งใน')
+    setTextButton('ขอ OTP ได้อีกครั้งใน');
     setState('pending');
     setTime(300);
   };
-
-
 
   const goToSuccess = () => {
     if (otp.length < 6) return;
     navigation.replace('VerifySuccess', {state: 'authOtp'});
   };
 
-
-
   const formatPhone = (): string => {
     if (phone.length != 10) return phone;
     let end = `${phone[6]}${phone[7]}${phone[8]}${phone[9]}`;
     return `xxx-xxx-${end}`;
   };
-
-
 
   return (
     <View style={{flex: 1}}>
@@ -94,6 +83,7 @@ const OTPPage = (props: any) => {
           <Box h={5} />
           <Text style={styles.textSubTitle}>(Ref code: 2X1XX)</Text>
         </View>
+
         <View style={stylesGlobal.column}>
           <BoxInput number={otp} />
           <Box h={10} />
@@ -111,6 +101,7 @@ const OTPPage = (props: any) => {
             }
           />
         </View>
+
         <ButtonStyle
           height={45}
           width={'100%'}
@@ -120,6 +111,7 @@ const OTPPage = (props: any) => {
           backgroundColor={colorGold}
         />
       </View>
+      
       <NumberPad setNumber={setOtp} number={otp} maxLength={6} />
     </View>
   );

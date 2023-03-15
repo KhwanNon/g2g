@@ -39,8 +39,10 @@ const VerifyKYCPage = (props: any) => {
     <View style={styles.container}>
       <Text style={styles.text20}>กรุณาตรวจสอบการยืนยันตัวตน 1 รายการ</Text>
       <Box h={30} />
+
       <Text style={styles.text18}>1. ยืนตัวตนโดยทำการ KYC</Text>
       <Box h={20} />
+
       <View style={stylesGlobal.rowBetween}>
         <View style={stylesGlobal.row}>
           <LinearGradient
@@ -56,9 +58,11 @@ const VerifyKYCPage = (props: any) => {
         </View>
         <Text style={styles.textBlue}>ยังไม่ทำการยืนยัน</Text>
       </View>
+
       <Box h={15} />
       <Divider />
       <Box h={35} />
+      
       <ButtonStyle
         height={45}
         width={'100%'}
