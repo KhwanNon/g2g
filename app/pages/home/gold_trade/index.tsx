@@ -1,14 +1,9 @@
-<<<<<<< HEAD
-//? react
-import React from 'react';
-import {View, ScrollView} from 'react-native';
-=======
 import React, {useState} from 'react';
 import {View, ScrollView, Text} from 'react-native';
->>>>>>> c1dba80565e6a26a8be5e1c7e0485f37ae59c0bf
 
-import InputTrade from './components/input';
 import MyCard from '../components/card';
+import InputTrade from './components/input';
+import ModalDetail from './components/modal_detail';
 import CardSummary from './components/card_summary';
 import ButtonFilter from './components/button_filter';
 import LineChartComponemt from '../components/line_chart';
@@ -22,12 +17,7 @@ import {
   colorLightGrey,
 } from '../../../../base/color';
 import {DEVICE_WIDTH} from '../../../../base/constant';
-<<<<<<< HEAD
-import CardSummary from './components/card_summary';
-=======
 import stylesGlobal from '../../../../base/styles_global';
-import ModalDetail from './components/modal_detail';
->>>>>>> c1dba80565e6a26a8be5e1c7e0485f37ae59c0bf
 
 const GoldTradePage = () => {
   const [index, setIndex] = useState<number>(0);
