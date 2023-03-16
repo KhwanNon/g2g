@@ -1,11 +1,8 @@
-//? react
 import React from 'react';
 import {ScrollView, Text, View, TouchableOpacity} from 'react-native';
 
-//? component
 import Box from '../../../../../base/components/ui_component/box';
 
-//? base
 import {styles} from '../style';
 import stylesGlobal from '../../../../../base/styles_global';
 import {colorOrange, colorTextSubTitle} from '../../../../../base/color';

@@ -1,14 +1,11 @@
-//? react
 import React, {useState} from 'react';
 import {View, Text} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 
-//? components
 import ButtonStyle from '../../../base/components/ui_component/button_style';
 import NumberPad from '../../../base/components/page_component/keyboard/number_pad';
 import DialogAlert from '../../../base/components/page_component/dialog/dialog_alert';
 
-//? base
 import stylesGlobal from '../../../base/styles_global';
 import {colorGold, colorGreen} from '../../../base/color';
 import BoxInput from './box_input';

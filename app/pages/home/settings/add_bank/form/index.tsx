@@ -1,12 +1,9 @@
-//? react
 import React from 'react';
 import {View, Text, TextInput, ScrollView} from 'react-native';
 
-//? component
 import Box from '../../../../../../base/components/ui_component/box';
 import Divider from '../../../../../../base/components/ui_component/divider';
 
-//? base
 import {
   colorGold,
   colorLightGrey,

@@ -1,8 +1,6 @@
-//? react
 import React, {useState} from 'react';
 import {View, Text, FlatList} from 'react-native';
 
-//? component
 import TabMenu from './components/tab';
 import CardBuy from './components/card/buy';
 import CardSell from './components/card/sell';
@@ -13,7 +11,6 @@ import CardWithdraw from './components/card/withdraw';
 import CardDepositGold from './components/card/deposit_gold';
 import Box from '../../../../base/components/ui_component/box';
 
-//? base
 import stylesGlobal from '../../../../base/styles_global';
 
 const HistoryPage = () => {

@@ -1,15 +1,12 @@
-//? react
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import LinearGradient from 'react-native-linear-gradient';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-//? component
 import Box from '../../../base/components/ui_component/box';
 import Divider from '../../../base/components/ui_component/divider';
 
-//? base
 import {
   colorGold,
   colorGold2,
@@ -62,7 +59,7 @@ const VerifyKYCPage = (props: any) => {
       <Box h={15} />
       <Divider />
       <Box h={35} />
-      
+
       <ButtonStyle
         height={45}
         width={'100%'}

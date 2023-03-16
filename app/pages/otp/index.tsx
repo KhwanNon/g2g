@@ -1,16 +1,13 @@
-//? react
 import {View, Text} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import React, {useLayoutEffect, useState, useEffect} from 'react';
 
-//? components
 import BoxInput from './box_input';
 import Box from '../../../base/components/ui_component/box';
 import ButtonText from '../../../base/components/ui_component/button_text';
 import ButtonStyle from '../../../base/components/ui_component/button_style';
 import NumberPad from '../../../base/components/page_component/keyboard/number_pad';
 
-//? base
 import {styles} from './style';
 import stylesGlobal from '../../../base/styles_global';
 import secondsToMin from '../../../base/functions/seconds_to_hms';
@@ -35,6 +32,8 @@ const OTPPage = (props: any) => {
     });
   }, []);
 
+
+
   //! when open page request otp 
   useEffect(() => {
     if (state == 'pending') return;
@@ -43,6 +42,8 @@ const OTPPage = (props: any) => {
       onRequestOtp();
     }, 300);
   }, []);
+
+
 
   //! set time interval
   useEffect(() => {
@@ -54,6 +55,8 @@ const OTPPage = (props: any) => {
 
     return () => clearInterval(interval);
   }, [time]);
+
+
 
   const onRequestOtp = () => {
     if (state == 'pending') return;
@@ -72,6 +75,9 @@ const OTPPage = (props: any) => {
     let end = `${phone[6]}${phone[7]}${phone[8]}${phone[9]}`;
     return `xxx-xxx-${end}`;
   };
+
+
+
 
   return (
     <View style={{flex: 1}}>
