@@ -1,12 +1,9 @@
-//? react
 import React from 'react';
 import {useNavigation} from '@react-navigation/native';
 import {View, Text, TouchableOpacity, Image} from 'react-native';
 
-//? component
 import Box from '../../../../base/components/ui_component/box';
 
-//? base
 import {
   assetMenuDeposit,
   assetMenuGDeposit,

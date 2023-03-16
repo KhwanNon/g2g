@@ -1,13 +1,10 @@
-//? react
 import React from 'react';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {View, Text, TouchableOpacity} from 'react-native';
 
-//? component
 import LineChartComponemt from './line_chart';
 import Box from '../../../../base/components/ui_component/box';
 
-//? base
 import {
   colorRed,
   colorGold2,
@@ -16,6 +13,7 @@ import {
 } from '../../../../base/color';
 import {styles} from '../style';
 import stylesGlobal from '../../../../base/styles_global';
+import {DEVICE_WIDTH} from '../../../../base/constant';
 
 const GraphGold = () => {
   return (
@@ -35,7 +33,7 @@ const GraphGold = () => {
         </View>
       </View>
       <View style={{padding: 15}}>
-        <LineChartComponemt />
+        <LineChartComponemt width={DEVICE_WIDTH * 0.8} />
       </View>
       <View style={{...stylesGlobal.rowEvenly, marginTop: -10}}>
         {buttonBuySell('buy', '25,000.00')}

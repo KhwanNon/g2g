@@ -1,14 +1,11 @@
-//? react
 import React from 'react';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import LinearGradient from 'react-native-linear-gradient';
 import {View, Text, TouchableOpacity} from 'react-native';
 
-//? component
 import Box from '../../../../base/components/ui_component/box';
 import Divider from '../../../../base/components/ui_component/divider';
 
-//? base
 import {
   colorGold2,
   colorDarkGold,

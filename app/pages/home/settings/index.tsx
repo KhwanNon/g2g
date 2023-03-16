@@ -1,13 +1,10 @@
-//? react
 import React, {useState} from 'react';
 import {View, Text, ScrollView} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 
-//? component
 import MenuItem, {menuModel} from './menu';
 import Box from '../../../../base/components/ui_component/box';
 
-//? base
 import {styles} from '../style';
 import styleSetting from './style';
 import DialogConfirm from '../../../../base/components/page_component/dialog/dialog_confirm';

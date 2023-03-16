@@ -1,9 +1,12 @@
 import React from 'react';
-import {DEVICE_WIDTH} from '../../../../../base/constant';
 import {LineChart} from 'react-native-gifted-charts';
 import {colorTextTitle} from '../../../../../base/color';
 
-const LineChartComponemt = () => {
+type Props = {
+  width: number;
+};
+
+const LineChartComponemt = ({width}: Props) => {
   const data: any = [
     {value: 30000},
     {value: 29000},
@@ -15,12 +18,17 @@ const LineChartComponemt = () => {
     {value: 25000},
     {value: 27000},
     {value: 28000},
+    {value: 27000},
+    {value: 28000},
+    {value: 27000},
+    {value: 28000},
   ];
+
   return (
     <>
       <LineChart
-        height={130}
-        width={DEVICE_WIDTH * 0.8}
+        height={100}
+        width={width}
         yAxisColor="#999999"
         xAxisColor="#999999"
         curved={true}
@@ -31,7 +39,7 @@ const LineChartComponemt = () => {
         startOpacity={0.6}
         endOpacity={0.6}
         color="#D5BD90"
-        spacing={40}
+        spacing={30}
         showVerticalLines
         rulesType="solid"
         initialSpacing={0}

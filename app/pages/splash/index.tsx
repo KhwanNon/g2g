@@ -1,9 +1,7 @@
-//? react
 import React, {useEffect} from 'react';
 import {View, Image} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 
-//? base
 import {styles} from './style';
 import {assetLogo} from '../../../generated/assets';
 
