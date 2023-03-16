@@ -1,14 +1,11 @@
-//? react
 import {View, Text, TextInput} from 'react-native';
 import React, {useState} from 'react';
 import {useNavigation} from '@react-navigation/native';
 
-//? components
 import Box from '../../../../base/components/ui_component/box';
 import ButtonStyle from '../../../../base/components/ui_component/button_style';
 import DialogConfirm from '../../../../base/components/page_component/dialog/dialog_confirm';
 
-//? base
 import {styles} from '../style';
 import {colorGold, colorTextLabel} from '../../../../base/color';
 

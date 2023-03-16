@@ -1,13 +1,10 @@
-//? react
 import React, {useState} from 'react';
 import {View, Text} from 'react-native';
 
-//? component
 import RowData from '../row_data';
 import Box from '../../../../../../base/components/ui_component/box';
 import ButtonStyle from '../../../../../../base/components/ui_component/button_style';
 
-//? base
 import {
   colorRed,
   colorBlue,

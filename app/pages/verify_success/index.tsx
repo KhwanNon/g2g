@@ -1,13 +1,10 @@
-//? react
 import React from 'react';
 import {useNavigation} from '@react-navigation/native';
 import {View, Text, Image, StyleSheet} from 'react-native';
 
-//? components
 import Box from '../../../base/components/ui_component/box';
 import ButtonStyle from '../../../base/components/ui_component/button_style';
 
-//? base
 import {colorGold} from '../../../base/color';
 import stylesGlobal from '../../../base/styles_global';
 import {assetVerifySuccess} from '../../../generated/assets';
@@ -16,14 +13,10 @@ const VerifySuccessPage = (props: any) => {
   const navigation: any = useNavigation();
   const state = props.route.params.state;
 
-
-
   const onClickButton = () => {
     if (state == 'authOtp') return navigation.replace('Pin');
     if (state == 'authPin') return navigation.replace('Home');
   };
-
-
 
   const caption = (): string => {
     let mapText: any = {
@@ -34,8 +27,6 @@ const VerifySuccessPage = (props: any) => {
     return mapText[state] ?? '';
   };
 
-
-  
   return (
     <View style={styles.container}>
       <View style={{...stylesGlobal.rowCenter, height: 60}}>
@@ -47,7 +38,7 @@ const VerifySuccessPage = (props: any) => {
         <Box h={30} />
         <Text style={stylesGlobal.textHeader}>{caption()}</Text>
       </View>
-      
+
       <View style={{padding: 15, width: '100%'}}>
         <ButtonStyle
           height={45}

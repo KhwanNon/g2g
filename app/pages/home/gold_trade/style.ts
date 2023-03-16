@@ -7,6 +7,7 @@ import {
 } from '../../../../base/color';
 
 export const styles = StyleSheet.create({
+  textLabel2: {color: 'black', fontSize: 17},
   card: {
     width: '94%',
     padding: 10,

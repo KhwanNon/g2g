@@ -1,37 +1,40 @@
-//? react
-import React from 'react';
+import React, {useState} from 'react';
 import {View, ScrollView, Text} from 'react-native';
 
-//? component
 import InputTrade from './components/input';
 import MyCard from '../components/card';
+import CardSummary from './components/card_summary';
 import ButtonFilter from './components/button_filter';
-import RowData from '../history/components/row_data';
 import LineChartComponemt from '../components/line_chart';
 import Box from '../../../../base/components/ui_component/box';
 import ButtonStyle from '../../../../base/components/ui_component/button_style';
 
-//? base
 import {
   colorGold3,
+  colorGold,
   colorDarkGold2,
   colorLightGrey,
-  colorGold,
 } from '../../../../base/color';
-import stylesGlobal from '../../../../base/styles_global';
 import {DEVICE_WIDTH} from '../../../../base/constant';
-import {styles} from './style';
-import CardSummary from './components/card_summary';
+import stylesGlobal from '../../../../base/styles_global';
+import ModalDetail from './components/modal_detail';
 
 const GoldTradePage = () => {
+  const [index, setIndex] = useState<number>(0);
+  const [openDetails, setOpenDetails] = useState<boolean>(false);
+
+  const onChangeTab = () => {
+    return index == 0 ? setIndex(1) : setIndex(0);
+  };
+
   return (
     <ScrollView
       style={stylesGlobal.containerWhite}
       showsVerticalScrollIndicator={false}>
       <Box h={20} />
       <View style={stylesGlobal.rowEvenly}>
-        {styleButton('ซื้อ', true)}
-        {styleButton('ขาย', false)}
+        {styleButton('ซื้อ', index == 0, onChangeTab)}
+        {styleButton('ขาย', index == 1, onChangeTab)}
       </View>
 
       <Box h={25} />
@@ -48,29 +51,37 @@ const GoldTradePage = () => {
         <LineChartComponemt width={DEVICE_WIDTH * 0.8} />
       </View>
 
-      <CardSummary />
-
+      <CardSummary isBuy={index == 0} />
       <Box h={20} />
+
       <View style={{padding: 15}}>
         <ButtonStyle
           height={45}
           width={'100%'}
-          title={'ซื้อ'}
           colorTxt={'white'}
           backgroundColor={colorGold}
+          title={index == 0 ? 'ซื้อ' : 'ขาย'}
+          onTap={() => setOpenDetails(true)}
         />
       </View>
+
       <Box h={20} />
+      <ModalDetail
+        isBuy={index == 0}
+        open={openDetails}
+        setOpen={setOpenDetails}
+      />
     </ScrollView>
   );
 };
 
-const styleButton = (name: string, isSelect: boolean) => {
+const styleButton = (name: string, isSelect: boolean, onTap: () => void) => {
   return (
     <ButtonStyle
       height={45}
       width={'40%'}
       title={name}
+      onTap={onTap}
       colorTxt={isSelect ? colorDarkGold2 : 'black'}
       backgroundColor={isSelect ? colorGold3 : colorLightGrey}
     />

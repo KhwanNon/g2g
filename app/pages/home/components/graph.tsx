@@ -1,13 +1,10 @@
-//? react
 import React from 'react';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {View, Text, TouchableOpacity} from 'react-native';
 
-//? component
 import LineChartComponemt from './line_chart';
 import Box from '../../../../base/components/ui_component/box';
 
-//? base
 import {
   colorRed,
   colorGold2,

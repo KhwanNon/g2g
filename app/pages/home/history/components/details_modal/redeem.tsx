@@ -1,13 +1,10 @@
-//? reatc
 import React from 'react';
 import {View, Text, Modal} from 'react-native';
 
-//? component
 import RowData from '../row_data';
 import Box from '../../../../../../base/components/ui_component/box';
 import ButtonStyle from '../../../../../../base/components/ui_component/button_style';
 
-//? base
 import {
   colorEgg,
   colorGold,

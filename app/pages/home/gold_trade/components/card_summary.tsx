@@ -4,18 +4,25 @@ import {View, Text} from 'react-native';
 import RowData from '../../history/components/row_data';
 import Box from '../../../../../base/components/ui_component/box';
 
-const CardSummary = () => {
+type Props = {
+  isBuy: boolean;
+};
+
+const CardSummary = ({isBuy}: Props) => {
   return (
     <View style={styles.card}>
       <Text style={{color: 'black', fontSize: 18, fontWeight: 'bold'}}>
-        สรุปรายการซื้อ
+        {`สรุปรายการ${isBuy ? 'ซื้อ' : 'ขาย'}`}
       </Text>
       <Box h={10} />
       <RowData title={'จำนวนเงิน'} value={'25,100.00'} />
-      <RowData title={'น้ำหนักทองที่ซื้อ'} value={'2 บาททอง'} />
+      <RowData
+        title={isBuy ? 'น้ำหนักทองที่ซื้อ' : 'น้ำหนักทองที่ขายออก'}
+        value={'2 บาททอง'}
+      />
       <RowData title={'E-Gold'} value={'1 E-Gold'} />
       <RowData title={'ราคาทอง/บาท'} value={'25,100.00 ฿'} />
-      <RowData title={'รวม'} value={'25,100.00 ฿'} />
+      <RowData title={'รวม'} value={'25,100.00 ฿'} isBold={true}/>
     </View>
   );
 };
