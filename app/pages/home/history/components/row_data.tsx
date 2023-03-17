@@ -15,7 +15,7 @@ const RowData = ({title, value, color, isBold}: Props) => {
     <View style={{...stylesGlobal.rowBetween, marginBottom: 10}}>
       <Text
         style={{
-          fontSize: 15,
+          fontSize: 17,
           color: colorTextTitle,
           fontWeight: isBold ? 'bold' : 'normal',
         }}>
@@ -23,7 +23,7 @@ const RowData = ({title, value, color, isBold}: Props) => {
       </Text>
       <Text
         style={{
-          fontSize: 15,
+          fontSize: 17,
           color: color ?? colorTextTitle,
           fontWeight: isBold ? 'bold' : 'normal',
         }}>

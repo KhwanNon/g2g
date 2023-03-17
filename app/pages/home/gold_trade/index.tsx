@@ -33,8 +33,8 @@ const GoldTradePage = () => {
       showsVerticalScrollIndicator={false}>
       <Box h={20} />
       <View style={stylesGlobal.rowEvenly}>
-        {styleButton('ซื้อ', index == 0, onChangeTab)}
-        {styleButton('ขาย', index == 1, onChangeTab)}
+        {styleButtonTap('ซื้อ', index == 0, onChangeTab)}
+        {styleButtonTap('ขาย', index == 1, onChangeTab)}
       </View>
 
       <Box h={25} />
@@ -75,7 +75,11 @@ const GoldTradePage = () => {
   );
 };
 
-const styleButton = (name: string, isSelect: boolean, onTap: () => void) => {
+export const styleButtonTap = (
+  name: string,
+  isSelect: boolean,
+  onTap: () => void,
+) => {
   return (
     <ButtonStyle
       height={45}
