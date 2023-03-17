@@ -80,10 +80,12 @@ export default DialogConfirm;
 const styles = StyleSheet.create({
   txtSubTitle: {
     fontSize: 16,
+    textAlign: 'center',
     color: colorTextLabel,
   },
   txtTitle: {
     fontSize: 20,
+    textAlign: 'center',
     fontWeight: 'bold',
     color: colorTextLabel,
   },

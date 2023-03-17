@@ -25,7 +25,9 @@ const ButtonStyle = (props: Props) => {
         justifyContent: 'center',
         backgroundColor: backgroundColor,
       }}>
-      <Text style={{color: colorTxt, fontSize: 16}}>{title}</Text>
+      <Text style={{color: colorTxt, fontSize: 16, fontWeight: 'bold'}}>
+        {title}
+      </Text>
     </TouchableOpacity>
   );
 };
