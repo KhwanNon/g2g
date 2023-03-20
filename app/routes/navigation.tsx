@@ -1,12 +1,9 @@
-//? navigation
 import {RootStackParamList} from './route';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-//? style
 import {header, noHeader} from './style_header';
 
-//? pages
 import OTPPage from '../pages/otp';
 import PinPage from '../pages/pin';
 import AuthPage from '../pages/auth';
@@ -17,7 +14,6 @@ import TermConditionPage from '../pages/auth/term';
 import VerifySuccessPage from '../pages/verify_success';
 import InputPhonePage from '../pages/auth/input_phone';
 
-//? ---- Home
 import GiftPage from '../pages/home/gift';
 import DepositPage from '../pages/home/deposit';
 import HistoryPage from '../pages/home/history';
@@ -26,9 +22,11 @@ import WithdrawPage from '../pages/home/withdraw';
 import GoldTradePage from '../pages/home/gold_trade';
 import GoldDepositPage from '../pages/home/gold_deposit';
 import GoldExchangePage from '../pages/home/gold_exchange';
+import RedeemPage from '../pages/home/gold_exchange/redeem';
 import WithdrawBankPage from '../pages/home/deposit/withdraw';
+import DeliveryPage from '../pages/home/gold_exchange/redeem/delivery';
+import DetailsRedeemPage from '../pages/home/gold_exchange/redeem/details';
 
-//? Settings
 import FormProfilePage from '../pages/home/settings/profile/form';
 import ProfilePage from '../pages/home/settings/profile';
 import MyPhonePage from '../pages/home/settings/profile/my_phone';
@@ -161,6 +159,21 @@ const Navigation = () => {
           name="WithdrawBank"
           component={WithdrawBankPage}
           options={header('ถอนเงิน')}
+        />
+        <Stack.Screen
+          name="Redeem"
+          component={RedeemPage}
+          options={header('แลกทองคำ')}
+        />
+        <Stack.Screen
+          name="DetailsRedeem"
+          component={DetailsRedeemPage}
+          options={header('แลกทองคำ')}
+        />
+        <Stack.Screen
+          name="Delivery"
+          component={DeliveryPage}
+          options={header('แลกทองคำ')}
         />
       </Stack.Navigator>
     </NavigationContainer>

@@ -5,7 +5,7 @@ const Divider = () => {
   return (
     <View
       style={{
-        width: '100%',
+        minWidth: '100%',
         height: 1,
         backgroundColor: 'lightgrey',
       }}

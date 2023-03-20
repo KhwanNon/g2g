@@ -1,9 +1,11 @@
 export const colorEgg = '#F2ECE0';
 export const colorGold = '#D8A54C';
 export const colorGold2 = '#DFBD69';
+export const colorGold3 = '#E7D5AF';
 export const colorDarkGold = '#AA8744';
 export const colorDarkGold2 = '#755F35';
 export const colorLightGrey = '#E2E5EC';
+export const colorGrey = '#F3F3F3';
 export const colorTextTitle = '#333333';
 export const colorTextLabel = '#4C4C4C';
 export const colorTextSubTitle = '#999999';

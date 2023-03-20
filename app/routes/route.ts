@@ -25,4 +25,7 @@ export type RootStackParamList = {
   Policy: undefined;
   Contact: undefined;
   WithdrawBank: undefined;
+  Redeem: undefined;
+  DetailsRedeem: undefined;
+  Delivery: undefined;
 };

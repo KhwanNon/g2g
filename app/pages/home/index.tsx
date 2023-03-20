@@ -1,8 +1,6 @@
-//? react
 import React from 'react';
 import {View, Text, ScrollView} from 'react-native';
 
-//? components
 import MyCard from './components/card';
 import MenuHome from './components/menu';
 import GraphGold from './components/graph';
@@ -10,7 +8,6 @@ import Notification from './components/notification';
 import Box from '../../../base/components/ui_component/box';
 import ButtonIcon from '../../../base/components/ui_component/button_icon';
 
-//? base
 import {styles} from './style';
 import {colorGold} from '../../../base/color';
 import stylesGlobal from '../../../base/styles_global';

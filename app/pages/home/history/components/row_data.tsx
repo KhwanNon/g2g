@@ -7,13 +7,26 @@ type Props = {
   title: string;
   value: string;
   color?: string;
+  isBold?: boolean;
 };
 
-const RowData = ({title, value, color}: Props) => {
+const RowData = ({title, value, color, isBold}: Props) => {
   return (
     <View style={{...stylesGlobal.rowBetween, marginBottom: 10}}>
-      <Text style={{color: colorTextTitle, fontSize: 15}}>{title}</Text>
-      <Text style={{color: color ?? colorTextTitle, fontSize: 15}}>
+      <Text
+        style={{
+          fontSize: 17,
+          color: colorTextTitle,
+          fontWeight: isBold ? 'bold' : 'normal',
+        }}>
+        {title}
+      </Text>
+      <Text
+        style={{
+          fontSize: 17,
+          color: color ?? colorTextTitle,
+          fontWeight: isBold ? 'bold' : 'normal',
+        }}>
         {value}
       </Text>
     </View>

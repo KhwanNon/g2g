@@ -1,13 +1,10 @@
-//? react
 import React from 'react';
 import LinearGradient from 'react-native-linear-gradient';
 import {View, Text, Image, TouchableOpacity} from 'react-native';
 
-//? component
 import Box from '../../../../base/components/ui_component/box';
 import ButtonIcon from '../../../../base/components/ui_component/button_icon';
 
-//? base
 import {
   colorGold2,
   colorDarkGold,

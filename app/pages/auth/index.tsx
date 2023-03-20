@@ -1,13 +1,10 @@
-//? react
 import React from 'react';
 import {View, Text, Image} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 
-//? components
 import Box from '../../../base/components/ui_component/box';
 import ButtonStyle from '../../../base/components/ui_component/button_style';
 
-//? base
 import {styles} from './style';
 import {colorGold} from '../../../base/color';
 import stylesGlobal from '../../../base/styles_global';

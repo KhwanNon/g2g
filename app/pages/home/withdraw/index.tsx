@@ -1,15 +1,12 @@
-//? react
 import {View, Text, Switch} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import React, {useLayoutEffect, useState} from 'react';
 
-//? component
 import ListTileMyBank from './components/list_tile_my_bank';
 import Box from '../../../../base/components/ui_component/box';
 import ButtonText from '../../../../base/components/ui_component/button_text';
 import ButtonBorder from '../../../../base/components/ui_component/button_border';
 
-//? base
 import {colorTextLabel} from '../../../../base/color';
 import stylesGlobal from '../../../../base/styles_global';
 
