@@ -13,7 +13,7 @@ type Props = {
 };
 
 const TabMenu = ({index, setIndex}: Props) => {
-  const Tabs = [
+  const tabs = [
     'Top-Up',
     'Buy',
     'Sell',
@@ -23,32 +23,30 @@ const TabMenu = ({index, setIndex}: Props) => {
     'Withdraw',
   ];
 
-  const onTap = (index: number) => {
-    setIndex(index);
+  const renderDivider = (idx: number) => {
+    const isActiveTab = index === idx;
+    return <View style={isActiveTab ? styles.divider : styles.dividerGrey} />;
+  };
+
+  const renderItem = () => {
+    return tabs.map((item, idx) => (
+      <TouchableOpacity
+        key={`#${idx}`}
+        onPress={() => setIndex(idx)}
+        style={[stylesGlobal.columnCenter, {width: 70}]}>
+        <Text style={{color: index === idx ? colorOrange : colorTextSubTitle}}>
+          {item}
+        </Text>
+        <Box h={4} />
+        {renderDivider(idx)}
+      </TouchableOpacity>
+    ));
   };
 
   return (
     <View style={{height: 30, width: '100%', backgroundColor: 'white'}}>
       <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-        {Tabs.map((item, idx) => (
-          <TouchableOpacity
-            key={`#${idx}`}
-            onPress={() => onTap(idx)}
-            style={{...stylesGlobal.columnCenter, width: 70}}>
-            <View>
-              <Text
-                style={{color: index == idx ? colorOrange : colorTextSubTitle}}>
-                {item}
-              </Text>
-            </View>
-            <Box h={4} />
-            {index == idx ? (
-              <View style={styles.divider} />
-            ) : (
-              <View style={styles.dividerGrey} />
-            )}
-          </TouchableOpacity>
-        ))}
+        {renderItem()}
       </ScrollView>
     </View>
   );

@@ -1,13 +1,15 @@
 import {styles} from '../style';
 import React, {useState} from 'react';
-import stylesGlobal from '../../../../../base/styles_global';
-import Box from '../../../../../base/components/ui_component/box';
 import {View, Text, TextInput, TouchableOpacity} from 'react-native';
-import {colorGreen, colorRed, colorTextLabel} from '../../../../../base/color';
+
+import Box from '../../../../../base/components/ui_component/box';
 import Divider from '../../../../../base/components/ui_component/divider';
 import ButtonStyle from '../../../../../base/components/ui_component/button_style';
-import DialogConfirm from '../../../../../base/components/page_component/dialog/dialog_confirm';
 import DialogAlert from '../../../../../base/components/page_component/dialog/dialog_alert';
+import DialogConfirm from '../../../../../base/components/page_component/dialog/dialog_confirm';
+
+import stylesGlobal from '../../../../../base/styles_global';
+import {colorGreen, colorRed, colorTextLabel} from '../../../../../base/color';
 
 const WithdrawBankPage = () => {
   const amount = [100, 300, 500, 1000];
@@ -19,14 +21,26 @@ const WithdrawBankPage = () => {
     setOpenFail(true);
   };
 
+  const renderAmount = () =>
+    amount.map((item, idx) => {
+      return (
+        <TouchableOpacity key={`#${idx}`} style={styles.btnAmount}>
+          <Text
+            style={{
+              fontSize: 16,
+              fontWeight: 'bold',
+              color: colorTextLabel,
+            }}>
+            {item}
+          </Text>
+        </TouchableOpacity>
+      );
+    });
+
   return (
     <View style={{flex: 1}}>
       <Box h={30} />
-      <View
-        style={{
-          ...stylesGlobal.row,
-          ...styles.cardWhite,
-        }}>
+      <View style={[stylesGlobal.row, styles.cardWhite]}>
         <View
           style={{
             width: 40,
@@ -42,11 +56,7 @@ const WithdrawBankPage = () => {
         </View>
       </View>
       <Box h={20} />
-      <View
-        style={{
-          paddingVertical: 15,
-          ...styles.cardWhite,
-        }}>
+      <View style={[{paddingVertical: 15}, styles.cardWhite]}>
         <Text style={{color: colorTextLabel, fontSize: 18, fontWeight: 'bold'}}>
           จำนวนเงิน (THB)
         </Text>
@@ -58,22 +68,7 @@ const WithdrawBankPage = () => {
           ยอดเงินคงเหลือของคุณ ฿ 0,000.00
         </Text>
         <Box h={15} />
-        <View style={stylesGlobal.row}>
-          {amount.map((item, idx) => {
-            return (
-              <TouchableOpacity key={`#${idx}`} style={styles.btnAmount}>
-                <Text
-                  style={{
-                    fontSize: 16,
-                    fontWeight: 'bold',
-                    color: colorTextLabel,
-                  }}>
-                  {item}
-                </Text>
-              </TouchableOpacity>
-            );
-          })}
-        </View>
+        <View style={stylesGlobal.row}>{renderAmount()}</View>
       </View>
       <View
         style={{

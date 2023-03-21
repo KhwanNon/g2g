@@ -31,25 +31,27 @@ const AddBankPage = () => {
 
   const goToForm = () => navigation.push('FormAddBank');
 
+  const renderItem = () => {
+    return listBank.map((item, idx) => {
+      return (
+        <ListTileBank
+          state={'bank'}
+          key={`#${idx}`}
+          title={item.name}
+          onPress={goToForm}
+        />
+      );
+    });
+  };
+
   return (
-    <View style={{...stylesGlobal.containerWhite, padding: 15}}>
+    <View style={[stylesGlobal.containerWhite, {padding: 15}]}>
       <Text style={styleSetting.textTitle}>เลือกเพิ่มธนาคาร</Text>
       <Box h={10} />
-      {listBank.map((item, idx) => {
-        return (
-          <ListTileBank
-            state={'bank'}
-            key={`#${idx}`}
-            title={item.name}
-            onPress={goToForm}
-          />
-        );
-      })}
-
+      {renderItem()}
       <Box h={30} />
       <Text style={styleSetting.textTitle}>ช่องทางบริการอื่นๆ</Text>
       <Box h={15} />
-
       <ButtonBorder title={'เพิ่มบัตร'} width={'100%'} height={35} />
     </View>
   );

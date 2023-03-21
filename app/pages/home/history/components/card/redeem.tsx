@@ -26,7 +26,7 @@ const CardRedeem = () => {
       <RowData title={'น้ำหนักทองคำ'} value={'1 บาททอง'} />
       <RowData title={'เลือกรับสินค้า'} value={'รับด้วยตนเอง'} />
       <RowData title={'รับได้ตั้งแต่วันที่'} value={'29/06/2022'} />
-      <View style={{...stylesGlobal.rowBetween, alignItems: 'flex-start'}}>
+      <View style={[stylesGlobal.rowBetween, {alignItems: 'flex-start'}]}>
         <Text style={{color: colorTextTitle}}>สถานะ</Text>
         <ButtonStyle
           width={115}

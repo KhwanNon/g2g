@@ -5,14 +5,14 @@ import {View, Text, TouchableOpacity, Image} from 'react-native';
 import Box from '../../../../base/components/ui_component/box';
 
 import {
-  assetMenuDeposit,
-  assetMenuGDeposit,
-  assetMenuGExchange,
   assetMenuGift,
+  assetMenuTrade,
+  assetMenuDeposit,
   assetMenuHistory,
   assetMenuSetting,
-  assetMenuTrade,
+  assetMenuGDeposit,
   assetMenuWithdraw,
+  assetMenuGExchange,
 } from '../../../../generated/assets';
 import {styles} from '../style';
 import {colorTextTitle} from '../../../../base/color';
@@ -20,30 +20,26 @@ import {colorTextTitle} from '../../../../base/color';
 const MenuHome = () => {
   const navigation: any = useNavigation();
 
-  return (
-    <View style={styles.boxMenu}>
-      {items.map(item => (
-        <TouchableOpacity
-          key={`#${item.id}`}
-          style={styles.boxItemMenu}
-          onPress={() => navigation.push(item.route)}>
-          <Box h={item.spaceTop} />
-          <Image
-            style={{
-              ...styles.icon,
-              width: item.w,
-              height: item.h,
-            }}
-            source={item.icon}
-          />
-          <Box h={item.spaceBottom} />
-          <Text style={{textAlign: 'center', color: colorTextTitle}}>
-            {item.name}
-          </Text>
-        </TouchableOpacity>
-      ))}
-    </View>
-  );
+  const renderItem = () => {
+    return items.map(item => (
+      <TouchableOpacity
+        key={`#${item.id}`}
+        style={styles.boxItemMenu}
+        onPress={() => navigation.push(item.route)}>
+        <Box h={item.spaceTop} />
+        <Image
+          style={[styles.icon, {width: item.w, height: item.h}]}
+          source={item.icon}
+        />
+        <Box h={item.spaceBottom} />
+        <Text style={{textAlign: 'center', color: colorTextTitle}}>
+          {item.name}
+        </Text>
+      </TouchableOpacity>
+    ));
+  };
+
+  return <View style={styles.boxMenu}>{renderItem()}</View>;
 };
 
 const items = [

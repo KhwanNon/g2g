@@ -1,6 +1,6 @@
 import React from 'react';
 import LinearGradient from 'react-native-linear-gradient';
-import {View, Text, Image, TouchableOpacity} from 'react-native';
+import { View, Text, Image, TouchableOpacity } from 'react-native';
 
 import Box from '../../../../base/components/ui_component/box';
 import ButtonIcon from '../../../../base/components/ui_component/button_icon';
@@ -10,9 +10,11 @@ import {
   colorDarkGold,
   colorDarkGold2,
 } from '../../../../base/color';
-import {styles} from '../style';
+
+import { assetHomeGold, assetLogo } from '../../../../generated/assets';
+
+import { styles } from '../style';
 import stylesGlobal from '../../../../base/styles_global';
-import {assetHomeGold, assetLogo} from '../../../../generated/assets';
 
 const MyCard = () => {
   return (
@@ -23,7 +25,7 @@ const MyCard = () => {
         style={styles.myCard}
         colors={[colorGold2, colorDarkGold]}>
         <Image style={styles.logo} source={assetLogo} />
-        <View style={{...stylesGlobal.column, flex: 1, padding: 10}}>
+        <View style={[stylesGlobal.column, {flex: 1, padding: 10}]}>
           <View style={stylesGlobal.rowCenter}>
             <Image style={styles.gold} source={assetHomeGold} />
             <Text style={styles.textTitleCard}>ทองคำของคุณ</Text>
@@ -39,8 +41,8 @@ const MyCard = () => {
           />
           <Box h={10} />
           <View style={{flex: 1, width: '100%'}}>
-            <View style={{...stylesGlobal.row, height: '100%'}}>
-              <View style={{...stylesGlobal.columnBetween, height: '100%'}}>
+            <View style={[stylesGlobal.row, {height: '100%'}]}>
+              <View style={[stylesGlobal.columnBetween, {height: '100%'}]}>
                 <Text style={styles.textBold}>จำนวนทองสะสม</Text>
                 <Text style={styles.textEGold}>2</Text>
                 <Text>บาท</Text>
@@ -55,21 +57,17 @@ const MyCard = () => {
               />
               <Box w={10} />
               <View
-                style={{
-                  flex: 1,
-                  height: '100%',
-                  ...stylesGlobal.columnEvenly,
-                }}>
-                <View style={{...stylesGlobal.rowBetween, width: '100%'}}>
+                style={[{flex: 1, height: '100%'}, stylesGlobal.columnEvenly]}>
+                <View style={[stylesGlobal.rowBetween, {width: '100%'}]}>
                   <Text style={styles.textBold}>มูลค่า E-Gold สะสม</Text>
                   <Text style={styles.textWhite}>2 E-Gold</Text>
                 </View>
-                <View style={{...stylesGlobal.rowBetween, width: '100%'}}>
+                <View style={[stylesGlobal.rowBetween, {width: '100%'}]}>
                   <Text style={styles.textBold}>มูลค่าสะสม</Text>
                   <Text style={styles.textWhite}>50,200.00 บาท</Text>
                 </View>
                 <Text
-                  style={{...styles.textBold, textDecorationLine: 'underline'}}>
+                  style={[styles.textBold, {textDecorationLine: 'underline'}]}>
                   1 E-Gold = ทองคำ 1 บาท
                 </Text>
               </View>

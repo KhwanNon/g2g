@@ -14,39 +14,41 @@ import Box from '../../../../base/components/ui_component/box';
 import stylesGlobal from '../../../../base/styles_global';
 
 const HistoryPage = () => {
-  const [index, setIndex] = useState<number>(0);
+  const [activeTabIndex, setActiveTabIndex] = useState<number>(0);
   const DATA = [1, 2, 3, 4, 5, 6];
+
+  const renderCard = () => {
+    switch (activeTabIndex) {
+      case 0:
+        return <CardTopUp />;
+      case 1:
+        return <CardBuy />;
+      case 2:
+        return <CardSell />;
+      case 3:
+        return <CardDepositGold />;
+      case 4:
+        return <CardRedeem />;
+      case 5:
+        return <CardGift />;
+      case 6:
+        return <CardWithdraw />;
+      default:
+        return <View />;
+    }
+  };
 
   return (
     <View style={stylesGlobal.containerWhite}>
-      <Box h={10}/>
-      <TabMenu index={index} setIndex={setIndex} />
+      <Box h={10} />
+      <TabMenu index={activeTabIndex} setIndex={setActiveTabIndex} />
       <View style={{flex: 1}}>
         <FlatList
           data={DATA}
           style={{paddingVertical: 15}}
           keyExtractor={item => `#${item}`}
           showsVerticalScrollIndicator={false}
-          renderItem={({item}) => {
-            switch (index) {
-              case 0:
-                return <CardTopUp />;
-              case 1:
-                return <CardBuy />;
-              case 2:
-                return <CardSell />;
-              case 3:
-                return <CardDepositGold />;
-              case 4:
-                return <CardRedeem />;
-              case 5:
-                return <CardGift />;
-              case 6:
-                return <CardWithdraw />;
-              default:
-                return <View />;
-            }
-          }}
+          renderItem={({item}) => renderCard()}
         />
       </View>
     </View>

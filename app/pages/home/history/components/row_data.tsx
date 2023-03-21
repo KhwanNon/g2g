@@ -12,7 +12,7 @@ type Props = {
 
 const RowData = ({title, value, color, isBold}: Props) => {
   return (
-    <View style={{...stylesGlobal.rowBetween, marginBottom: 10}}>
+    <View style={[stylesGlobal.rowBetween, {marginBottom: 10}]}>
       <Text
         style={{
           fontSize: 17,

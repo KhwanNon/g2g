@@ -26,15 +26,18 @@ const AuthPage = () => {
       <View style={stylesGlobal.column}>
         <Box h={40} />
         <Image style={styles.boxLogo} source={assetLogo} />
-        <Box h={90} />        
+
+        <Box h={90} />
         <Text style={styles.txtH2}>{text1}</Text>
         <Text style={styles.txtH2}>{text2}</Text>
+
         <Box h={20} />
         <Image style={styles.gfaTxt} source={assetGFA} />
+
         <Box h={20} />
         <Text style={styles.txtH2}>{text3}</Text>
       </View>
-      
+
       <View style={{padding: 15, width: '100%'}}>
         <ButtonStyle
           height={45}

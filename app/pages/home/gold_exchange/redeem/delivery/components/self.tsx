@@ -12,8 +12,7 @@ const Self = () => {
       <Text style={styles.text}>จังหวัด</Text>
       <Box h={10} />
 
-      <TouchableOpacity
-        style={{...styles.cardBorder, justifyContent: 'center'}}>
+      <TouchableOpacity style={[styles.cardBorder, {justifyContent: 'center'}]}>
         <Text style={styles.text}>เลือกจังหวัดที่ต้องการไปรับ</Text>
       </TouchableOpacity>
 
@@ -22,8 +21,7 @@ const Self = () => {
 
       <Box h={10} />
 
-      <TouchableOpacity
-        style={{...styles.cardBorder, justifyContent: 'center'}}>
+      <TouchableOpacity style={[styles.cardBorder, {justifyContent: 'center'}]}>
         <Text style={styles.text}>เลือกสาขา</Text>
       </TouchableOpacity>
 

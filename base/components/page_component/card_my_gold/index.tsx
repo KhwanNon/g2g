@@ -29,13 +29,13 @@ const CardMyGold = () => {
         <View style={stylesGlobal.row}>
           <Text style={styles.textEGold}>2</Text>
           <Box w={30} />
-          <Text style={{...styles.textTitle, fontSize: 22}}>E-GOLD</Text>
+          <Text style={[styles.textTitle, {fontSize: 22}]}>E-GOLD</Text>
         </View>
 
         <Box h={15} />
         <View style={stylesGlobal.row}>
           <Image style={styles.gold} source={assetHomeGold} />
-          <Text style={{...styles.textTitle, fontSize: 16}}>บาททองคำ</Text>
+          <Text style={[styles.textTitle, {fontSize: 16}]}>บาททองคำ</Text>
         </View>
       </View>
     </LinearGradient>

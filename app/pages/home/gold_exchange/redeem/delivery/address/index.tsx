@@ -24,7 +24,7 @@ const DeliveryAddress = ({open, setOpen}: Props) => {
       <KeyboardAvoidingView
         style={{justifyContent: 'space-between', flex: 1, padding: 10}}>
         <View>
-          <View style={{...stylesGlobal.rowBetween}}>
+          <View style={stylesGlobal.rowBetween}>
             <ButtonIcon
               size={30}
               onTap={close}
@@ -38,7 +38,7 @@ const DeliveryAddress = ({open, setOpen}: Props) => {
           <View style={{padding: 10}}>
             <Box h={10} />
             <View style={stylesGlobal.row}>
-              <Text style={{...styles.text, fontWeight: 'bold'}}>
+              <Text style={[styles.text, {fontWeight: 'bold'}]}>
                 ข้อมูลติดต่อ
               </Text>
               <Text style={{color: 'red'}}>*</Text>
@@ -58,14 +58,16 @@ const DeliveryAddress = ({open, setOpen}: Props) => {
             <Text style={styles.text}>สถานที่จัดส่ง</Text>
             <Box h={10} />
             <View
-              style={{
-                padding: 10,
-                elevation: 1,
-                minHeight: 60,
-                borderRadius: 10,
-                ...stylesGlobal.rowBetween,
-                backgroundColor: colorGrey,
-              }}>
+              style={[
+                stylesGlobal.rowBetween,
+                {
+                  padding: 10,
+                  elevation: 1,
+                  minHeight: 60,
+                  borderRadius: 10,
+                  backgroundColor: colorGrey,
+                },
+              ]}>
               <Ionicons size={25} color={colorRed} name={'location-sharp'} />
               <View style={{width: '80%'}}>
                 <Text numberOfLines={3}>

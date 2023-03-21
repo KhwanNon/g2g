@@ -13,21 +13,39 @@ import {colorGold} from '../../../base/color';
 import stylesGlobal from '../../../base/styles_global';
 
 const HomePage = () => {
+  const renderTitle = (text: string) => (
+    <Text style={styles.textTitle}>{text}</Text>
+  );
+
+  const renderDivider = () => (
+    <View
+      style={{
+        height: 5,
+        backgroundColor: '#EFEFEF',
+      }}
+    />
+  );
+
+  const renderBalance = () => (
+    <View style={stylesGlobal.row}>
+      <Text style={styles.textAmount}>฿ 0.00</Text>
+      <Box w={15} />
+      <ButtonIcon
+        size={24}
+        color={colorGold}
+        name="add-circle-outline"
+        onTap={() => {}}
+      />
+    </View>
+  );
+
   return (
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
       <Box h={15} />
-      {styleTextTitle('ยอดคงเหลือ')}
-      
-      <View style={stylesGlobal.row}>
-        <Text style={styles.textAmount}>{`฿ 0.00`}</Text>
-        <Box w={15} />
-        <ButtonIcon
-          size={24}
-          onTap={() => {}}
-          color={colorGold}
-          name={'add-circle-outline'}
-        />
-      </View>
+      {renderTitle('ยอดคงเหลือ')}
+
+      <Box h={15} />
+      {renderBalance()}
 
       <Box h={15} />
       <MyCard />
@@ -36,32 +54,17 @@ const HomePage = () => {
       <Notification />
 
       <Box h={15} />
-      {styleTextTitle('บริการของเรา')}
+      {renderTitle('บริการของเรา')}
 
       <Box h={10} />
       <MenuHome />
 
-      {divider()}
+      {renderDivider()}
 
       <Box h={20} />
-      {styleTextTitle('ราคาทองวันนี้')}
+      {renderTitle('ราคาทองวันนี้')}
       <GraphGold />
     </ScrollView>
-  );
-};
-
-const styleTextTitle = (text: string) => {
-  return <Text style={styles.textTitle}>{text}</Text>;
-};
-
-const divider = () => {
-  return (
-    <View
-      style={{
-        height: 5,
-        backgroundColor: '#EFEFEF',
-      }}
-    />
   );
 };
 

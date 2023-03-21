@@ -1,6 +1,5 @@
 import React from 'react';
-import Ionicons from 'react-native-vector-icons/Ionicons';
-import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 import ButtonIcon from '../../../../../base/components/ui_component/button_icon';
 
 type Props = {
@@ -10,7 +9,7 @@ type Props = {
 
 const ListTileMyBank = ({onPress, icon}: Props) => {
   return (
-    <View style={styles.box}>
+    <View style={styles.container}>
       <View>
         <Text>ธนาคารไทยพาณิชย์</Text>
         <Text>******0000</Text>
@@ -23,7 +22,7 @@ const ListTileMyBank = ({onPress, icon}: Props) => {
 export default ListTileMyBank;
 
 const styles = StyleSheet.create({
-  box: {
+  container: {
     height: 80,
     width: '100%',
     marginTop: 25,

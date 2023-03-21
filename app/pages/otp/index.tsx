@@ -1,5 +1,5 @@
 import {View, Text} from 'react-native';
-import {useNavigation} from '@react-navigation/native';
+import {useNavigation, useRoute} from '@react-navigation/native';
 import React, {useLayoutEffect, useState, useEffect} from 'react';
 
 import BoxInput from './box_input';
@@ -13,50 +13,16 @@ import stylesGlobal from '../../../base/styles_global';
 import secondsToMin from '../../../base/functions/seconds_to_hms';
 import {colorGold2, colorGold, colorSkyBlue} from '../../../base/color';
 
-const OTPPage = (props: any) => {
+const textOTPAgain = 'ยังไม่ได้รับ SMS OTP ต้องการขออีกครั้ง';
+
+const OTPPage = () => {
   const navigation: any = useNavigation();
-  const phone = props.route.params.phone;
+  const {params: {phone}} = useRoute<any>();
 
   const [otp, setOtp] = useState<string>('');
   let [time, setTime] = React.useState<number>(0);
-  const [textButton, setTextButton] = useState<string>('');
+  const [textButton, setTextButton] = useState<string>(textOTPAgain);
   const [state, setState] = useState<'default' | 'pending'>('default');
-
-  //! set appbar layout
-  useLayoutEffect(() => {
-    navigation.setOptions({
-      headerShadowVisible: true,
-      headerStyle: {
-        backgroundColor: colorGold2,
-      },
-    });
-  }, []);
-
-
-
-  //! when open page request otp 
-  useEffect(() => {
-    if (state == 'pending') return;
-    setTextButton('ยังไม่ได้รับ SMS OTP ต้องการขออีกครั้ง');
-    setTimeout(() => {
-      onRequestOtp();
-    }, 300);
-  }, []);
-
-
-
-  //! set time interval
-  useEffect(() => {
-    if (time == 0) return setState('default');
-
-    const interval = setInterval(() => {
-      setTime(prev => prev - 1);
-    }, 1000);
-
-    return () => clearInterval(interval);
-  }, [time]);
-
-
 
   const onRequestOtp = () => {
     if (state == 'pending') return;
@@ -72,12 +38,37 @@ const OTPPage = (props: any) => {
 
   const formatPhone = (): string => {
     if (phone.length != 10) return phone;
-    let end = `${phone[6]}${phone[7]}${phone[8]}${phone[9]}`;
-    return `xxx-xxx-${end}`;
+    return `xxx-xxx-${phone.slice(6, 10)}`;
   };
 
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      headerShadowVisible: true,
+      headerStyle: {
+        backgroundColor: colorGold2,
+      },
+    });
+  }, []);
 
+  //! when open page request otp
+  useEffect(() => {
+    if (state == 'pending') return;
+    setTextButton(textOTPAgain);
+    setTimeout(() => {
+      onRequestOtp();
+    }, 300);
+  }, [state]);
 
+  //! set time interval
+  useEffect(() => {
+    if (time == 0) return setState('default');
+
+    const interval = setInterval(() => {
+      setTime(prev => prev - 1);
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, [time]);
 
   return (
     <View style={{flex: 1}}>
@@ -101,7 +92,7 @@ const OTPPage = (props: any) => {
             fontSize={16}
             color={colorSkyBlue}
             title={
-              state == 'default'
+              state === 'default'
                 ? textButton
                 : `${textButton} ${secondsToMin(time)}`
             }
@@ -117,7 +108,7 @@ const OTPPage = (props: any) => {
           backgroundColor={colorGold}
         />
       </View>
-      
+
       <NumberPad setNumber={setOtp} number={otp} maxLength={6} />
     </View>
   );

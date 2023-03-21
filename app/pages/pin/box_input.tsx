@@ -11,7 +11,7 @@ type Props = {
 
 const BoxInput = ({number}: Props) => {
   return (
-    <View style={{...stylesGlobal.rowCenter, width: '100%'}}>
+    <View style={[stylesGlobal.rowCenter, {width: '100%'}]}>
       {BoxStyle(number[0])}
       <Box w={25} />
       {BoxStyle(number[1])}
@@ -30,10 +30,12 @@ const BoxInput = ({number}: Props) => {
 const BoxStyle = (value?: string) => {
   return (
     <View
-      style={{
-        ...styles.boxCircle,
-        backgroundColor: value ? colorGold : colorLightGrey,
-      }}
+      style={[
+        styles.boxCircle,
+        {
+          backgroundColor: value ? colorGold : colorLightGrey,
+        },
+      ]}
     />
   );
 };
