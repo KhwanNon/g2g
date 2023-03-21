@@ -18,14 +18,16 @@ const Ems = () => {
       <Box h={25} />
       <TouchableOpacity
         onPress={() => setOpenDeliveryAddress(true)}
-        style={{
-          ...styles.cardBorder,
-          borderColor: 'white',
-          paddingVertical: 12,
-        }}>
+        style={[
+          styles.cardBorder,
+          {
+            borderColor: 'white',
+            paddingVertical: 12,
+          },
+        ]}>
         <View style={stylesGlobal.row}>
           <Ionicons size={22} color={'black'} name={'add-circle-outline'} />
-          
+
           <Box w={10} />
           <Text style={styles.text}>เพิ่มที่อยู่จัดส่ง</Text>
         </View>

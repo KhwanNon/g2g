@@ -15,28 +15,25 @@ const InputPhonePage = () => {
   const [openAlert, setOpenAlert] = useState<boolean>(false);
 
 
-
   const onConfirm = () => {
     setOpenAlert(false);
     navigation.push('OTP', {phone: phone});
   };
 
 
-
   const formatPhone = (): string => {
-    if (phone.length != 10) return phone;
+    if (phone.length !== 10) return phone;
 
-    let start = `${phone[0]}${phone[1]}${phone[2]}`;
-    let mid = `${phone[3]}${phone[4]}${phone[5]}`;
-    let end = `${phone[6]}${phone[7]}${phone[8]}${phone[9]}`;
+    const start = `${phone.slice(0, 3)}`;
+    const mid = `${phone.slice(3, 6)}`;
+    const end = `${phone.slice(6, 10)}`;
 
     return `${start}-${mid}-${end}`;
   };
 
-
   
   return (
-    <View style={{...styles.containerWhite, padding: 15}}>
+    <View style={[styles.containerWhite, {padding: 15}]}>
       <View style={{flex: 1}}>
         <Text style={{fontSize: 18, color: colorTextLabel}}>
           หมายเลขเบอร์โทรศัพท์

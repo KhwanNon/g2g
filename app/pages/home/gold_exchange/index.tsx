@@ -15,7 +15,7 @@ const GoldExchangePage = () => {
   const goToRedeem = () => navigation.push('Redeem');
 
   return (
-    <View style={{...stylesGlobal.containerWhite, padding: 15}}>
+    <View style={[stylesGlobal.containerWhite, {padding: 15}]}>
       <CardMyGold />
       <Box h={20} />
       <TouchableOpacity style={styles.button} onPress={goToRedeem}>

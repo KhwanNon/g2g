@@ -4,16 +4,15 @@ import {useNavigation} from '@react-navigation/native';
 
 import MenuItem, {menuModel} from './menu';
 import Box from '../../../../base/components/ui_component/box';
+import DialogConfirm from '../../../../base/components/page_component/dialog/dialog_confirm';
 
 import {styles} from '../style';
 import styleSetting from './style';
-import DialogConfirm from '../../../../base/components/page_component/dialog/dialog_confirm';
 
 const SettingPage = () => {
   const navigation: any = useNavigation();
   const [openLogout, setOpenLogout] = useState<boolean>(false);
 
-  
   const logoutData: menuModel = {
     subTitle: '',
     state: 'logout',
@@ -21,19 +20,14 @@ const SettingPage = () => {
     icon: 'md-exit-outline',
   };
 
-
   const onPressMenu = (state: string) => {
     const hasVerifyKYC = false;
-    if (state == 'version') return;
+    if (state === 'version') return;
 
     switch (state) {
       case 'profile':
-        let condition: 'ProfilePage' | 'VerifyKYC' = hasVerifyKYC
-          ? 'ProfilePage'
-          : 'VerifyKYC';
-        return navigation.push(condition, {
-          state: 'profile',
-        });
+        let condition = hasVerifyKYC ? 'ProfilePage' : 'VerifyKYC';
+        return navigation.push(condition, {state: 'profile'});
       case 'pin':
         return navigation.push('OTP', {phone: '0000000000'});
       case 'bank':
@@ -47,18 +41,26 @@ const SettingPage = () => {
     }
   };
 
-
   const onLogout = () => {
-    setOpenLogout(false)
+    setOpenLogout(false);
     setTimeout(() => {
       navigation.replace('Auth');
-    }, 500)
-  }
-  
+    }, 500);
+  };
+
+  const renderItem = () => {
+    return menuItems.map((item, index) => (
+      <MenuItem
+        item={item}
+        key={`#${index}${item.state}`}
+        onPress={() => onPressMenu(item.state)}
+      />
+    ));
+  };
 
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
-      <View style={{...styles.container, alignItems: 'center'}}>
+      <View style={[styles.container, {alignItems: 'center'}]}>
         <View style={styleSetting.circle} />
         <Box h={15} />
         <Text style={styleSetting.textName}>Fluke</Text>
@@ -69,15 +71,7 @@ const SettingPage = () => {
         <Box h={30} />
         <View style={styleSetting.bgView}>
           <Box h={30} />
-          <View style={styleSetting.cardMenu}>
-            {menuItems.map((item, index) => (
-              <MenuItem
-                item={item}
-                key={`#${index}${item.state}`}
-                onPress={() => onPressMenu(item.state)}
-              />
-            ))}
-          </View>
+          <View style={styleSetting.cardMenu}>{renderItem()}</View>
           <Box h={30} />
           <View style={styleSetting.cardLogout}>
             <MenuItem item={logoutData} onPress={() => setOpenLogout(true)} />

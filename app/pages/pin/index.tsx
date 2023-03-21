@@ -16,25 +16,19 @@ const PinPage = () => {
   const [openAlert, setOpenAlert] = useState<boolean>(false);
   const [state, setState] = useState<'success' | 'fails'>('success');
 
-
-
   const onNext = () => {
     if (pincode.length < 6) return;
     setOpenAlert(true);
   };
-
-
 
   const onConfirm = () => {
     if (state == 'fails') return setOpenAlert(false);
     navigation.replace('VerifySuccess', {state: 'authPin'});
   };
 
-
-
   return (
     <View style={stylesGlobal.containerWhite}>
-      <View style={{flex: 1, ...stylesGlobal.columnBetween, padding: 15}}>
+      <View style={[stylesGlobal.columnBetween, {flex: 1, padding: 15}]}>
         <View style={stylesGlobal.columnCenter}>
           <Text style={{fontSize: 20}}>ใส่รหัสผ่าน</Text>
           <Text>ตั้งรหัสผ่าน</Text>
@@ -51,7 +45,7 @@ const PinPage = () => {
       </View>
 
       <NumberPad number={pincode} maxLength={6} setNumber={setPincode} />
-      
+
       {openAlert ? (
         <DialogAlert
           txtButton={'ปิด'}

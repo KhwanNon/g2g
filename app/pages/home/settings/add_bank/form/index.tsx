@@ -3,21 +3,38 @@ import {View, Text, TextInput, ScrollView} from 'react-native';
 
 import Box from '../../../../../../base/components/ui_component/box';
 import Divider from '../../../../../../base/components/ui_component/divider';
+import ButtonStyle from '../../../../../../base/components/ui_component/button_style';
 
 import {
   colorGold,
-  colorLightGrey,
-  colorTextLabel,
   colorTextTitle,
+  colorTextLabel,
+  colorLightGrey,
 } from '../../../../../../base/color';
 import styleSetting from '../../style';
 import stylesGlobal from '../../../../../../base/styles_global';
-import ButtonStyle from '../../../../../../base/components/ui_component/button_style';
 
 const FormAddBankPage = () => {
+  const radio = (text: string) => {
+    return (
+      <View style={[stylesGlobal.row, {marginBottom: 4}]}>
+        <View
+          style={{
+            width: 5,
+            height: 5,
+            borderRadius: 5,
+            backgroundColor: colorTextLabel,
+          }}
+        />
+        <Box w={10} />
+        <Text style={{fontSize: 12}}>{text}</Text>
+      </View>
+    );
+  };
+
   return (
     <ScrollView
-      style={{...stylesGlobal.containerWhite, padding: 15}}
+      style={[stylesGlobal.containerWhite, {padding: 15}]}
       showsVerticalScrollIndicator={false}>
       <Text style={styleSetting.textTitle}>ธนาคาร</Text>
       <Box h={15} />
@@ -89,23 +106,6 @@ const FormAddBankPage = () => {
       />
       <Box h={40} />
     </ScrollView>
-  );
-};
-
-const radio = (text: string) => {
-  return (
-    <View style={{...stylesGlobal.row, marginBottom: 4}}>
-      <View
-        style={{
-          width: 5,
-          height: 5,
-          borderRadius: 5,
-          backgroundColor: colorTextLabel,
-        }}
-      />
-      <Box w={10} />
-      <Text style={{fontSize: 12}}>{text}</Text>
-    </View>
   );
 };
 

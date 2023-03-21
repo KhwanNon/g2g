@@ -11,7 +11,7 @@ type Props = {
 };
 
 const NumberPad = ({setNumber, number, maxLength}: Props) => {
-  const onClick = (item: any) => {
+  const handleClick = (item: any) => {
     if (number.length >= maxLength && item.value != 'delete') return;
     if (item.value == 'empty') return;
     if (item.value == 'delete') return deleteLastCharacter();
@@ -26,32 +26,31 @@ const NumberPad = ({setNumber, number, maxLength}: Props) => {
     setNumber((prev: string) => prev + item.value);
   };
 
+  const renderItem = ({item}: {item: any}) => {
+    const isEmpty = item.value === 'empty';
+    const isDelete = item.value === 'delete';
+    const text = <Text style={styles.text}>{item.value}</Text>;
+    const icon = (
+      <Ionicons size={30} color={colorTextTitle} name="ios-backspace-outline" />
+    );
+
+    return (
+      <TouchableOpacity
+        style={styles.boxInput}
+        onPress={() => handleClick(item)}>
+        {isEmpty ? null : isDelete ? icon : text}
+      </TouchableOpacity>
+    );
+  };
+
   return (
     <View style={styles.container}>
       <FlatList
         key={'#'}
         numColumns={3}
         data={dataKeyboard}
+        renderItem={renderItem}
         keyExtractor={item => '#' + item.id}
-        renderItem={({item}) => {
-          let isEmpty = item.value == 'empty';
-          let isDelete = item.value == 'delete';
-          let text = <Text style={styles.text}>{item.value}</Text>;
-          let icon = (
-            <Ionicons
-              size={30}
-              color={colorTextTitle}
-              name={'ios-backspace-outline'}
-            />
-          );
-          return (
-            <TouchableOpacity
-              style={styles.boxInput}
-              onPress={() => onClick(item)}>
-              {isEmpty ? null : isDelete ? icon : text}
-            </TouchableOpacity>
-          );
-        }}
       />
     </View>
   );

@@ -19,13 +19,26 @@ const ModalFilter = ({open, setOpen}: Props) => {
     setOpen(false);
   };
 
+  const renderItem = () => {
+    return store.map((item, idx) => {
+      return (
+        <TouchableOpacity onPress={onSelectFilter} key={`#${idx}`}>
+          <Box h={12} />
+          <Text style={{color: 'black'}}>{item}</Text>
+          <Box h={12} />
+          <Divider />
+        </TouchableOpacity>
+      );
+    });
+  };
+
   return (
-    <Modal visible={open} transparent animationType='fade'>
+    <Modal visible={open} transparent animationType="fade">
       <View style={{flex: 1, backgroundColor: '#00000020'}}>
         <View style={styles.modalFilter}>
           <View style={stylesGlobal.rowBetween}>
             <Box w={20} />
-            
+
             <Text style={{fontSize: 16, color: 'black'}}>
               เลือกร้านที่ต้องการแลก
             </Text>
@@ -39,16 +52,7 @@ const ModalFilter = ({open, setOpen}: Props) => {
           </View>
 
           <Box h={5} />
-          {store.map((item, idx) => {
-            return (
-              <TouchableOpacity onPress={onSelectFilter} key={`#${idx}`}>
-                <Box h={12} />
-                <Text style={{color: 'black'}}>{item}</Text>
-                <Box h={12} />
-                <Divider />
-              </TouchableOpacity>
-            );
-          })}
+          {renderItem()}
           <Box h={20} />
         </View>
       </View>

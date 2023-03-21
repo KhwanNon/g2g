@@ -29,7 +29,7 @@ const CardGift = () => {
       pending: colorBlue,
       success: colorYellow,
     };
-    return map[status] ?? colorBlue;
+    return map[status] || colorBlue;
   };
 
   return (

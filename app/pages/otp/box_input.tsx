@@ -8,24 +8,17 @@ type Props = {
 };
 
 const BoxInput = ({number}: Props) => {
-  return (
-    <View style={{...stylesGlobal.rowAround, width: '100%'}}>
-      {BoxStyle(number[0])}
-      {BoxStyle(number[1])}
-      {BoxStyle(number[2])}
-      {BoxStyle(number[3])}
-      {BoxStyle(number[4])}
-      {BoxStyle(number[5])}
-    </View>
-  );
-};
+  const BoxStyle = (value?: string) => {
+    return (
+      <View style={styles.boxInput}>
+        <Text style={styles.textTitle}>{value?.toString()}</Text>
+      </View>
+    );
+  };
 
-const BoxStyle = (value?: string) => {
-  return (
-    <View style={styles.boxInput}>
-      <Text style={styles.textTitle}>{value ? `${value}` : ''}</Text>
-    </View>
-  );
+  const boxes = [...Array(6).keys()].map(i => BoxStyle(number[i]));
+
+  return <View style={[stylesGlobal.rowAround, {width: '100%'}]}>{boxes}</View>;
 };
 
 export default BoxInput;

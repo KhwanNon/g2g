@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import {View, Text, TouchableOpacity, FlatList} from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import {View, Text, TouchableOpacity, FlatList} from 'react-native';
 
 import CardRedeem from './components/card';
 import {styleButtonTap} from '../../gold_trade';
@@ -18,7 +18,9 @@ const RedeemPage = () => {
     return index == 0 ? setIndex(1) : setIndex(0);
   };
 
-  const list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 1];
+  const renderItem = ({item}: any) => <CardRedeem item={item} />;
+
+  const data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 1];
 
   return (
     <View style={stylesGlobal.containerWhite}>
@@ -28,7 +30,7 @@ const RedeemPage = () => {
       </View>
 
       <Box h={15} />
-      <View style={{...stylesGlobal.rowBetween, paddingHorizontal: 15}}>
+      <View style={[stylesGlobal.rowBetween, {paddingHorizontal: 15}]}>
         <Text style={styles.textBtn}>All (20)</Text>
         <TouchableOpacity
           style={stylesGlobal.row}
@@ -41,15 +43,13 @@ const RedeemPage = () => {
 
       <View style={{flex: 1}}>
         <FlatList
-          ListFooterComponent={<Box h={30} />}
-          showsVerticalScrollIndicator={false}
-          keyExtractor={item => `#${item}`}
-          style={{paddingVertical: 15}}
+          data={data}
           numColumns={2}
-          data={list}
-          renderItem={({item}) => {
-            return <CardRedeem item={item} />;
-          }}
+          renderItem={renderItem}
+          style={{paddingVertical: 15}}
+          keyExtractor={item => `#${item}`}
+          showsVerticalScrollIndicator={false}
+          ListFooterComponent={<Box h={30} />}
         />
       </View>
 

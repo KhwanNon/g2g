@@ -1,29 +1,31 @@
 import React, {useState} from 'react';
-import {useNavigation} from '@react-navigation/native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import {useNavigation, useRoute} from '@react-navigation/native';
 import {View, Text, ScrollView, TouchableOpacity} from 'react-native';
 
 import RowData from '../../../history/components/row_data';
 import Box from '../../../../../../base/components/ui_component/box';
-import Dropdown from '../../../../../../base/components/page_component/modal/dropdown';
 import ButtonStyle from '../../../../../../base/components/ui_component/button_style';
+import Dropdown from '../../../../../../base/components/page_component/modal/dropdown';
 import DialogConfirm from '../../../../../../base/components/page_component/dialog/dialog_confirm';
 
 import {styles} from '../../style';
 import {colorGold, colorRed} from '../../../../../../base/color';
 import stylesGlobal from '../../../../../../base/styles_global';
 
-const DetailsRedeemPage = (props: any) => {
+
+const DetailsRedeemPage = () => {
   const navigation: any = useNavigation();
-  const state = props.route.params.state;
+  const {params: {state}} = useRoute<any>()
 
   const [openAlert, setOpenAlert] = useState<boolean>(false);
   const [openDropdown, setOpenDropdown] = useState<boolean>(false);
+  
   const goToDelivery = () => navigation.push('Delivery', {state: state});
 
   const onExchange = () => {
     // setOpenAlert(true);
-    goToDelivery()
+    goToDelivery();
   };
 
   const onSelectDropdown = () => {
@@ -33,7 +35,7 @@ const DetailsRedeemPage = (props: any) => {
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
       <View style={stylesGlobal.containerWhite}>
-        <View style={{...styles.boxImageGold, height: 250}}></View>
+        <View style={[styles.boxImageGold, {height: 250}]}></View>
         <View style={{padding: 15}}>
           <Text style={styles.textBtn}>รายละเอียดสินค้า</Text>
           <Box h={10} />
@@ -49,9 +51,9 @@ const DetailsRedeemPage = (props: any) => {
           </TouchableOpacity>
 
           <Box h={20} />
-          <RowData title={'รหัสสินค้า '} value={'xxxxxxxxx'} />
+          <RowData title={'รหัสสินค้า'} value={'xxxxxxxxx'} />
           <Box h={3} />
-          <RowData title={'ชื่อสินค้า  '} value={'xxxxxxxxx'} />
+          <RowData title={'ชื่อสินค้า '} value={'xxxxxxxxx'} />
           <Box h={3} />
           <RowData title={'ผู้ให้จำหน่าย '} value={'Aurora'} />
           <Box h={3} />
@@ -90,9 +92,9 @@ const DetailsRedeemPage = (props: any) => {
             open={openAlert}
             txtColorL={'black'}
             txtColorR={'white'}
-            iconColor={colorRed}
-            onConfirm={() => {}}
             icon={'close-circle'}
+            onConfirm={() => {}}
+            iconColor={colorRed}
             setOpen={setOpenAlert}
             title={'น้ำหนักทองคำ คุณไม่เพียงพอ \nโปรดทำรายการใหม่อีกครั้ง'}
           />

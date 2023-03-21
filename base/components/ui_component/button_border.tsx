@@ -14,12 +14,14 @@ type Props = {
 const ButtonBorder = ({title, width, height, colorBorder}: Props) => {
   return (
     <TouchableOpacity
-      style={{
-        width: width,
-        height: height,
-        ...styles.container,
-        borderColor: colorBorder ?? 'lightgrey',
-      }}>
+      style={[
+        styles.container,
+        {
+          width: width,
+          height: height,
+          borderColor: colorBorder ?? 'lightgrey',
+        },
+      ]}>
       <Ionicons size={22} color={'black'} name={'add'} />
       <Box w={5} />
       <Text style={styles.textTitle}>{title}</Text>

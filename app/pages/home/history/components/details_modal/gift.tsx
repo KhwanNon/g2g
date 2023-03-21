@@ -34,7 +34,7 @@ const GiftModal = ({open, setOpen}: Props) => {
       pending: colorBlue,
       success: colorYellow,
     };
-    return map[status] ?? colorBlue;
+    return map[status] || colorBlue;
   };
 
   return (
@@ -65,7 +65,7 @@ const GiftModal = ({open, setOpen}: Props) => {
           <RowData title={'เวลา'} value={'17:30:00'} />
           <RowData title={'รับทองคำผ่านระบบ'} value={'SMS'} />
           <RowData title={'รหัสรับทอง'} value={''} />
-          <View style={{...stylesGlobal.rowBetween}}>
+          <View style={stylesGlobal.rowBetween}>
             <Text style={{color: colorTextTitle}}>000*******************</Text>
             <ButtonText
               fontSize={14}
@@ -79,7 +79,7 @@ const GiftModal = ({open, setOpen}: Props) => {
             value={'รอดำเนินการ'}
             color={changeColorText('pending')}
           />
-          <View style={{...stylesGlobal.rowBetween, alignItems: 'flex-start'}}>
+          <View style={[stylesGlobal.rowBetween,{ alignItems: 'flex-start'}]}>
             <Text style={{color: colorTextTitle, fontSize: 13}}>
               {textWarning}
             </Text>
@@ -92,7 +92,7 @@ const GiftModal = ({open, setOpen}: Props) => {
             />
           </View>
           <Box h={30} />
-          <View style={{...stylesGlobal.rowCenter}}>
+          <View style={stylesGlobal.rowCenter}>
             <ButtonStyle
               width={'40%'}
               height={40}

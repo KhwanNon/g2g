@@ -26,7 +26,7 @@ const WithdrawPage = () => {
         />
       ),
     });
-  }, []);
+  }, [isEdit]);
 
   const goToWithdraw = () => {
     if (isEdit) return navigation.push('OTP', {phone: '0000000000'});
@@ -50,7 +50,7 @@ const WithdrawPage = () => {
       })}
 
       <Box h={50} />
-      <View style={{...stylesGlobal.rowBetween, paddingHorizontal: 15}}>
+      <View style={[stylesGlobal.rowBetween]}>
         <View>
           <Text>แสดงเลขบัญชีธนาคาร</Text>
           <Text>ตกลงที่จะแสดงเลขบัญชีธนาคารของผู้ใช้</Text>

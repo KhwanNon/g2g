@@ -47,7 +47,7 @@ const RedeemModal = ({open, setOpen}: Props) => {
           <RowData title={'วิธีรับสินค้า'} value={'รับด้วยตนเอง'} />
           <RowData title={'จังหวัด'} value={'กรุงเทพ'} />
           <RowData title={'สาขา'} value={'xxxxxx'} />
-          <View style={{...stylesGlobal.rowBetween, alignItems: 'flex-start'}}>
+          <View style={[stylesGlobal.rowBetween, {alignItems: 'flex-start'}]}>
             <Text style={{color: colorTextTitle}}>สถานะ</Text>
             <ButtonStyle
               width={115}
@@ -58,7 +58,7 @@ const RedeemModal = ({open, setOpen}: Props) => {
             />
           </View>
           <Box h={30} />
-          <View style={{...stylesGlobal.rowCenter}}>
+          <View style={stylesGlobal.rowCenter}>
             <ButtonStyle
               width={'40%'}
               height={40}

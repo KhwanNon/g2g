@@ -1,32 +1,32 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
-import {useNavigation} from '@react-navigation/native';
 import LinearGradient from 'react-native-linear-gradient';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import {useNavigation, useRoute} from '@react-navigation/native';
 
 import Box from '../../../base/components/ui_component/box';
 import Divider from '../../../base/components/ui_component/divider';
+import ButtonStyle from '../../../base/components/ui_component/button_style';
 
 import {
+  colorBlue,
   colorGold,
   colorGold2,
   colorDarkGold,
   colorTextLabel,
-  colorBlue,
 } from '../../../base/color';
 import styleSetting from '../home/settings/style';
 import stylesGlobal from '../../../base/styles_global';
-import ButtonStyle from '../../../base/components/ui_component/button_style';
 
-const VerifyKYCPage = (props: any) => {
+const VerifyKYCPage = () => {
   const navigation: any = useNavigation();
+  const {params: {state}} = useRoute<any>()
 
   const onConfirm = () => {
-    const state = props.route.params.state;
-
     switch (state) {
       case 'profile':
-        return navigation.push('FormProfile');
+        navigation.push('FormProfile');
+        break;
       default:
         break;
     }

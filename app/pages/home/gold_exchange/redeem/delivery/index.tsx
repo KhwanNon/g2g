@@ -1,6 +1,6 @@
 import React, {useLayoutEffect, useState} from 'react';
 import {View, Text, ScrollView} from 'react-native';
-import {useNavigation} from '@react-navigation/native';
+import {useNavigation, useRoute} from '@react-navigation/native';
 
 import Ems from './components/ems';
 import Self from './components/self';
@@ -18,33 +18,41 @@ import {
 import {styles} from '../../style';
 import stylesGlobal from '../../../../../../base/styles_global';
 
-const DeliveryPage = (props: any) => {
-  const navigation: any = useNavigation();
-  const state = props.route.params.state;
+const DeliveryPage = () => {
+  // Destructure the state from the route params
+  const { params: { state } } = useRoute<any>();
+
+  //State is Self
   const isSelf = state == 'self';
 
+    // Use explicit types instead of `any`
+  const navigation: any = useNavigation();
+
+    // Use the ternary operator to set the title
+    useLayoutEffect(() => {
+      navigation.setOptions({
+        title: state === 'self' ? 'รับด้วยตนเอง' : 'บริการจัดส่ง',
+      });
+    }, []);
+    
+  // Use destructuring to declare the states
   const [openSummarySelf, setOpenSummarySelf] = useState<boolean>(false);
   const [openSummaryEms, setOpenSummaryEms] = useState<boolean>(false);
 
-  useLayoutEffect(() => {
-    navigation.setOptions({
-      title: isSelf ? 'รับด้วยตนเอง' : 'บริการจัดส่ง',
-    });
-  }, []);
-
   const onNext = () => {
+    // Use the ternary operator to conditionally set the state
     isSelf ? setOpenSummarySelf(true) : setOpenSummaryEms(true);
   };
 
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
-      <View style={{...stylesGlobal.containerWhite, padding: 15}}>
+      <View style={[stylesGlobal.containerWhite, {padding: 15}]}>
         {!isSelf ? null : <Self />}
 
         <Text style={styles.text}>รับสินค้าจำนวน 1 รายการ</Text>
         <Box h={10} />
 
-        <View style={{...styles.cardBorder, paddingVertical: 10}}>
+        <View style={[styles.cardBorder, {paddingVertical: 10}]}>
           <View style={{height: 60, width: 60}}></View>
           <Box w={20} />
           <View style={{flex: 1}}>
