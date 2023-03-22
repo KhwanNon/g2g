@@ -15,23 +15,6 @@ import styleSetting from '../../style';
 import stylesGlobal from '../../../../../../base/styles_global';
 
 const FormAddBankPage = () => {
-  const radio = (text: string) => {
-    return (
-      <View style={[stylesGlobal.row, {marginBottom: 4}]}>
-        <View
-          style={{
-            width: 5,
-            height: 5,
-            borderRadius: 5,
-            backgroundColor: colorTextLabel,
-          }}
-        />
-        <Box w={10} />
-        <Text style={{fontSize: 12}}>{text}</Text>
-      </View>
-    );
-  };
-
   return (
     <ScrollView
       style={[stylesGlobal.containerWhite, {padding: 15}]}
@@ -106,6 +89,25 @@ const FormAddBankPage = () => {
       />
       <Box h={40} />
     </ScrollView>
+  );
+};
+
+export const radio = (text: string) => {
+  return (
+    <View
+      style={[stylesGlobal.row, {marginBottom: 4, alignItems: 'flex-start'}]}>
+      <View
+        style={{
+          width: 5,
+          height: 5,
+          marginTop: 5,
+          borderRadius: 5,
+          backgroundColor: colorTextLabel,
+        }}
+      />
+      <Box w={10} />
+      <Text style={{fontSize: 12, color: colorTextLabel}}>{text}</Text>
+    </View>
   );
 };
 

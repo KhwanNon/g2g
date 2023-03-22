@@ -6,7 +6,7 @@ export const styles = StyleSheet.create({
     width: '40%',
     height: 45,
     elevation: 3,
-    borderRadius: 5
+    borderRadius: 5,
   },
   btnDowload: {
     bottom: 10,
@@ -31,7 +31,7 @@ export const styles = StyleSheet.create({
     color: colorDarkGold2,
   },
   textBold: {
-    fontSize: 13,
+    fontSize: 14,
     color: colorTextTitle,
     fontWeight: 'bold',
   },
