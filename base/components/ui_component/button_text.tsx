@@ -1,4 +1,4 @@
-import {Text, TouchableOpacity} from 'react-native';
+import {StyleProp, Text, TouchableOpacity, ViewStyle} from 'react-native';
 import React from 'react';
 
 type Props = {
@@ -6,14 +6,23 @@ type Props = {
   title: string;
   fontSize: number;
   onTap?: () => void;
+  underLine?: boolean;
 };
 
 const ButtonText = (props: Props) => {
-  const {title, color, onTap, fontSize} = props;
+  const {title, color, onTap, fontSize, underLine} = props;
 
   return (
     <TouchableOpacity onPress={onTap}>
-      <Text style={{color: color, fontSize: fontSize, fontWeight: 'bold'}}>
+      <Text
+        style={[
+          {
+            color: color,
+            fontSize: fontSize,
+            fontWeight: 'bold',
+            textDecorationLine: underLine ? 'underline' : 'none',
+          },
+        ]}>
         {title}
       </Text>
     </TouchableOpacity>

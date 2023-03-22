@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {colorTextLabel} from './color';
+import {colorTextTitle} from './color';
 
 const stylesGlobal = StyleSheet.create({
   containerWhite: {
@@ -9,7 +9,7 @@ const stylesGlobal = StyleSheet.create({
   textHeader: {
     fontSize: 20,
     fontWeight: 'bold',
-    color: colorTextLabel,
+    color: colorTextTitle,
   },
   row: {
     flexDirection: 'row',
