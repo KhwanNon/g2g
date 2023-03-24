@@ -3,6 +3,7 @@ import {View, Text, Image} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 
 import Box from '../../../base/components/ui_component/box';
+import Column from '../../../base/components/ui_component/column';
 import ButtonStyle from '../../../base/components/ui_component/button_style';
 
 import {styles} from './style';
@@ -23,7 +24,7 @@ const AuthPage = () => {
     <View style={styles.container}>
       <Image style={styles.boxLiquid} source={assetLiquid} />
 
-      <View style={stylesGlobal.column}>
+      <Column style={stylesGlobal.alignItemsCenter}>
         <Box h={40} />
         <Image style={styles.boxLogo} source={assetLogo} />
 
@@ -36,7 +37,7 @@ const AuthPage = () => {
 
         <Box h={20} />
         <Text style={styles.txtH2}>{text3}</Text>
-      </View>
+      </Column>
 
       <View style={{padding: 15, width: '100%'}}>
         <ButtonStyle

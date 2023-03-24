@@ -5,11 +5,12 @@ import {colorDarkGold2} from '../../../../../base/color';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import stylesGlobal from '../../../../../base/styles_global';
 import Box from '../../../../../base/components/ui_component/box';
+import Row from '../../../../../base/components/ui_component/row';
 
 const InputTrade = () => {
   return (
     <View style={styles.cardTrade}>
-      <View style={stylesGlobal.rowEvenly}>
+      <Row style={stylesGlobal.evenly}>
         <View>
           <Text style={styles.textLabel}>E-Gold</Text>
           <Box h={4} />
@@ -30,17 +31,17 @@ const InputTrade = () => {
           <Box h={4} />
           <TextInput style={styles.inputAmount} placeholder="กรอกจำนวนเงิน" />
         </View>
-      </View>
+      </Row>
 
       <View>
-        <View style={stylesGlobal.rowCenter}>
+        <Row style={stylesGlobal.center}>
           <Text style={styles.textLabel}>1 E-Gold = 1 บาททองคำ</Text>
-        </View>
-        <View style={stylesGlobal.rowCenter}>
+        </Row>
+        <Row style={stylesGlobal.center}>
           <Text style={styles.textLabel}>
             ราคาซื้อ ณ ปัจุบัน 25,100.00 บาท = 1 บาททองคำ
           </Text>
-        </View>
+        </Row>
       </View>
     </View>
   );

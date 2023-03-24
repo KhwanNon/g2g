@@ -33,7 +33,7 @@ const TabMenu = ({index, setIndex}: Props) => {
       <TouchableOpacity
         key={`#${idx}`}
         onPress={() => setIndex(idx)}
-        style={[stylesGlobal.columnCenter, {width: 70}]}>
+        style={[stylesGlobal.center, {width: 70}]}>
         <Text style={{color: index === idx ? colorOrange : colorTextSubTitle}}>
           {item}
         </Text>

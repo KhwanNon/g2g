@@ -1,8 +1,8 @@
 import React from 'react';
 import {colorGrey} from '../../../color';
 import Box from '../../ui_component/box';
-import stylesGlobal from '../../../styles_global';
 import {Modal, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import Row from '../../ui_component/row';
 
 type Props = {
   items: any[];
@@ -29,9 +29,9 @@ const Dropdown = ({open, setOpen, items, onPress, title}: Props) => {
       <View style={styles.container}>
         <View style={styles.card}>
           <Box h={12} />
-          <View style={[stylesGlobal.row, {paddingLeft: 20}]}>
+          <Row style={[{paddingLeft: 20}]}>
             <Text style={{fontSize: 18, color: 'black'}}>{title}</Text>
-          </View>
+          </Row>
           <Box h={10} />
           <View style={styles.divider} />
           {renderItem()}

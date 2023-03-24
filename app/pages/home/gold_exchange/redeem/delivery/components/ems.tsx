@@ -3,12 +3,11 @@ import {styles} from '../../../style';
 import DeliveryAddress from '../address';
 import {View, Text, TouchableOpacity} from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import stylesGlobal from '../../../../../../../base/styles_global';
 import Box from '../../../../../../../base/components/ui_component/box';
+import Row from '../../../../../../../base/components/ui_component/row';
 
 const Ems = () => {
-  const [openDeliveryAddress, setOpenDeliveryAddress] =
-    useState<boolean>(false);
+  const [openDeliveryAddress, setOpenDeliveryAddress] =  useState<boolean>(false);
 
   return (
     <View>
@@ -25,12 +24,12 @@ const Ems = () => {
             paddingVertical: 12,
           },
         ]}>
-        <View style={stylesGlobal.row}>
+        <Row>
           <Ionicons size={22} color={'black'} name={'add-circle-outline'} />
 
           <Box w={10} />
           <Text style={styles.text}>เพิ่มที่อยู่จัดส่ง</Text>
-        </View>
+        </Row>
 
         <Ionicons size={22} color={'grey'} name={'chevron-forward'} />
       </TouchableOpacity>

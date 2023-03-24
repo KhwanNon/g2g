@@ -3,6 +3,7 @@ import {View, Text, Modal} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 
 import RowData from '../../../../history/components/row_data';
+import Row from '../../../../../../../base/components/ui_component/row';
 import Box from '../../../../../../../base/components/ui_component/box';
 import ButtonStyle from '../../../../../../../base/components/ui_component/button_style';
 
@@ -34,9 +35,9 @@ const ModalSummarySelf = ({open, setOpen}: Props) => {
           backgroundColor: '#00000080',
         }}>
         <View style={styles.containerModal}>
-          <View style={stylesGlobal.rowCenter}>
+          <Row style={stylesGlobal.center}>
             <Text style={styles.textBtn}>สรุปรายละเอียด</Text>
-          </View>
+          </Row>
 
           <Box h={20} />
           <RowData title={'รหัสสินค้า'} value={'xxxxxxxxx'} />

@@ -1,10 +1,10 @@
 import React from 'react';
 import Box from '../../ui_component/box';
-import stylesGlobal from '../../../styles_global';
 import ButtonStyle from '../../ui_component/button_style';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {StyleSheet, Text, View, Modal} from 'react-native';
 import {colorGold, colorLightGrey, colorTextLabel} from '../../../color';
+import Row from '../../ui_component/row';
 
 type Props = {
   open: boolean;
@@ -49,7 +49,7 @@ const DialogConfirm = (props: Props) => {
           <Box h={10} />
           {caption ? <Text style={styles.txtCaption}>{caption}</Text> : null}
           <Box h={20} />
-          <View style={stylesGlobal.row}>
+          <Row>
             <ButtonStyle
               height={45}
               width={'45%'}
@@ -67,7 +67,7 @@ const DialogConfirm = (props: Props) => {
               colorTxt={txtColorR}
               backgroundColor={colorGold}
             />
-          </View>
+          </Row>
           <Box h={10} />
         </View>
       </View>

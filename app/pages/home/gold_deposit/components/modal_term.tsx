@@ -4,6 +4,7 @@ import {colorGold, colorEgg, colorGrey} from '../../../../../base/color';
 import Box from '../../../../../base/components/ui_component/box';
 import ButtonIcon from '../../../../../base/components/ui_component/button_icon';
 import ButtonStyle from '../../../../../base/components/ui_component/button_style';
+import Row from '../../../../../base/components/ui_component/row';
 import stylesGlobal from '../../../../../base/styles_global';
 
 type Props = {
@@ -14,21 +15,25 @@ type Props = {
 const ModalTerm = ({open, setOpen}: Props) => {
   const close = () => setOpen(false);
 
+  const renderAppBar = () => (
+    <Row style={stylesGlobal.between}>
+      <ButtonIcon
+        size={30}
+        onTap={close}
+        color={'grey'}
+        name={'chevron-back'}
+      />
+      <Text style={stylesGlobal.textHeader}>ข้อกำหนดและเงื่อนไข</Text>
+      <Box w={20} />
+    </Row>
+  );
+
   return (
     <Modal visible={open} transparent={true} animationType="fade">
       <View style={[stylesGlobal.containerWhite, {padding: 10}]}>
-        <View style={stylesGlobal.rowBetween}>
-          <ButtonIcon
-            size={30}
-            color={'grey'}
-            onTap={close}
-            name={'chevron-back'}
-          />
-          <Text style={stylesGlobal.textHeader}>ข้อกำหนดและเงื่อนไข</Text>
-          <Box w={20} />
-        </View>
-
+        {renderAppBar()}
         <Box h={20} />
+
         <ScrollView
           showsVerticalScrollIndicator={false}
           style={{
@@ -61,14 +66,14 @@ const ModalTerm = ({open, setOpen}: Props) => {
         </ScrollView>
 
         <Box h={20} />
-        <View style={[stylesGlobal.rowEvenly]}>
+        <Row style={[stylesGlobal.evenly]}>
           <Box h={30} />
           <ButtonStyle
             height={45}
             width={'40%'}
+            onTap={close}
             title={'ยินยอม'}
             colorTxt={'white'}
-            onTap={close}
             backgroundColor={colorGold}
           />
           <ButtonStyle
@@ -79,7 +84,7 @@ const ModalTerm = ({open, setOpen}: Props) => {
             colorTxt={colorGold}
             backgroundColor={colorEgg}
           />
-        </View>
+        </Row>
         <Box h={20} />
       </View>
     </Modal>

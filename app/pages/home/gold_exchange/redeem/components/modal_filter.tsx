@@ -4,6 +4,7 @@ import {StyleSheet, Text, View, Modal, TouchableOpacity} from 'react-native';
 import Box from '../../../../../../base/components/ui_component/box';
 import ButtonIcon from '../../../../../../base/components/ui_component/button_icon';
 import Divider from '../../../../../../base/components/ui_component/divider';
+import Row from '../../../../../../base/components/ui_component/row';
 
 import stylesGlobal from '../../../../../../base/styles_global';
 
@@ -36,7 +37,7 @@ const ModalFilter = ({open, setOpen}: Props) => {
     <Modal visible={open} transparent animationType="fade">
       <View style={{flex: 1, backgroundColor: '#00000020'}}>
         <View style={styles.modalFilter}>
-          <View style={stylesGlobal.rowBetween}>
+          <Row style={stylesGlobal.between}>
             <Box w={20} />
 
             <Text style={{fontSize: 16, color: 'black'}}>
@@ -49,7 +50,7 @@ const ModalFilter = ({open, setOpen}: Props) => {
               color={'black'}
               onTap={() => setOpen(false)}
             />
-          </View>
+          </Row>
 
           <Box h={5} />
           {renderItem()}

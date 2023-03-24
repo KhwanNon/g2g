@@ -3,6 +3,7 @@ import {View, Text, Image, StyleSheet} from 'react-native';
 import {useNavigation, useRoute} from '@react-navigation/native';
 
 import Box from '../../../base/components/ui_component/box';
+import Row from '../../../base/components/ui_component/row';
 import ButtonStyle from '../../../base/components/ui_component/button_style';
 
 import {colorGold} from '../../../base/color';
@@ -32,9 +33,9 @@ const VerifySuccessPage = () => {
   
   return (
     <View style={styles.container}>
-      <View style={[stylesGlobal.rowCenter, {height: 60}]}>
+      <Row style={[stylesGlobal.center, {height: 60}]}>
         <Text style={stylesGlobal.textHeader}>ยืนยันตัวตน</Text>
-      </View>
+      </Row>
 
       <View style={styles.box}>
         <Image style={styles.img} source={assetVerifySuccess} />

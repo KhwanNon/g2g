@@ -3,6 +3,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import {Image, StyleSheet, Text, View} from 'react-native';
 
 import Box from '../../ui_component/box';
+import Row from '../../ui_component/row';
 
 import {
   colorGold2,
@@ -10,7 +11,6 @@ import {
   colorDarkGold2,
   colorTextTitle,
 } from '../../../color';
-import stylesGlobal from '../../../styles_global';
 import {assetLogo, assetHomeGold} from '../../../../generated/assets';
 
 const CardMyGold = () => {
@@ -26,17 +26,17 @@ const CardMyGold = () => {
         <Text style={styles.textBold}>น้ำหนักทองคำของคุณ</Text>
         <Box h={15} />
 
-        <View style={stylesGlobal.row}>
+        <Row>
           <Text style={styles.textEGold}>2</Text>
           <Box w={30} />
           <Text style={[styles.textTitle, {fontSize: 22}]}>E-GOLD</Text>
-        </View>
+        </Row>
 
         <Box h={15} />
-        <View style={stylesGlobal.row}>
+        <Row>
           <Image style={styles.gold} source={assetHomeGold} />
           <Text style={[styles.textTitle, {fontSize: 16}]}>บาททองคำ</Text>
-        </View>
+        </Row>
       </View>
     </LinearGradient>
   );

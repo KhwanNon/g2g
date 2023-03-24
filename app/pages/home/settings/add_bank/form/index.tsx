@@ -2,6 +2,7 @@ import React from 'react';
 import {View, Text, TextInput, ScrollView} from 'react-native';
 
 import Box from '../../../../../../base/components/ui_component/box';
+import Row from '../../../../../../base/components/ui_component/row';
 import Divider from '../../../../../../base/components/ui_component/divider';
 import ButtonStyle from '../../../../../../base/components/ui_component/button_style';
 
@@ -53,7 +54,7 @@ const FormAddBankPage = () => {
         }}
       />
       <Box h={15} />
-      <View style={stylesGlobal.rowBetween}>
+      <Row style={stylesGlobal.between}>
         <ButtonStyle
           height={45}
           width={'43%'}
@@ -68,7 +69,7 @@ const FormAddBankPage = () => {
           colorTxt={'white'}
           backgroundColor={colorGold}
         />
-      </View>
+      </Row>
 
       <Box h={30} />
       <Text style={{fontWeight: 'bold', color: colorTextTitle}}>
@@ -94,8 +95,7 @@ const FormAddBankPage = () => {
 
 export const radio = (text: string) => {
   return (
-    <View
-      style={[stylesGlobal.row, {marginBottom: 4, alignItems: 'flex-start'}]}>
+    <Row style={[{marginBottom: 4, alignItems: 'flex-start'}]}>
       <View
         style={{
           width: 5,
@@ -107,7 +107,7 @@ export const radio = (text: string) => {
       />
       <Box w={10} />
       <Text style={{fontSize: 12, color: colorTextLabel}}>{text}</Text>
-    </View>
+    </Row>
   );
 };
 

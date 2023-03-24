@@ -78,15 +78,15 @@ const SettingPage = () => {
           </View>
         </View>
         <DialogConfirm
-          icon={'ios-alert-circle-outline'}
-          iconColor={'lightgrey'}
-          txtColorL={'white'}
-          open={openLogout}
           txtR={'ตกลง'}
           txtL={'ยกเลิก'}
+          txtColorL={'white'}
           txtColorR={'white'}
+          open={openLogout}
+          iconColor={'lightgrey'}
           onConfirm={onLogout}
           setOpen={setOpenLogout}
+          icon={'ios-alert-circle-outline'}
           title={'ต้องการออกจากระบบหรือไม่'}
         />
       </View>
@@ -126,10 +126,16 @@ const menuItems: menuModel[] = [
     icon: 'ios-lock-closed',
   },
   {
+    state: 'term',
+    title: 'ข้อตกลงและเงื่อนไข',
+    subTitle: 'ข้อตกลงและเงื่อนไข',
+    icon: 'md-checkbox-outline',
+  },
+  {
     state: 'policy',
     title: 'นโยบาย',
     subTitle: 'นโยบาย',
-    icon: 'md-checkbox-outline',
+    icon: 'ios-shield-checkmark',
   },
   {
     state: 'contact',

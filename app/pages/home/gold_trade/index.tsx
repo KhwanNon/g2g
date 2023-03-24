@@ -8,6 +8,7 @@ import CardSummary from './components/card_summary';
 import ButtonFilter from './components/button_filter';
 import LineChartComponemt from '../components/line_chart';
 import Box from '../../../../base/components/ui_component/box';
+import Row from '../../../../base/components/ui_component/row';
 import ButtonStyle from '../../../../base/components/ui_component/button_style';
 
 import {
@@ -16,26 +17,23 @@ import {
   colorDarkGold2,
   colorLightGrey,
 } from '../../../../base/color';
+import useTab from '../../../../hooks/use_tab';
 import {DEVICE_WIDTH} from '../../../../base/constant';
 import stylesGlobal from '../../../../base/styles_global';
 
 const GoldTradePage = () => {
-  const [index, setIndex] = useState<number>(0);
+  const {index, toggleValue} = useTab(0);
   const [openDetails, setOpenDetails] = useState<boolean>(false);
-
-  const onChangeTab = () => {
-    return index == 0 ? setIndex(1) : setIndex(0);
-  };
 
   return (
     <ScrollView
       style={stylesGlobal.containerWhite}
       showsVerticalScrollIndicator={false}>
       <Box h={20} />
-      <View style={stylesGlobal.rowEvenly}>
-        {styleButtonTap('ซื้อ', index == 0, onChangeTab)}
-        {styleButtonTap('ขาย', index == 1, onChangeTab)}
-      </View>
+      <Row style={stylesGlobal.evenly}>
+        {styleButtonTap('ซื้อ', index == 0, () => toggleValue(0))}
+        {styleButtonTap('ขาย', index == 1, () => toggleValue(1))}
+      </Row>
 
       <Box h={25} />
       <MyCard />

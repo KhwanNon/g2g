@@ -3,6 +3,7 @@ import {View, Text, Modal} from 'react-native';
 
 import RowData from '../row_data';
 import Box from '../../../../../../base/components/ui_component/box';
+import Row from '../../../../../../base/components/ui_component/row';
 import ButtonStyle from '../../../../../../base/components/ui_component/button_style';
 
 import {
@@ -30,11 +31,11 @@ const RedeemModal = ({open, setOpen}: Props) => {
           backgroundColor: '#00000060',
         }}>
         <View style={styles.modal}>
-          <View style={stylesGlobal.rowCenter}>
+          <Row style={stylesGlobal.center}>
             <Text style={{color: colorTextTitle, fontSize: 16}}>
               รายละเอียดเพิ่มเติม
             </Text>
-          </View>
+          </Row>
           <Box h={10} />
           <RowData title={'รหัสสินค้า '} value={'xxxxxxxxxxx'} />
           <RowData title={'ชื่อสินค้า'} value={'xxxx xxxx'} />
@@ -47,7 +48,7 @@ const RedeemModal = ({open, setOpen}: Props) => {
           <RowData title={'วิธีรับสินค้า'} value={'รับด้วยตนเอง'} />
           <RowData title={'จังหวัด'} value={'กรุงเทพ'} />
           <RowData title={'สาขา'} value={'xxxxxx'} />
-          <View style={[stylesGlobal.rowBetween, {alignItems: 'flex-start'}]}>
+          <Row style={[stylesGlobal.between, {alignItems: 'flex-start'}]}>
             <Text style={{color: colorTextTitle}}>สถานะ</Text>
             <ButtonStyle
               width={115}
@@ -56,9 +57,9 @@ const RedeemModal = ({open, setOpen}: Props) => {
               colorTxt={colorGold}
               backgroundColor={colorEgg}
             />
-          </View>
+          </Row>
           <Box h={30} />
-          <View style={stylesGlobal.rowCenter}>
+          <Row style={stylesGlobal.center}>
             <ButtonStyle
               width={'40%'}
               height={40}
@@ -67,7 +68,7 @@ const RedeemModal = ({open, setOpen}: Props) => {
               onTap={() => setOpen(false)}
               backgroundColor={colorLightGrey}
             />
-          </View>
+          </Row>
           <Box h={5} />
         </View>
       </View>

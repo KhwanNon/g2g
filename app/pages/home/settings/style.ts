@@ -31,7 +31,7 @@ const styleSetting = StyleSheet.create({
     backgroundColor: 'white',
   },
   cardMenu: {
-    height: 600,
+    height: 660,
     width: '92%',
     elevation: 4,
     paddingTop: 25,
@@ -40,7 +40,7 @@ const styleSetting = StyleSheet.create({
     backgroundColor: 'white',
   },
   bgView: {
-    height: 740,
+    height: 800,
     width: '100%',
     alignItems: 'center',
     justifyContent: 'space-between',

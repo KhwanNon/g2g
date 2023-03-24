@@ -27,6 +27,7 @@ import WithdrawBankPage from '../pages/home/deposit/withdraw';
 import DeliveryPage from '../pages/home/gold_exchange/redeem/delivery';
 import DetailsRedeemPage from '../pages/home/gold_exchange/redeem/details';
 import GoldTransferPage from '../pages/home/gift/gold_transfer';
+import NotificationPage from '../pages/home/notification';
 
 import FormProfilePage from '../pages/home/settings/profile/form';
 import ProfilePage from '../pages/home/settings/profile';
@@ -180,6 +181,11 @@ const Navigation = () => {
           name="GoldTransfer"
           component={GoldTransferPage}
           options={header('โอนทองคำผ่านระบบ')}
+        />
+        <Stack.Screen
+          name="Notification"
+          component={NotificationPage}
+          options={header('แจ้งเตือน')}
         />
       </Stack.Navigator>
     </NavigationContainer>

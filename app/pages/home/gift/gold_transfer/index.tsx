@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {View, Text, TextInput} from 'react-native';
 
+import Row from '../../../../../base/components/ui_component/row';
 import Box from '../../../../../base/components/ui_component/box';
 import Divider from '../../../../../base/components/ui_component/divider';
 import ButtonStyle from '../../../../../base/components/ui_component/button_style';
@@ -15,10 +16,10 @@ const GoldTransferPage = () => {
 
   const renderTextAlert = () => {
     return (
-      <View style={stylesGlobal.rowBetween}>
+      <Row style={stylesGlobal.between}>
         <Text style={styles.textAlert}>น้ำหนักทองคำของคุณสามารถโอนได้</Text>
         <Text style={styles.textAlert}>1.2 บาท/ทองคำ</Text>
-      </View>
+      </Row>
     );
   };
 

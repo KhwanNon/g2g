@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, Text} from 'react-native';
 import {colorTextTitle} from '../../../../../base/color';
+import Row from '../../../../../base/components/ui_component/row';
 import stylesGlobal from '../../../../../base/styles_global';
 
 type Props = {
@@ -12,7 +13,7 @@ type Props = {
 
 const RowData = ({title, value, color, isBold}: Props) => {
   return (
-    <View style={[stylesGlobal.rowBetween, {marginBottom: 10}]}>
+    <Row style={[stylesGlobal.between, {marginBottom: 10}]}>
       <Text
         style={{
           fontSize: 16,
@@ -29,7 +30,7 @@ const RowData = ({title, value, color, isBold}: Props) => {
         }}>
         {value}
       </Text>
-    </View>
+    </Row>
   );
 };
 

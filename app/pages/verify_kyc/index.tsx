@@ -4,6 +4,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {useNavigation, useRoute} from '@react-navigation/native';
 
+import Row from '../../../base/components/ui_component/row';
 import Box from '../../../base/components/ui_component/box';
 import Divider from '../../../base/components/ui_component/divider';
 import ButtonStyle from '../../../base/components/ui_component/button_style';
@@ -20,7 +21,7 @@ import stylesGlobal from '../../../base/styles_global';
 
 const VerifyKYCPage = () => {
   const navigation: any = useNavigation();
-  const {params: {state}} = useRoute<any>()
+  const { params: {state} } = useRoute<any>();
 
   const onConfirm = () => {
     switch (state) {
@@ -40,8 +41,8 @@ const VerifyKYCPage = () => {
       <Text style={styles.text18}>1. ยืนตัวตนโดยทำการ KYC</Text>
       <Box h={20} />
 
-      <View style={stylesGlobal.rowBetween}>
-        <View style={stylesGlobal.row}>
+      <Row style={stylesGlobal.between}>
+        <Row>
           <LinearGradient
             style={styleSetting.boxIcon}
             colors={[colorGold2, colorDarkGold]}>
@@ -52,9 +53,9 @@ const VerifyKYCPage = () => {
             <Text style={styles.text16}>การยืนยันตัวตน</Text>
             <Text>ยืนยันตัวตน</Text>
           </View>
-        </View>
+        </Row>
         <Text style={styles.textBlue}>ยังไม่ทำการยืนยัน</Text>
-      </View>
+      </Row>
 
       <Box h={15} />
       <Divider />
@@ -63,9 +64,9 @@ const VerifyKYCPage = () => {
       <ButtonStyle
         height={45}
         width={'100%'}
-        onTap={onConfirm}
         colorTxt={'white'}
         title={'ยืนยันตัวตน'}
+        onTap={onConfirm}
         backgroundColor={colorGold}
       />
     </View>

@@ -3,6 +3,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import {View, Text, Modal, TextInput, KeyboardAvoidingView} from 'react-native';
 
 import Box from '../../../../../../../base/components/ui_component/box';
+import Row from '../../../../../../../base/components/ui_component/row';
 import Divider from '../../../../../../../base/components/ui_component/divider';
 import ButtonIcon from '../../../../../../../base/components/ui_component/button_icon';
 import ButtonStyle from '../../../../../../../base/components/ui_component/button_style';
@@ -24,7 +25,7 @@ const DeliveryAddress = ({open, setOpen}: Props) => {
       <KeyboardAvoidingView
         style={{justifyContent: 'space-between', flex: 1, padding: 10}}>
         <View>
-          <View style={stylesGlobal.rowBetween}>
+          <Row style={stylesGlobal.between}>
             <ButtonIcon
               size={30}
               onTap={close}
@@ -33,16 +34,16 @@ const DeliveryAddress = ({open, setOpen}: Props) => {
             />
             <Text style={stylesGlobal.textHeader}>ที่อยู่จัดส่ง</Text>
             <Box w={20} />
-          </View>
+          </Row>
 
           <View style={{padding: 10}}>
             <Box h={10} />
-            <View style={stylesGlobal.row}>
+            <Row>
               <Text style={[styles.text, {fontWeight: 'bold'}]}>
                 ข้อมูลติดต่อ
               </Text>
               <Text style={{color: 'red'}}>*</Text>
-            </View>
+            </Row>
 
             <Box h={20} />
             <Text style={styles.text}>ชื่อ</Text>
@@ -57,9 +58,9 @@ const DeliveryAddress = ({open, setOpen}: Props) => {
             <Box h={20} />
             <Text style={styles.text}>สถานที่จัดส่ง</Text>
             <Box h={10} />
-            <View
+            <Row
               style={[
-                stylesGlobal.rowBetween,
+                stylesGlobal.between,
                 {
                   padding: 10,
                   elevation: 1,
@@ -76,7 +77,7 @@ const DeliveryAddress = ({open, setOpen}: Props) => {
                 </Text>
               </View>
               <Ionicons size={20} color={'grey'} name={'chevron-forward'} />
-            </View>
+            </Row>
 
             <Box h={20} />
             <Text style={styles.text}>รายละเอียดที่อยู่เพิ่มเติม</Text>

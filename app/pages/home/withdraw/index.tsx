@@ -4,6 +4,7 @@ import React, {useLayoutEffect, useState} from 'react';
 
 import ListTileMyBank from './components/list_tile_my_bank';
 import Box from '../../../../base/components/ui_component/box';
+import Row from '../../../../base/components/ui_component/row';
 import ButtonText from '../../../../base/components/ui_component/button_text';
 import ButtonBorder from '../../../../base/components/ui_component/button_border';
 
@@ -50,13 +51,13 @@ const WithdrawPage = () => {
       })}
 
       <Box h={50} />
-      <View style={[stylesGlobal.rowBetween]}>
+      <Row style={[stylesGlobal.between, {paddingLeft: 15}]}>
         <View>
           <Text>แสดงเลขบัญชีธนาคาร</Text>
           <Text>ตกลงที่จะแสดงเลขบัญชีธนาคารของผู้ใช้</Text>
         </View>
         <Switch ios_backgroundColor="#3e3e3e" value={false} />
-      </View>
+      </Row>
       <Box h={50} />
 
       <View style={{paddingHorizontal: 15}}>

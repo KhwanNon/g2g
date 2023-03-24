@@ -1,10 +1,12 @@
 import React from 'react';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 
 import stylesGlobal from '../../styles_global';
-import Ionicons from 'react-native-vector-icons/Ionicons';
-import Divider from './divider';
+
 import Box from './box';
+import Row from './row';
+import Divider from './divider';
 
 type Props = {
   title: string;
@@ -16,12 +18,12 @@ const ListTileBank = ({state, title, onPress}: Props) => {
   return (
     <TouchableOpacity onPress={onPress}>
       <Box h={15} />
-      <View style={stylesGlobal.rowBetween}>
-        <View style={stylesGlobal.row}>
+      <Row style={stylesGlobal.between}>
+        <Row>
           <Text>{title}</Text>
-        </View>
+        </Row>
         <Ionicons size={20} color={'lightgrey'} name={'chevron-forward'} />
-      </View>
+      </Row>
       <Box h={15} />
       <Divider />
     </TouchableOpacity>

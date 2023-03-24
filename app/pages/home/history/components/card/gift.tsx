@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {View, Text} from 'react-native';
 
 import RowData from '../row_data';
+import Row from '../../../../../../base/components/ui_component/row';
 import Box from '../../../../../../base/components/ui_component/box';
 import ButtonStyle from '../../../../../../base/components/ui_component/button_style';
 
@@ -34,9 +35,9 @@ const CardGift = () => {
 
   return (
     <View style={styles.card}>
-      <View style={stylesGlobal.rowCenter}>
+      <Row style={stylesGlobal.center}>
         <Text style={{color: colorTextTitle, fontSize: 16}}>ผู้ส่งของขวัญ</Text>
-      </View>
+      </Row>
       <RowData title={'ชื่อ'} value={'xxxxxxxxxxx'} />
       <RowData title={'นามสกุล'} value={'xxxxxxxxxxx'} />
       <RowData title={'น้ำหนักทองคำ'} value={'1 บาททอง'} />
@@ -46,7 +47,7 @@ const CardGift = () => {
         value={'รอดำนเนิการ'}
         color={changeColorText('pending')}
       />
-      <View style={stylesGlobal.rowBetween}>
+      <Row style={stylesGlobal.between}>
         <Text style={{color: colorTextTitle, fontSize: 13}}>{textWarning}</Text>
         <ButtonStyle
           width={85}
@@ -55,9 +56,9 @@ const CardGift = () => {
           colorTxt={colorGold}
           backgroundColor={colorEgg}
         />
-      </View>
+      </Row>
       <Box h={20} />
-      <View style={stylesGlobal.rowCenter}>
+      <Row style={stylesGlobal.center}>
         <ButtonStyle
           height={35}
           width={'50%'}
@@ -66,7 +67,7 @@ const CardGift = () => {
           backgroundColor={colorGold}
           onTap={() => setOpenDetails(true)}
         />
-      </View>
+      </Row>
       <Box h={10} />
       <GiftModal open={openDetails} setOpen={setOpenDetails} />
     </View>

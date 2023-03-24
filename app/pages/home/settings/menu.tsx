@@ -4,6 +4,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import {View, Text, TouchableOpacity} from 'react-native';
 
 import Box from '../../../../base/components/ui_component/box';
+import Row from '../../../../base/components/ui_component/row';
 import Divider from '../../../../base/components/ui_component/divider';
 
 import {
@@ -27,10 +28,14 @@ type Props = {
 };
 
 const MenuItem = ({item, onPress}: Props) => {
+  const renderIcon = () => (
+    <Ionicons name={'chevron-forward'} size={20} color={'lightgrey'} />
+  );
+
   return (
     <TouchableOpacity onPress={onPress}>
-      <View style={stylesGlobal.rowBetween}>
-        <View style={stylesGlobal.row}>
+      <Row style={stylesGlobal.between}>
+        <Row style={stylesGlobal.alignItemsCenter}>
           <LinearGradient
             style={styleSetting.boxIcon}
             colors={[colorGold2, colorDarkGold]}>
@@ -43,13 +48,9 @@ const MenuItem = ({item, onPress}: Props) => {
             </Text>
             {item.state == 'logout' ? null : <Text>{item.subTitle}</Text>}
           </View>
-        </View>
-        {item.state != 'version' ? (
-          <Ionicons name={'chevron-forward'} size={20} color={'lightgrey'} />
-        ) : (
-          <Text>1.0.0</Text>
-        )}
-      </View>
+        </Row>
+        {item.state != 'version' ? renderIcon() : <Text>1.0.0</Text>}
+      </Row>
       <Box h={12} />
       <Divider />
       <Box h={15} />

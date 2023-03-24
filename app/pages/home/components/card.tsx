@@ -3,6 +3,8 @@ import LinearGradient from 'react-native-linear-gradient';
 import {View, Text, Image, TouchableOpacity} from 'react-native';
 
 import Box from '../../../../base/components/ui_component/box';
+import Row from '../../../../base/components/ui_component/row';
+import Column from '../../../../base/components/ui_component/column';
 import ButtonIcon from '../../../../base/components/ui_component/button_icon';
 
 import {
@@ -23,14 +25,14 @@ type Props = {
 const MyCard = ({isDeposit}: Props) => {
   const renderInfoAccumulate = () => (
     <>
-      <View style={[stylesGlobal.rowBetween, {width: '100%'}]}>
+      <Row style={[stylesGlobal.between, {width: '100%'}]}>
         <Text style={styles.textBold}>มูลค่า E-Gold สะสม</Text>
         <Text style={styles.textWhite}>2 E-Gold</Text>
-      </View>
-      <View style={[stylesGlobal.rowBetween, {width: '100%'}]}>
+      </Row>
+      <Row style={[stylesGlobal.between, {width: '100%'}]}>
         <Text style={styles.textBold}>มูลค่าสะสม</Text>
         <Text style={styles.textWhite}>50,200.00 บาท</Text>
-      </View>
+      </Row>
       <Text style={[styles.textBold, {textDecorationLine: 'underline'}]}>
         1 E-Gold = ทองคำ 1 บาท
       </Text>
@@ -39,23 +41,23 @@ const MyCard = ({isDeposit}: Props) => {
 
   const renderInfoDeposit = () => (
     <>
-      <View style={[stylesGlobal.rowBetween, {width: '100%'}]}>
+      <Row style={[stylesGlobal.between, {width: '100%'}]}>
         <Text style={styles.textBold}>มูลค่าทองที่ฝากแล้ว </Text>
         <View />
-      </View>
-      <View style={[stylesGlobal.rowBetween, {width: '100%'}]}>
+      </Row>
+      <Row style={[stylesGlobal.between, {width: '100%'}]}>
         <Text style={styles.textWhite}>1 บาท</Text>
         <Text style={styles.textWhite}>7.622 กรัม</Text>
-      </View>
+      </Row>
 
-      <View style={[stylesGlobal.rowBetween, {width: '100%'}]}>
+      <Row style={[stylesGlobal.between, {width: '100%'}]}>
         <Text style={styles.textBold}>มูลค่าทองที่ต้องซื้อคืน </Text>
         <View />
-      </View>
-      <View style={[stylesGlobal.rowBetween, {width: '100%'}]}>
+      </Row>
+      <Row style={[stylesGlobal.between, {width: '100%'}]}>
         <Text style={styles.textWhite}>1 บาท</Text>
         <Text style={styles.textWhite}>7.622 กรัม</Text>
-      </View>
+      </Row>
     </>
   );
 
@@ -78,12 +80,12 @@ const MyCard = ({isDeposit}: Props) => {
         style={styles.myCard}
         colors={[colorGold2, colorDarkGold]}>
         <Image style={styles.logo} source={assetLogo} />
-        <View style={[stylesGlobal.column, {flex: 1, padding: 10}]}>
-          <View style={stylesGlobal.rowCenter}>
+        <Column style={[{flex: 1, padding: 10}]}>
+          <Row style={stylesGlobal.center}>
             <Image style={styles.gold} source={assetHomeGold} />
             <Text style={styles.textTitleCard}>ทองคำของคุณ</Text>
             <Image style={styles.gold} source={assetHomeGold} />
-          </View>
+          </Row>
           <Box h={7} />
           <View
             style={{
@@ -94,12 +96,12 @@ const MyCard = ({isDeposit}: Props) => {
           />
           <Box h={10} />
           <View style={{flex: 1, width: '100%'}}>
-            <View style={[stylesGlobal.row, {height: '100%'}]}>
-              <View style={[stylesGlobal.columnBetween, {height: '100%'}]}>
+            <Row style={[{height: '100%'}]}>
+              <Column style={[stylesGlobal.between, {height: '100%'}]}>
                 <Text style={styles.textBold}>จำนวนทองสะสม</Text>
                 <Text style={styles.textEGold}>2</Text>
                 <Text>บาท</Text>
-              </View>
+              </Column>
               <Box w={10} />
               <View
                 style={{
@@ -109,18 +111,16 @@ const MyCard = ({isDeposit}: Props) => {
                 }}
               />
               <Box w={10} />
-              <View
+              <Column
                 style={[
-                  isDeposit
-                    ? stylesGlobal.columnBetween
-                    : stylesGlobal.columnEvenly,
-                    {flex: 1, height: '100%'},
+                  isDeposit ? stylesGlobal.between : stylesGlobal.evenly,
+                  {flex: 1, height: '100%'},
                 ]}>
                 {isDeposit ? renderInfoDeposit() : renderInfoAccumulate()}
-              </View>
-            </View>
+              </Column>
+            </Row>
           </View>
-        </View>
+        </Column>
         {isDeposit ? null : renderBtnDowload()}
       </LinearGradient>
     </View>

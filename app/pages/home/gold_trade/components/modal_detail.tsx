@@ -4,6 +4,7 @@ import {useNavigation} from '@react-navigation/native';
 
 import RowData from '../../history/components/row_data';
 import Box from '../../../../../base/components/ui_component/box';
+import Row from '../../../../../base/components/ui_component/row';
 import ButtonStyle from '../../../../../base/components/ui_component/button_style';
 
 import {styles} from '../style';
@@ -46,7 +47,7 @@ const ModalDetail = ({open, setOpen, isBuy}: Props) => {
           <RowData title={'ราคาทอง/บาท'} value={'25,100.00 ฿'} />
           <RowData title={'รวม'} value={'25,100.00 ฿'} isBold={true} />
           <Box h={20} />
-          <View style={stylesGlobal.rowEvenly}>
+          <Row style={stylesGlobal.evenly}>
             <ButtonStyle
               height={40}
               width={'45%'}
@@ -63,7 +64,7 @@ const ModalDetail = ({open, setOpen, isBuy}: Props) => {
               colorTxt={'white'}
               backgroundColor={colorGold}
             />
-          </View>
+          </Row>
           <Box h={10} />
         </View>
       </View>

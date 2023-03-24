@@ -6,11 +6,11 @@ import MenuHome from './components/menu';
 import GraphGold from './components/graph';
 import Notification from './components/notification';
 import Box from '../../../base/components/ui_component/box';
+import Row from '../../../base/components/ui_component/row';
 import ButtonIcon from '../../../base/components/ui_component/button_icon';
 
 import {styles} from './style';
 import {colorGold} from '../../../base/color';
-import stylesGlobal from '../../../base/styles_global';
 
 const HomePage = () => {
   const renderTitle = (text: string) => (
@@ -27,7 +27,7 @@ const HomePage = () => {
   );
 
   const renderBalance = () => (
-    <View style={stylesGlobal.row}>
+    <Row>
       <Text style={styles.textAmount}>฿ 0.00</Text>
       <Box w={15} />
       <ButtonIcon
@@ -36,7 +36,7 @@ const HomePage = () => {
         name="add-circle-outline"
         onTap={() => {}}
       />
-    </View>
+    </Row>
   );
 
   return (

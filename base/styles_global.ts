@@ -11,51 +11,22 @@ const stylesGlobal = StyleSheet.create({
     fontWeight: 'bold',
     color: colorTextTitle,
   },
-  row: {
-    flexDirection: 'row',
+  alignItemsCenter: {
     alignItems: 'center',
   },
-  rowBetween: {
-    flexDirection: 'row',
+  between: {
     alignItems: 'center',
     justifyContent: 'space-between',
   },
-  rowCenter: {
-    flexDirection: 'row',
+  center: {
     alignItems: 'center',
     justifyContent: 'center',
   },
-  rowAround: {
-    flexDirection: 'row',
+  around: {
     alignItems: 'center',
     justifyContent: 'space-around',
   },
-  rowEvenly: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-evenly',
-  },
-  column: {
-    flexDirection: 'column',
-    alignItems: 'center',
-  },
-  columnBetween: {
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-  },
-  columnCenter: {
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  columnAround: {
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'space-around',
-  },
-  columnEvenly: {
-    flexDirection: 'column',
+  evenly: {
     alignItems: 'center',
     justifyContent: 'space-evenly',
   },

@@ -3,13 +3,14 @@ import React, {useState} from 'react';
 import {View, Text, TextInput, TouchableOpacity} from 'react-native';
 
 import Box from '../../../../../base/components/ui_component/box';
+import Row from '../../../../../base/components/ui_component/row';
 import Divider from '../../../../../base/components/ui_component/divider';
 import ButtonStyle from '../../../../../base/components/ui_component/button_style';
 import DialogAlert from '../../../../../base/components/page_component/dialog/dialog_alert';
 import DialogConfirm from '../../../../../base/components/page_component/dialog/dialog_confirm';
 
-import stylesGlobal from '../../../../../base/styles_global';
 import {colorGreen, colorRed, colorTextLabel} from '../../../../../base/color';
+import stylesGlobal from '../../../../../base/styles_global';
 
 const WithdrawBankPage = () => {
   const amount = [100, 300, 500, 1000];
@@ -40,7 +41,7 @@ const WithdrawBankPage = () => {
   return (
     <View style={{flex: 1}}>
       <Box h={30} />
-      <View style={[stylesGlobal.row, styles.cardWhite]}>
+      <Row style={[stylesGlobal.alignItemsCenter, styles.cardWhite]}>
         <View
           style={{
             width: 40,
@@ -54,7 +55,7 @@ const WithdrawBankPage = () => {
           <Text>SCB Easy app</Text>
           <Text>******0000</Text>
         </View>
-      </View>
+      </Row>
       <Box h={20} />
       <View style={[{paddingVertical: 15}, styles.cardWhite]}>
         <Text style={{color: colorTextLabel, fontSize: 18, fontWeight: 'bold'}}>
@@ -68,7 +69,7 @@ const WithdrawBankPage = () => {
           ยอดเงินคงเหลือของคุณ ฿ 0,000.00
         </Text>
         <Box h={15} />
-        <View style={stylesGlobal.row}>{renderAmount()}</View>
+        <Row>{renderAmount()}</Row>
       </View>
       <View
         style={{

@@ -29,4 +29,5 @@ export type RootStackParamList = {
   DetailsRedeem: undefined;
   Delivery: undefined;
   GoldTransfer: undefined;
+  Notification: undefined;
 };

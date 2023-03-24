@@ -3,8 +3,9 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import {StyleSheet, Text, View, Modal, TouchableOpacity} from 'react-native';
 
 import Box from '../../../../../../base/components/ui_component/box';
-import ButtonIcon from '../../../../../../base/components/ui_component/button_icon';
+import Row from '../../../../../../base/components/ui_component/row';
 import Divider from '../../../../../../base/components/ui_component/divider';
+import ButtonIcon from '../../../../../../base/components/ui_component/button_icon';
 
 import stylesGlobal from '../../../../../../base/styles_global';
 import {useNavigation} from '@react-navigation/native';
@@ -37,7 +38,7 @@ const ModalRedeem = ({open, setOpen}: Props) => {
     <Modal visible={open} transparent animationType="fade">
       <View style={{flex: 1, backgroundColor: '#00000080'}}>
         <View style={styles.modalRedeem}>
-          <View style={stylesGlobal.rowBetween}>
+          <Row style={stylesGlobal.between}>
             <Text style={{fontSize: 16, color: 'black'}}>
               เลือกวิธีรับทองคำ
             </Text>
@@ -48,7 +49,7 @@ const ModalRedeem = ({open, setOpen}: Props) => {
               color={'black'}
               onTap={() => setOpen(false)}
             />
-          </View>
+          </Row>
 
           <Box h={15} />
           {store.map((item, idx) => {
@@ -57,10 +58,10 @@ const ModalRedeem = ({open, setOpen}: Props) => {
                 key={`#${idx}`}
                 onPress={() => onSelectFilter(item.state)}>
                 <Box h={12} />
-                <View style={stylesGlobal.rowBetween}>
+                <Row style={stylesGlobal.between}>
                   <Text style={{color: 'black'}}>{item.title}</Text>
                   <Ionicons size={22} color={'grey'} name={'chevron-forward'} />
-                </View>
+                </Row>
                 <Box h={12} />
                 <Divider />
               </TouchableOpacity>

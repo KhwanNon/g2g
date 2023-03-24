@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
 import {colorGold3, colorGrey} from '../../../../../base/color';
-import stylesGlobal from '../../../../../base/styles_global';
+import Row from '../../../../../base/components/ui_component/row';
 
 type ButtonProps = {
   left: boolean;
@@ -27,7 +27,7 @@ const Button = ({left, right, title, isSelect}: ButtonProps) => {
   };
 
   return (
-    <TouchableOpacity style={stylesGlobal.row} onPress={() => {}}>
+    <TouchableOpacity style={{flexDirection: 'row'}} onPress={() => {}}>
       <View
         style={[
           buttonWidth,
@@ -46,12 +46,12 @@ const Button = ({left, right, title, isSelect}: ButtonProps) => {
 
 const ButtonFilter = () => {
   return (
-    <View style={[stylesGlobal.row, {marginLeft: 15}]}>
+    <Row style={[{marginLeft: 15}]}>
       <Button left right={false} title={'7วัน'} isSelect={true} />
       <Button left={false} right={false} title={'1เดือน'} isSelect={false} />
       <Button left={false} right={false} title={'6เดือน'} isSelect={false} />
       <Button left={false} right={true} title={'1ปี'} isSelect={false} />
-    </View>
+    </Row>
   );
 };
 

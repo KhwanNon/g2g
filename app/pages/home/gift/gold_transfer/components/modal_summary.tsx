@@ -2,15 +2,17 @@ import React from 'react';
 import {View, Text, Modal} from 'react-native';
 
 import {
-  colorTextLabel,
-  colorTextTitle,
+  colorGold,
   colorYellow2,
+  colorTextTitle,
+  colorTextLabel,
 } from '../../../../../../base/color';
 import {styles} from '../../style';
 import stylesGlobal from '../../../../../../base/styles_global';
 
 import {radio} from '../../../settings/add_bank/form';
 import Box from '../../../../../../base/components/ui_component/box';
+import Row from '../../../../../../base/components/ui_component/row';
 import Divider from '../../../../../../base/components/ui_component/divider';
 import ButtonIcon from '../../../../../../base/components/ui_component/button_icon';
 import ButtonStyle from '../../../../../../base/components/ui_component/button_style';
@@ -28,7 +30,7 @@ const ModalSummaryGift = ({open, setOpen}: Props) => {
     <Modal visible={open} transparent animationType="fade">
       <View style={styles.containerModal}>
         <View style={styles.cardModal}>
-          <View style={[stylesGlobal.rowBetween]}>
+          <Row style={[stylesGlobal.between]}>
             <Box w={10} />
             <ButtonIcon
               size={25}
@@ -36,7 +38,7 @@ const ModalSummaryGift = ({open, setOpen}: Props) => {
               color={'black'}
               onTap={close}
             />
-          </View>
+          </Row>
           <View style={{padding: 10}}>
             <Text
               style={{
@@ -70,15 +72,15 @@ const ModalSummaryGift = ({open, setOpen}: Props) => {
             </Text>
 
             <Box h={20} />
-            <View style={stylesGlobal.rowCenter}>
+            <Row style={stylesGlobal.center}>
               <ButtonStyle
                 height={40}
                 width={'45%'}
                 colorTxt={'white'}
                 title={'คัดลอกรหัส'}
-                backgroundColor={colorYellow2}
+                backgroundColor={colorGold}
               />
-            </View>
+            </Row>
 
             <Box h={30} />
             <Text style={{color: colorTextLabel}}>หมายเหตุ</Text>
@@ -86,7 +88,7 @@ const ModalSummaryGift = ({open, setOpen}: Props) => {
             {radio(
               'โปรดมั่นใจก่อนทุกครั้งก่อนที่จะให้รหัสผ่านเพื่อเปิดลิงค์ กับผู้อื่น หากผู้ที่ไม่พึ่งประสงค์ได้รับรหัสผ่านและลิงค์ ทองที่ท่านโอนผู้รับให้จะถูกโอนไปให้โดยทันที',
             )}
-            <View style={stylesGlobal.row}>
+            <Row>
               {radio('หากต้องการดูรหัสผ่านอีกครั้ง โปรดไปดู')}
               <Box w={5} />
               <ButtonText
@@ -94,7 +96,7 @@ const ModalSummaryGift = ({open, setOpen}: Props) => {
                 color={colorYellow2}
                 title={'คลิกที่นี่ History'}
               />
-            </View>
+            </Row>
             <Box h={10} />
           </View>
         </View>
