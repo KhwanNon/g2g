@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "282797196703",
+    "project_id": "g2g-progect",
+    "storage_bucket": "g2g-progect.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:282797196703:android:27a969f88c991daa68e9aa",
+        "android_client_info": {
+          "package_name": "com.minerta.g2g.mobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "282797196703-0ct366pvjr8mqs4ckdf9it9nj0tgngrd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.minerta.g2g.mobile",
+            "certificate_hash": "cce4e63bdfd46d8bc608665e0b5995c99cca8f2c"
+          }
+        },
+        {
+          "client_id": "282797196703-far3imvvkpa7ss85g3f7tcqp306mrva4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAfW0y_J8bZAALqSMXRGaJ-wA7LNljyRdg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "282797196703-far3imvvkpa7ss85g3f7tcqp306mrva4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

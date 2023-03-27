@@ -1,8 +1,8 @@
-import moment from "moment";
+import moment from 'moment';
 
 function secondsToMin(sec: any) {
   sec = Number(sec);
-  return moment.utc(sec * 1000).format("m:ss");
+  return moment.utc(sec * 1000).format('m:ss');
 }
 
 export default secondsToMin;

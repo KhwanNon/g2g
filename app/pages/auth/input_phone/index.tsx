@@ -1,5 +1,5 @@
-import {View, Text, TextInput} from 'react-native';
 import React, {useState} from 'react';
+import {View, Text, TextInput} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 
 import Box from '../../../../base/components/ui_component/box';

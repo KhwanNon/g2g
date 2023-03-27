@@ -67,10 +67,10 @@ const OTPPage = () => {
 
         <ButtonStyle
           height={45}
-          width={'100%'}
-          onTap={goToSuccess}
           title={'ยืนยัน'}
+          width={'100%'}
           colorTxt={'white'}
+          onTap={goToSuccess}
           backgroundColor={colorGold}
         />
       </View>

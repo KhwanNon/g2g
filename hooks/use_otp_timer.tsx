@@ -26,7 +26,7 @@ const useOtpTimer = (): Return => {
     setTimeout(() => {
       onRequestOtp();
     }, 300);
-  }, [state]);
+  }, []);
 
   //! set time interval
   useEffect(() => {

@@ -14,9 +14,9 @@ import {assetGFA, assetLiquid, assetLogo} from '../../../generated/assets';
 const AuthPage = () => {
   const navigation: any = useNavigation();
 
-  const text1: string = 'Destine your own wealth';
-  const text2: string = '“just click”';
-  const text3: string = 'The Ultimate Gold Platform Services';
+  const TEXT_1: string = 'Destine your own wealth';
+  const TEXT_2: string = '“just click”';
+  const TEXT_3: string = 'The Ultimate Gold Platform Services';
 
   const goToTerm = () => navigation.push('Term');
 
@@ -29,23 +29,23 @@ const AuthPage = () => {
         <Image style={styles.boxLogo} source={assetLogo} />
 
         <Box h={90} />
-        <Text style={styles.txtH2}>{text1}</Text>
-        <Text style={styles.txtH2}>{text2}</Text>
+        <Text style={styles.txtH2}>{TEXT_1}</Text>
+        <Text style={styles.txtH2}>{TEXT_2}</Text>
 
         <Box h={20} />
         <Image style={styles.gfaTxt} source={assetGFA} />
 
         <Box h={20} />
-        <Text style={styles.txtH2}>{text3}</Text>
+        <Text style={styles.txtH2}>{TEXT_3}</Text>
       </Column>
 
       <View style={{padding: 15, width: '100%'}}>
         <ButtonStyle
           height={45}
           width={'100%'}
-          onTap={goToTerm}
           colorTxt={'white'}
           title={'เริ่มต้นใช้งาน'}
+          onTap={goToTerm}
           backgroundColor={colorGold}
         />
         <Box h={30} />

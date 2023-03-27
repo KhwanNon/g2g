@@ -12,15 +12,13 @@ import {assetVerifySuccess} from '../../../generated/assets';
 
 const VerifySuccessPage = () => {
   const navigation: any = useNavigation();
-  const {params: {state}} = useRoute<any>()
-
+  const { params: {state} } = useRoute<any>();
 
   const onClickButton = () => {
     if (state === 'authOtp') return navigation.replace('Pin');
     if (state === 'authPin') return navigation.replace('Home');
   };
 
-  
   const caption = (): string => {
     let mapText: any = {
       authOtp: 'เสร็จสิ้นการยืนยันเบอร์โทรศัพท์แล้ว',
@@ -30,7 +28,6 @@ const VerifySuccessPage = () => {
     return mapText[state] || '';
   };
 
-  
   return (
     <View style={styles.container}>
       <Row style={[stylesGlobal.center, {height: 60}]}>

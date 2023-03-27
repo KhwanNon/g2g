@@ -8,7 +8,7 @@ type Props = {
 
 const Box = (props: Props) => {
   const {h, w} = props;
-  return <View style={{height: h, width: w}}/>;
+  return <View style={{height: h, width: w}} />;
 };
 
 export default Box;

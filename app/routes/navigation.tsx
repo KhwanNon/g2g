@@ -1,42 +1,42 @@
-import {RootStackParamList} from './route';
-import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {NavigationContainer} from '@react-navigation/native';
+import {RootStackParamList} from './route';
 
 import {header, noHeader} from './style_header';
 
+import InputPhonePage from '../pages/auth/input_phone';
+import VerifySuccessPage from '../pages/verify_success';
+import TermConditionPage from '../pages/auth/term';
+import VerifyKYCPage from '../pages/verify_kyc';
+import SplashPage from '../pages/splash';
+import HomePage from '../pages/home';
+import AuthPage from '../pages/auth';
 import OTPPage from '../pages/otp';
 import PinPage from '../pages/pin';
-import AuthPage from '../pages/auth';
-import HomePage from '../pages/home';
-import SplashPage from '../pages/splash';
-import VerifyKYCPage from '../pages/verify_kyc';
-import TermConditionPage from '../pages/auth/term';
-import VerifySuccessPage from '../pages/verify_success';
-import InputPhonePage from '../pages/auth/input_phone';
 
-import GiftPage from '../pages/home/gift';
-import DepositPage from '../pages/home/deposit';
-import HistoryPage from '../pages/home/history';
-import SettingPage from '../pages/home/settings';
-import WithdrawPage from '../pages/home/withdraw';
-import GoldTradePage from '../pages/home/gold_trade';
-import GoldDepositPage from '../pages/home/gold_deposit';
-import GoldExchangePage from '../pages/home/gold_exchange';
-import RedeemPage from '../pages/home/gold_exchange/redeem';
-import WithdrawBankPage from '../pages/home/deposit/withdraw';
 import DeliveryPage from '../pages/home/gold_exchange/redeem/delivery';
 import DetailsRedeemPage from '../pages/home/gold_exchange/redeem/details';
+import WithdrawBankPage from '../pages/home/deposit/withdraw';
+import RedeemPage from '../pages/home/gold_exchange/redeem';
 import GoldTransferPage from '../pages/home/gift/gold_transfer';
+import GoldExchangePage from '../pages/home/gold_exchange';
+import GoldDepositPage from '../pages/home/gold_deposit';
 import NotificationPage from '../pages/home/notification';
+import GoldTradePage from '../pages/home/gold_trade';
+import WithdrawPage from '../pages/home/withdraw';
+import DepositPage from '../pages/home/deposit';
+import SettingPage from '../pages/home/settings';
+import HistoryPage from '../pages/home/history';
+import GiftPage from '../pages/home/gift';
 
-import FormProfilePage from '../pages/home/settings/profile/form';
-import ProfilePage from '../pages/home/settings/profile';
-import MyPhonePage from '../pages/home/settings/profile/my_phone';
 import EditPhonePage from '../pages/home/settings/profile/my_phone/edit';
-import AddBankPage from '../pages/home/settings/add_bank';
 import FormAddBankPage from '../pages/home/settings/add_bank/form';
-import PolicyPage from '../pages/home/settings/policy';
+import MyPhonePage from '../pages/home/settings/profile/my_phone';
+import FormProfilePage from '../pages/home/settings/profile/form';
+import AddBankPage from '../pages/home/settings/add_bank';
 import ContactUsPage from '../pages/home/settings/contact';
+import ProfilePage from '../pages/home/settings/profile';
+import PolicyPage from '../pages/home/settings/policy';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
