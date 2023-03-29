@@ -17,13 +17,13 @@ type Props = {
   setOpen: Function;
 };
 
-const ModalDetail = ({open, setOpen, isBuy}: Props) => {
+function ModalDetail({open, setOpen, isBuy}: Props) {
   const navigation: any = useNavigation();
 
-  const goToOTP = () => {
+  function goToOTP() {
     setOpen(false);
     navigation.push('OTP', {phone: '0008887765'});
-  };
+  }
 
   return (
     <Modal visible={open} transparent={true} animationType="fade">
@@ -70,6 +70,6 @@ const ModalDetail = ({open, setOpen, isBuy}: Props) => {
       </View>
     </Modal>
   );
-};
+}
 
 export default ModalDetail;

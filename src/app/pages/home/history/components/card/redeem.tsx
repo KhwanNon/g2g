@@ -15,7 +15,7 @@ import {
 import {styles} from '../../style';
 import stylesGlobal from '../../../../../../base/styles_global';
 
-const CardRedeem = () => {
+function CardRedeem() {
   const [openDetails, setOpenDetails] = useState<boolean>(false);
 
   return (
@@ -52,6 +52,6 @@ const CardRedeem = () => {
       <RedeemModal open={openDetails} setOpen={setOpenDetails} />
     </View>
   );
-};
+}
 
 export default CardRedeem;

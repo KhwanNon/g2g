@@ -8,7 +8,7 @@ type Props = {
   isBuy: boolean;
 };
 
-const CardSummary = ({isBuy}: Props) => {
+function CardSummary({isBuy}: Props) {
   return (
     <View style={styles.card}>
       <Text style={{color: 'black', fontSize: 18, fontWeight: 'bold'}}>
@@ -22,9 +22,9 @@ const CardSummary = ({isBuy}: Props) => {
       />
       <RowData title={'E-Gold'} value={'1 E-Gold'} />
       <RowData title={'ราคาทอง/บาท'} value={'25,100.00 ฿'} />
-      <RowData title={'รวม'} value={'25,100.00 ฿'} isBold={true}/>
+      <RowData title={'รวม'} value={'25,100.00 ฿'} isBold={true} />
     </View>
   );
-};
+}
 
 export default CardSummary;

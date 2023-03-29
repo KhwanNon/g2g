@@ -10,23 +10,25 @@ import {colorGold} from '../../../base/color';
 import stylesGlobal from '../../../base/styles_global';
 import {assetVerifySuccess} from '../../../generated/assets';
 
-const VerifySuccessPage = () => {
+function VerifySuccessPage() {
   const navigation: any = useNavigation();
-  const { params: {state} } = useRoute<any>();
+  const {
+    params: {state},
+  } = useRoute<any>();
 
-  const onClickButton = () => {
+  function onClickButton() {
     if (state === 'authOtp') return navigation.replace('Pin');
     if (state === 'authPin') return navigation.replace('Home');
-  };
+  }
 
-  const caption = (): string => {
+  function caption(): string {
     let mapText: any = {
       authOtp: 'เสร็จสิ้นการยืนยันเบอร์โทรศัพท์แล้ว',
       authPin: 'เสร็จสิ้นการยืนยันรหัสพินโค้ดแล้ว',
     };
 
     return mapText[state] || '';
-  };
+  }
 
   return (
     <View style={styles.container}>
@@ -52,7 +54,7 @@ const VerifySuccessPage = () => {
       </View>
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   box: {

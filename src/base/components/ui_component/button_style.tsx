@@ -10,7 +10,7 @@ type Props = {
   height: string | number;
 };
 
-const ButtonStyle = (props: Props) => {
+function ButtonStyle(props: Props) {
   const {backgroundColor, width, height, title, colorTxt, onTap} = props;
 
   return (
@@ -30,6 +30,6 @@ const ButtonStyle = (props: Props) => {
       </Text>
     </TouchableOpacity>
   );
-};
+}
 
 export default ButtonStyle;

@@ -1,9 +1,9 @@
 import React from 'react';
-import {View} from 'react-native';
 import {styles} from '../../style';
+import {View} from 'react-native';
 import RowData from '../row_data';
 
-const CardBuy = () => {
+function CardBuy() {
   return (
     <View style={styles.card}>
       <RowData title={'วันที่ทำรายการ'} value={'29/06/2022'} />
@@ -14,6 +14,6 @@ const CardBuy = () => {
       <RowData title={'รวม'} value={'50,200.00 ฿'} />
     </View>
   );
-};
+}
 
 export default CardBuy;

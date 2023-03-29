@@ -9,8 +9,8 @@ import Divider from '../../../../base/components/ui_component/divider';
 
 import {
   colorGold2,
-  colorDarkGold,
   colorTextTitle,
+  colorDarkGold,
 } from '../../../../base/color';
 import styleSetting from './style';
 import stylesGlobal from '../../../../base/styles_global';
@@ -27,10 +27,10 @@ type Props = {
   onPress?: () => void;
 };
 
-const MenuItem = ({item, onPress}: Props) => {
-  const renderIcon = () => (
-    <Ionicons name={'chevron-forward'} size={20} color={'lightgrey'} />
-  );
+function MenuItem({item, onPress}: Props) {
+  function renderIcon() {
+    return <Ionicons name={'chevron-forward'} size={20} color={'lightgrey'} />;
+  }
 
   return (
     <TouchableOpacity onPress={onPress}>
@@ -56,6 +56,6 @@ const MenuItem = ({item, onPress}: Props) => {
       <Box h={15} />
     </TouchableOpacity>
   );
-};
+}
 
 export default MenuItem;

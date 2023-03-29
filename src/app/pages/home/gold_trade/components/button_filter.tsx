@@ -10,7 +10,7 @@ type ButtonProps = {
   isSelect: boolean;
 };
 
-const Button = ({left, right, title, isSelect}: ButtonProps) => {
+function Button({left, right, title, isSelect}: ButtonProps) {
   const borderRadius = {
     borderBottomLeftRadius: left ? 10 : 0,
     borderTopLeftRadius: left ? 10 : 0,
@@ -42,9 +42,9 @@ const Button = ({left, right, title, isSelect}: ButtonProps) => {
       )}
     </TouchableOpacity>
   );
-};
+}
 
-const ButtonFilter = () => {
+function ButtonFilter() {
   return (
     <Row style={[{marginLeft: 15}]}>
       <Button left right={false} title={'7วัน'} isSelect={true} />
@@ -53,6 +53,6 @@ const ButtonFilter = () => {
       <Button left={false} right={true} title={'1ปี'} isSelect={false} />
     </Row>
   );
-};
+}
 
 export default ButtonFilter;

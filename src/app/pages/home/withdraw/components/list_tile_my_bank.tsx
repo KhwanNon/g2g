@@ -7,7 +7,7 @@ type Props = {
   icon: string;
 };
 
-const ListTileMyBank = ({onPress, icon}: Props) => {
+function ListTileMyBank({onPress, icon}: Props) {
   return (
     <View style={styles.container}>
       <View>
@@ -17,7 +17,7 @@ const ListTileMyBank = ({onPress, icon}: Props) => {
       <ButtonIcon name={icon} size={20} color={'grey'} onTap={onPress} />
     </View>
   );
-};
+}
 
 export default ListTileMyBank;
 

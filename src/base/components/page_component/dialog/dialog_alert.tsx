@@ -16,7 +16,7 @@ type Props = {
   onConfirm: () => void;
 };
 
-const DialogAlert = (props: Props) => {
+function DialogAlert(props: Props) {
   const {open, icon, title, setOpen, caption, txtButton, iconColor, onConfirm} =
     props;
 
@@ -43,7 +43,7 @@ const DialogAlert = (props: Props) => {
       </View>
     </Modal>
   );
-};
+}
 
 export default DialogAlert;
 

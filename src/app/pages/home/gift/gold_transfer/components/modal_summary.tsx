@@ -23,7 +23,7 @@ type Props = {
   setOpen: Function;
 };
 
-const ModalSummaryGift = ({open, setOpen}: Props) => {
+function ModalSummaryGift({open, setOpen}: Props) {
   const close = () => setOpen(false);
 
   return (
@@ -103,6 +103,6 @@ const ModalSummaryGift = ({open, setOpen}: Props) => {
       </View>
     </Modal>
   );
-};
+}
 
 export default ModalSummaryGift;

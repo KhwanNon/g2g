@@ -13,14 +13,14 @@ type Props = {
   setOpen: Function;
 };
 
-const ModalFilter = ({open, setOpen}: Props) => {
+function ModalFilter({open, setOpen}: Props) {
   const store = ['ร้านที่เข้าร่วมทั้งหมด', 'AURORA', 'GCAP'];
 
-  const onSelectFilter = () => {
+  function onSelectFilter() {
     setOpen(false);
-  };
+  }
 
-  const renderItem = () => {
+  function renderItem() {
     return store.map((item, idx) => {
       return (
         <TouchableOpacity onPress={onSelectFilter} key={`#${idx}`}>
@@ -31,7 +31,7 @@ const ModalFilter = ({open, setOpen}: Props) => {
         </TouchableOpacity>
       );
     });
-  };
+  }
 
   return (
     <Modal visible={open} transparent animationType="fade">
@@ -59,7 +59,7 @@ const ModalFilter = ({open, setOpen}: Props) => {
       </View>
     </Modal>
   );
-};
+}
 
 export default ModalFilter;
 

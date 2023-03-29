@@ -12,9 +12,9 @@ type Props = {
   onPress: () => void;
 };
 
-const Dropdown = ({open, setOpen, items, onPress, title}: Props) => {
-  const renderItem = () =>
-    items.map((item, idx) => {
+function Dropdown({open, setOpen, items, onPress, title}: Props) {
+  function renderItem() {
+    return items.map((item, idx) => {
       return (
         <TouchableOpacity onPress={onPress} key={`#${idx}`} style={styles.row}>
           <Box h={12} />
@@ -23,6 +23,7 @@ const Dropdown = ({open, setOpen, items, onPress, title}: Props) => {
         </TouchableOpacity>
       );
     });
+  }
 
   return (
     <Modal visible={open} transparent animationType="fade">
@@ -39,9 +40,7 @@ const Dropdown = ({open, setOpen, items, onPress, title}: Props) => {
       </View>
     </Modal>
   );
-};
-
-export default Dropdown;
+}
 
 const styles = StyleSheet.create({
   divider: {
@@ -69,3 +68,5 @@ const styles = StyleSheet.create({
     backgroundColor: '#00000020',
   },
 });
+
+export default Dropdown;

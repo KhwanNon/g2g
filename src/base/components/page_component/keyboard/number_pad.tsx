@@ -1,6 +1,6 @@
 import React from 'react';
-import {dataKeyboard} from './data_keyboard';
 import {colorTextTitle} from '../../../color';
+import {dataKeyboard} from './data_keyboard';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {FlatList, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 
@@ -10,23 +10,23 @@ type Props = {
   setNumber: Function;
 };
 
-const NumberPad = ({setNumber, number, maxLength}: Props) => {
-  const handleClick = (item: any) => {
+function NumberPad({setNumber, number, maxLength}: Props) {
+  function handleClick(item: any) {
     if (number.length >= maxLength && item.value != 'delete') return;
     if (item.value == 'empty') return;
     if (item.value == 'delete') return deleteLastCharacter();
     return addLastCharacter(item);
-  };
+  }
 
-  const deleteLastCharacter = () => {
+  function deleteLastCharacter() {
     setNumber((prev: string) => prev.slice(0, -1));
-  };
+  }
 
-  const addLastCharacter = (item: any) => {
+  function addLastCharacter(item: any) {
     setNumber((prev: string) => prev + item.value);
-  };
+  }
 
-  const renderItem = ({item}: {item: any}) => {
+  function renderItem({item}: {item: any}) {
     const isEmpty = item.value === 'empty';
     const isDelete = item.value === 'delete';
     const text = <Text style={styles.text}>{item.value}</Text>;
@@ -41,7 +41,7 @@ const NumberPad = ({setNumber, number, maxLength}: Props) => {
         {isEmpty ? null : isDelete ? icon : text}
       </TouchableOpacity>
     );
-  };
+  }
 
   return (
     <View style={styles.container}>
@@ -54,9 +54,7 @@ const NumberPad = ({setNumber, number, maxLength}: Props) => {
       />
     </View>
   );
-};
-
-export default NumberPad;
+}
 
 const styles = StyleSheet.create({
   text: {
@@ -78,3 +76,5 @@ const styles = StyleSheet.create({
     width: '100%',
   },
 });
+
+export default NumberPad;

@@ -11,7 +11,7 @@ type Props = {
   isBold?: boolean;
 };
 
-const RowData = ({title, value, color, isBold}: Props) => {
+function RowData({title, value, color, isBold}: Props) {
   return (
     <Row style={[stylesGlobal.between, {marginBottom: 10}]}>
       <Text
@@ -32,6 +32,6 @@ const RowData = ({title, value, color, isBold}: Props) => {
       </Text>
     </Row>
   );
-};
+}
 
 export default RowData;

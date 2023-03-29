@@ -8,18 +8,18 @@ type Props = {
   number: string;
 };
 
-const BoxInput = ({number}: Props) => {
-  const BoxStyle = (value?: string) => {
+function BoxInput({number}: Props) {
+  function BoxStyle(value?: string) {
     return (
       <View style={styles.boxInput}>
         <Text style={styles.textTitle}>{value?.toString()}</Text>
       </View>
     );
-  };
+  }
 
   const boxes = [...Array(6).keys()].map(i => BoxStyle(number[i]));
 
   return <Row style={[stylesGlobal.around, {width: '100%'}]}>{boxes}</Row>;
-};
+}
 
 export default BoxInput;

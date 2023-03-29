@@ -14,7 +14,7 @@ type Props = {
   state: 'bank' | 'other';
 };
 
-const ListTileBank = ({state, title, onPress}: Props) => {
+function ListTileBank({state, title, onPress}: Props) {
   return (
     <TouchableOpacity onPress={onPress}>
       <Box h={15} />
@@ -28,8 +28,6 @@ const ListTileBank = ({state, title, onPress}: Props) => {
       <Divider />
     </TouchableOpacity>
   );
-};
+}
 
 export default ListTileBank;
-
-const styles = StyleSheet.create({});

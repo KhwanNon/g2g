@@ -7,13 +7,13 @@ import Row from '../../ui_component/row';
 
 import {
   colorGold2,
+  colorTextTitle,
   colorDarkGold,
   colorDarkGold2,
-  colorTextTitle,
 } from '../../../color';
 import {assetLogo, assetHomeGold} from '../../../../generated/assets';
 
-const CardMyGold = () => {
+function CardMyGold() {
   return (
     <LinearGradient
       end={{x: 1, y: 0}}
@@ -40,9 +40,7 @@ const CardMyGold = () => {
       </View>
     </LinearGradient>
   );
-};
-
-export default CardMyGold;
+}
 
 const styles = StyleSheet.create({
   textTitle: {
@@ -84,3 +82,5 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
   },
 });
+
+export default CardMyGold;

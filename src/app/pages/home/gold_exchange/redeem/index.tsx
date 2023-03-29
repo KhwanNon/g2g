@@ -12,7 +12,7 @@ import {styles} from '../style';
 import stylesGlobal from '../../../../../base/styles_global';
 import useTab from '../../../../../hooks/use_tab';
 
-const RedeemPage = () => {
+function RedeemPage() {
   const {index, toggleValue} = useTab(0);
   const [openFilter, setOpenFilter] = useState<boolean>(false);
 
@@ -54,6 +54,6 @@ const RedeemPage = () => {
       <ModalFilter open={openFilter} setOpen={setOpenFilter} />
     </View>
   );
-};
+}
 
 export default RedeemPage;

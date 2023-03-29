@@ -9,19 +9,17 @@ import DialogConfirm from '../../../../base/components/page_component/dialog/dia
 import {styles} from '../style';
 import {colorGold, colorTextLabel} from '../../../../base/color';
 
-const InputPhonePage = () => {
+function InputPhonePage() {
   const navigation: any = useNavigation();
   const [phone, setPhone] = useState<string>('');
   const [openAlert, setOpenAlert] = useState<boolean>(false);
 
-
-  const onConfirm = () => {
+  function onConfirm() {
     setOpenAlert(false);
     navigation.push('OTP', {phone: phone});
-  };
+  }
 
-
-  const formatPhone = (): string => {
+  function formatPhone(): string {
     if (phone.length !== 10) return phone;
 
     const start = `${phone.slice(0, 3)}`;
@@ -29,9 +27,8 @@ const InputPhonePage = () => {
     const end = `${phone.slice(6, 10)}`;
 
     return `${start}-${mid}-${end}`;
-  };
+  }
 
-  
   return (
     <View style={[styles.containerWhite, {padding: 15}]}>
       <View style={{flex: 1}}>
@@ -77,6 +74,6 @@ const InputPhonePage = () => {
       ) : null}
     </View>
   );
-};
+}
 
 export default InputPhonePage;

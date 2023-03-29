@@ -9,7 +9,7 @@ import DialogConfirm from '../../../../base/components/page_component/dialog/dia
 import {styles} from '../style';
 import styleSetting from './style';
 
-const SettingPage = () => {
+function SettingPage() {
   const navigation: any = useNavigation();
   const [openLogout, setOpenLogout] = useState<boolean>(false);
 
@@ -20,7 +20,7 @@ const SettingPage = () => {
     icon: 'md-exit-outline',
   };
 
-  const onPressMenu = (state: string) => {
+  function onPressMenu(state: string) {
     const hasVerifyKYC = false;
     if (state === 'version') return;
 
@@ -39,16 +39,16 @@ const SettingPage = () => {
       default:
         break;
     }
-  };
+  }
 
-  const onLogout = () => {
+  function onLogout() {
     setOpenLogout(false);
     setTimeout(() => {
       navigation.replace('Auth');
     }, 500);
-  };
+  }
 
-  const renderItem = () => {
+  function renderItem() {
     return menuItems.map((item, index) => (
       <MenuItem
         item={item}
@@ -56,7 +56,7 @@ const SettingPage = () => {
         onPress={() => onPressMenu(item.state)}
       />
     ));
-  };
+  }
 
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
@@ -92,7 +92,7 @@ const SettingPage = () => {
       </View>
     </ScrollView>
   );
-};
+}
 
 const menuItems: menuModel[] = [
   {

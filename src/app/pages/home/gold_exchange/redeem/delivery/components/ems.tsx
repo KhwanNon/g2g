@@ -6,8 +6,9 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import Box from '../../../../../../../base/components/ui_component/box';
 import Row from '../../../../../../../base/components/ui_component/row';
 
-const Ems = () => {
-  const [openDeliveryAddress, setOpenDeliveryAddress] =  useState<boolean>(false);
+function Ems() {
+  const [openDeliveryAddress, setOpenDeliveryAddress] =
+    useState<boolean>(false);
 
   return (
     <View>
@@ -40,6 +41,6 @@ const Ems = () => {
       />
     </View>
   );
-};
+}
 
 export default Ems;

@@ -10,7 +10,7 @@ import {colorDarkGold2} from '../../../../base/color';
 import stylesGlobal from '../../../../base/styles_global';
 import {useNavigation} from '@react-navigation/native';
 
-const GoldExchangePage = () => {
+function GoldExchangePage () {
   const navigation: any = useNavigation();
   const goToRedeem = () => navigation.push('Redeem');
 

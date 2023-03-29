@@ -13,7 +13,7 @@ type Props = {
   onPress: () => void;
 };
 
-const CardRepurchase = ({onPress}: Props) => {
+function CardRepurchase({onPress}: Props) {
   return (
     <TouchableOpacity style={styles.cardRepurchase} onPress={onPress}>
       <Text>ฝากทองเมื่อวันที่ 00 ก.ก. 0000</Text>
@@ -35,6 +35,6 @@ const CardRepurchase = ({onPress}: Props) => {
       <Text>วันครบกำหนดซื้อคืนทอง 00 ก.ก. 0000</Text>
     </TouchableOpacity>
   );
-};
+}
 
 export default CardRepurchase;

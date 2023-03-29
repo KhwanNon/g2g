@@ -6,32 +6,35 @@ import {styles} from '../style';
 import RowData from '../../history/components/row_data';
 import Box from '../../../../../base/components/ui_component/box';
 
-
 type Props = {
   done: boolean;
 };
 
-const CardSummaryDeposit = ({done}: Props) => {
-  const renderHeaderDone = () => (
-    <>
-      <Box h={10} />
-      <Text style={styles.textHeader}>21,250฿</Text>
-      <Box h={10} />
-      <Text style={{alignSelf: 'center'}}>
-        วันครบกำหนดซื้อคืนทอง 00 ก.ก. 0000
-      </Text>
-      <Box h={20} />
-    </>
-  );
+function CardSummaryDeposit({done}: Props) {
+  function renderHeaderDone() {
+    return (
+      <>
+        <Box h={10} />
+        <Text style={styles.textHeader}>21,250฿</Text>
+        <Box h={10} />
+        <Text style={{alignSelf: 'center'}}>
+          วันครบกำหนดซื้อคืนทอง 00 ก.ก. 0000
+        </Text>
+        <Box h={20} />
+      </>
+    );
+  }
 
-  const renderRowDone = () => (
-    <>
-      <Box h={5} />
-      <RowData title={'ดอกเบี้ยเมื่อครบกำหนด'} value={'+1,250 ฿'} />
-      <Box h={5} />
-      <RowData title={'ดอกเบี้ย ณ ปัจจุบัน'} value={'+125 ฿'} />
-    </>
-  );
+  function renderRowDone() {
+    return (
+      <>
+        <Box h={5} />
+        <RowData title={'ดอกเบี้ยเมื่อครบกำหนด'} value={'+1,250 ฿'} />
+        <Box h={5} />
+        <RowData title={'ดอกเบี้ย ณ ปัจจุบัน'} value={'+125 ฿'} />
+      </>
+    );
+  }
 
   return (
     <View style={[styles.cardBorderSummary]}>
@@ -56,7 +59,7 @@ const CardSummaryDeposit = ({done}: Props) => {
       <Box h={5} />
       <RowData title={'รวมราคาสุทธิ'} value={'21,250 ฿'} />
       <Box h={10} />
-      
+
       <Text style={[styles.textLabel16]}>สรุปรายการที่ต้องซื้อคืน</Text>
 
       <Box h={10} />
@@ -64,6 +67,6 @@ const CardSummaryDeposit = ({done}: Props) => {
       <Box h={5} />
     </View>
   );
-};
+}
 
 export default CardSummaryDeposit;

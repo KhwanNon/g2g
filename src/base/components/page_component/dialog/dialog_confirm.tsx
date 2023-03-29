@@ -21,7 +21,7 @@ type Props = {
   onConfirm: () => void;
 };
 
-const DialogConfirm = (props: Props) => {
+function DialogConfirm(props: Props) {
   const {
     open,
     txtR,
@@ -73,7 +73,7 @@ const DialogConfirm = (props: Props) => {
       </View>
     </Modal>
   );
-};
+}
 
 export default DialogConfirm;
 

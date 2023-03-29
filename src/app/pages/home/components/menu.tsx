@@ -17,10 +17,10 @@ import {
 import {styles} from '../style';
 import {colorTextTitle} from '../../../../base/color';
 
-const MenuHome = () => {
+function MenuHome() {
   const navigation: any = useNavigation();
 
-  const renderItem = () => {
+  function renderItem() {
     return items.map(item => (
       <TouchableOpacity
         key={`#${item.id}`}
@@ -37,10 +37,10 @@ const MenuHome = () => {
         </Text>
       </TouchableOpacity>
     ));
-  };
+  }
 
   return <View style={styles.boxMenu}>{renderItem()}</View>;
-};
+}
 
 const items = [
   {

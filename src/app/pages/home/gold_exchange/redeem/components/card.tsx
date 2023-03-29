@@ -11,7 +11,7 @@ type Props = {
   item: number;
 };
 
-const CardRedeem = ({item}: Props) => {
+function CardRedeem({item}: Props) {
   const [openRedeem, setOpenRedeem] = useState<boolean>(false);
 
   return (
@@ -37,6 +37,6 @@ const CardRedeem = ({item}: Props) => {
       <ModalRedeem open={openRedeem} setOpen={setOpenRedeem} />
     </View>
   );
-};
+}
 
 export default CardRedeem;

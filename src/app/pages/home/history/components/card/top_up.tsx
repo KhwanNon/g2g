@@ -3,7 +3,7 @@ import {styles} from '../../style';
 import RowData from '../row_data';
 import {StyleSheet, View} from 'react-native';
 
-const CardTopUp = () => {
+function CardTopUp() {
   return (
     <View style={styles.card}>
       <RowData title={'ช่องทางบริการ'} value={'ธนาคาร'} />
@@ -12,7 +12,7 @@ const CardTopUp = () => {
       <RowData title={'เวลา'} value={'17:30:00'} />
     </View>
   );
-};
+}
 
 export default CardTopUp;
 

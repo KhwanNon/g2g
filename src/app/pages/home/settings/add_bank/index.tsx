@@ -8,7 +8,7 @@ import Box from '../../../../../base/components/ui_component/box';
 import ListTileBank from '../../../../../base/components/ui_component/list_tile_bank';
 import ButtonBorder from '../../../../../base/components/ui_component/button_border';
 
-const AddBankPage = () => {
+function AddBankPage() {
   const navigation: any = useNavigation();
 
   const listBank = [
@@ -31,7 +31,7 @@ const AddBankPage = () => {
 
   const goToForm = () => navigation.push('FormAddBank');
 
-  const renderItem = () => {
+  function renderItem() {
     return listBank.map((item, idx) => {
       return (
         <ListTileBank
@@ -42,7 +42,7 @@ const AddBankPage = () => {
         />
       );
     });
-  };
+  }
 
   return (
     <View style={[stylesGlobal.containerWhite, {padding: 15}]}>
@@ -55,6 +55,6 @@ const AddBankPage = () => {
       <ButtonBorder title={'เพิ่มบัตร'} width={'100%'} height={35} />
     </View>
   );
-};
+}
 
 export default AddBankPage;

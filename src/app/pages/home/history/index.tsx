@@ -13,11 +13,11 @@ import Box from '../../../../base/components/ui_component/box';
 
 import stylesGlobal from '../../../../base/styles_global';
 
-const HistoryPage = () => {
+function HistoryPage() {
   const [activeTabIndex, setActiveTabIndex] = useState<number>(0);
   const DATA = [1, 2, 3, 4, 5, 6];
 
-  const renderCard = () => {
+  function renderCard() {
     switch (activeTabIndex) {
       case 0:
         return <CardTopUp />;
@@ -36,7 +36,7 @@ const HistoryPage = () => {
       default:
         return <View />;
     }
-  };
+  }
 
   return (
     <View style={stylesGlobal.containerWhite}>
@@ -53,6 +53,6 @@ const HistoryPage = () => {
       </View>
     </View>
   );
-};
+}
 
 export default HistoryPage;

@@ -7,7 +7,7 @@ import stylesGlobal from '../../../../../base/styles_global';
 import Box from '../../../../../base/components/ui_component/box';
 import Row from '../../../../../base/components/ui_component/row';
 
-const InputTrade = () => {
+function InputTrade() {
   return (
     <View style={styles.cardTrade}>
       <Row style={stylesGlobal.evenly}>
@@ -45,6 +45,6 @@ const InputTrade = () => {
       </View>
     </View>
   );
-};
+}
 
 export default InputTrade;

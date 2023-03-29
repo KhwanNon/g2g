@@ -1,32 +1,35 @@
 import React from 'react';
+import stylesGlobal from '../../../../../base/styles_global';
 import {View, Text, Modal, ScrollView} from 'react-native';
 import {colorGold, colorEgg, colorGrey} from '../../../../../base/color';
+
 import Box from '../../../../../base/components/ui_component/box';
 import ButtonIcon from '../../../../../base/components/ui_component/button_icon';
 import ButtonStyle from '../../../../../base/components/ui_component/button_style';
 import Row from '../../../../../base/components/ui_component/row';
-import stylesGlobal from '../../../../../base/styles_global';
 
 type Props = {
   open: boolean;
   setOpen: Function;
 };
 
-const ModalTerm = ({open, setOpen}: Props) => {
+function ModalTerm({open, setOpen}: Props) {
   const close = () => setOpen(false);
 
-  const renderAppBar = () => (
-    <Row style={stylesGlobal.between}>
-      <ButtonIcon
-        size={30}
-        onTap={close}
-        color={'grey'}
-        name={'chevron-back'}
-      />
-      <Text style={stylesGlobal.textHeader}>ข้อกำหนดและเงื่อนไข</Text>
-      <Box w={20} />
-    </Row>
-  );
+  function renderAppBar() {
+    return (
+      <Row style={stylesGlobal.between}>
+        <ButtonIcon
+          size={30}
+          onTap={close}
+          color={'grey'}
+          name={'chevron-back'}
+        />
+        <Text style={stylesGlobal.textHeader}>ข้อกำหนดและเงื่อนไข</Text>
+        <Box w={20} />
+      </Row>
+    );
+  }
 
   return (
     <Modal visible={open} transparent={true} animationType="fade">
@@ -89,6 +92,6 @@ const ModalTerm = ({open, setOpen}: Props) => {
       </View>
     </Modal>
   );
-};
+}
 
 export default ModalTerm;

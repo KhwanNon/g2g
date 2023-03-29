@@ -40,7 +40,7 @@ import PolicyPage from '../pages/home/settings/policy';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
-const Navigation = () => {
+function Navigation() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Splash">
@@ -190,6 +190,6 @@ const Navigation = () => {
       </Stack.Navigator>
     </NavigationContainer>
   );
-};
+}
 
 export default Navigation;

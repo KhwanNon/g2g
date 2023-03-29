@@ -8,7 +8,7 @@ import ListTileBank from '../../../../base/components/ui_component/list_tile_ban
 import {styles} from './style';
 import stylesGlobal from '../../../../base/styles_global';
 
-const DepositPage = () => {
+function DepositPage() {
   const navigation: any = useNavigation();
 
   const listBank = [
@@ -19,11 +19,11 @@ const DepositPage = () => {
     {name: 'Krungthai NEXT App'},
   ];
 
-  const goToWithdraw = () => {
+  function goToWithdraw() {
     navigation.push('WithdrawBank');
-  };
+  }
 
-  const renderBankList = () => {
+  function renderBankList() {
     return listBank.map((item, idx) => {
       return (
         <ListTileBank
@@ -34,9 +34,9 @@ const DepositPage = () => {
         />
       );
     });
-  };
+  }
 
-  const renderOtherServices = () => {
+  function renderOtherServices() {
     return (
       <>
         <ListTileBank
@@ -46,7 +46,7 @@ const DepositPage = () => {
         />
       </>
     );
-  };
+  }
 
   return (
     <View style={[stylesGlobal.containerWhite, {padding: 15}]}>
@@ -60,6 +60,6 @@ const DepositPage = () => {
       {renderOtherServices()}
     </View>
   );
-};
+}
 
 export default DepositPage;

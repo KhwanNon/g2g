@@ -1,12 +1,12 @@
 import {View, Text} from 'react-native';
 import React from 'react';
 
-const FormProfilePage = () => {
+function FormProfilePage() {
   return (
     <View>
       <Text>FormProfilePage</Text>
     </View>
   );
-};
+}
 
 export default FormProfilePage;

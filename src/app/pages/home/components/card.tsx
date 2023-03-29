@@ -22,55 +22,61 @@ type Props = {
   isDeposit?: boolean;
 };
 
-const MyCard = ({isDeposit}: Props) => {
-  const renderInfoAccumulate = () => (
-    <>
-      <Row style={[stylesGlobal.between, {width: '100%'}]}>
-        <Text style={styles.textBold}>มูลค่า E-Gold สะสม</Text>
-        <Text style={styles.textWhite}>2 E-Gold</Text>
-      </Row>
-      <Row style={[stylesGlobal.between, {width: '100%'}]}>
-        <Text style={styles.textBold}>มูลค่าสะสม</Text>
-        <Text style={styles.textWhite}>50,200.00 บาท</Text>
-      </Row>
-      <Text style={[styles.textBold, {textDecorationLine: 'underline'}]}>
-        1 E-Gold = ทองคำ 1 บาท
-      </Text>
-    </>
-  );
+function MyCard({isDeposit}: Props) {
+  function renderInfoAccumulate() {
+    return (
+      <>
+        <Row style={[stylesGlobal.between, {width: '100%'}]}>
+          <Text style={styles.textBold}>มูลค่า E-Gold สะสม</Text>
+          <Text style={styles.textWhite}>2 E-Gold</Text>
+        </Row>
+        <Row style={[stylesGlobal.between, {width: '100%'}]}>
+          <Text style={styles.textBold}>มูลค่าสะสม</Text>
+          <Text style={styles.textWhite}>50,200.00 บาท</Text>
+        </Row>
+        <Text style={[styles.textBold, {textDecorationLine: 'underline'}]}>
+          1 E-Gold = ทองคำ 1 บาท
+        </Text>
+      </>
+    );
+  }
 
-  const renderInfoDeposit = () => (
-    <>
-      <Row style={[stylesGlobal.between, {width: '100%'}]}>
-        <Text style={styles.textBold}>มูลค่าทองที่ฝากแล้ว </Text>
-        <View />
-      </Row>
-      <Row style={[stylesGlobal.between, {width: '100%'}]}>
-        <Text style={styles.textWhite}>1 บาท</Text>
-        <Text style={styles.textWhite}>7.622 กรัม</Text>
-      </Row>
+  function renderInfoDeposit() {
+    return (
+      <>
+        <Row style={[stylesGlobal.between, {width: '100%'}]}>
+          <Text style={styles.textBold}>มูลค่าทองที่ฝากแล้ว </Text>
+          <View />
+        </Row>
+        <Row style={[stylesGlobal.between, {width: '100%'}]}>
+          <Text style={styles.textWhite}>1 บาท</Text>
+          <Text style={styles.textWhite}>7.622 กรัม</Text>
+        </Row>
 
-      <Row style={[stylesGlobal.between, {width: '100%'}]}>
-        <Text style={styles.textBold}>มูลค่าทองที่ต้องซื้อคืน </Text>
-        <View />
-      </Row>
-      <Row style={[stylesGlobal.between, {width: '100%'}]}>
-        <Text style={styles.textWhite}>1 บาท</Text>
-        <Text style={styles.textWhite}>7.622 กรัม</Text>
-      </Row>
-    </>
-  );
+        <Row style={[stylesGlobal.between, {width: '100%'}]}>
+          <Text style={styles.textBold}>มูลค่าทองที่ต้องซื้อคืน </Text>
+          <View />
+        </Row>
+        <Row style={[stylesGlobal.between, {width: '100%'}]}>
+          <Text style={styles.textWhite}>1 บาท</Text>
+          <Text style={styles.textWhite}>7.622 กรัม</Text>
+        </Row>
+      </>
+    );
+  }
 
-  const renderBtnDowload = () => (
-    <TouchableOpacity style={styles.btnDowload}>
-      <ButtonIcon
-        size={16}
-        color={'white'}
-        onTap={() => {}}
-        name={'ios-download-outline'}
-      />
-    </TouchableOpacity>
-  );
+  function renderBtnDowload() {
+    return (
+      <TouchableOpacity style={styles.btnDowload}>
+        <ButtonIcon
+          size={16}
+          color={'white'}
+          onTap={() => {}}
+          name={'ios-download-outline'}
+        />
+      </TouchableOpacity>
+    );
+  }
 
   return (
     <View style={{paddingHorizontal: 15}}>
@@ -125,6 +131,6 @@ const MyCard = ({isDeposit}: Props) => {
       </LinearGradient>
     </View>
   );
-};
+}
 
 export default MyCard;

@@ -16,14 +16,14 @@ type Props = {
   setOpen: Function;
 };
 
-const ModalSummarySelf = ({open, setOpen}: Props) => {
+function ModalSummarySelf({open, setOpen}: Props) {
   const navigation: any = useNavigation();
   const close = () => setOpen(false);
 
-  const onConfirm = () => {
+  function onConfirm() {
     close();
     navigation.push('OTP', {phone: '0989878764'});
-  };
+  }
 
   return (
     <Modal visible={open} transparent animationType="fade">
@@ -90,6 +90,6 @@ const ModalSummarySelf = ({open, setOpen}: Props) => {
       </View>
     </Modal>
   );
-};
+}
 
 export default ModalSummarySelf;

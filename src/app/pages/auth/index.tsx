@@ -11,7 +11,7 @@ import {colorGold} from '../../../base/color';
 import stylesGlobal from '../../../base/styles_global';
 import {assetGFA, assetLiquid, assetLogo} from '../../../generated/assets';
 
-const AuthPage = () => {
+function AuthPage () {
   const navigation: any = useNavigation();
 
   const TEXT_1: string = 'Destine your own wealth';

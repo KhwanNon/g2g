@@ -12,18 +12,18 @@ import DialogConfirm from '../../../../../base/components/page_component/dialog/
 import {colorGreen, colorRed, colorTextLabel} from '../../../../../base/color';
 import stylesGlobal from '../../../../../base/styles_global';
 
-const WithdrawBankPage = () => {
+function WithdrawBankPage() {
   const amount = [100, 300, 500, 1000];
   const [openSuccess, setOpenSuccess] = useState<boolean>(false);
   const [openFail, setOpenFail] = useState<boolean>(false);
 
-  const pressWithdraw = () => {
+  function pressWithdraw() {
     // setOpenSuccess(true);
     setOpenFail(true);
-  };
+  }
 
-  const renderAmount = () =>
-    amount.map((item, idx) => {
+  function renderAmount() {
+    return amount.map((item, idx) => {
       return (
         <TouchableOpacity key={`#${idx}`} style={styles.btnAmount}>
           <Text
@@ -37,6 +37,7 @@ const WithdrawBankPage = () => {
         </TouchableOpacity>
       );
     });
+  }
 
   return (
     <View style={{flex: 1}}>
@@ -110,6 +111,6 @@ const WithdrawBankPage = () => {
       />
     </View>
   );
-};
+}
 
 export default WithdrawBankPage;

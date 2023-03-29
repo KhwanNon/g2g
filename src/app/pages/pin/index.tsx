@@ -11,21 +11,21 @@ import DialogAlert from '../../../base/components/page_component/dialog/dialog_a
 import stylesGlobal from '../../../base/styles_global';
 import {colorGold, colorGreen} from '../../../base/color';
 
-const PinPage = () => {
+function PinPage() {
   const navigation: any = useNavigation();
-  const [pincode, setPincode] = useState<string>("");
+  const [pincode, setPincode] = useState<string>('');
   const [openAlert, setOpenAlert] = useState<boolean>(false);
   const [state, setState] = useState<'success' | 'fails'>('success');
 
-  const onNext = () => {
+  function onNext() {
     if (pincode.length < 6) return;
     setOpenAlert(true);
-  };
+  }
 
-  const onConfirm = () => {
+  function onConfirm() {
     if (state == 'fails') return setOpenAlert(false);
     navigation.replace('VerifySuccess', {state: 'authPin'});
-  };
+  }
 
   return (
     <View style={stylesGlobal.containerWhite}>
@@ -60,6 +60,6 @@ const PinPage = () => {
       ) : null}
     </View>
   );
-};
+}
 
 export default PinPage;

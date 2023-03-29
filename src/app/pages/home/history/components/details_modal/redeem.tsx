@@ -20,7 +20,7 @@ type Props = {
   setOpen: Function;
 };
 
-const RedeemModal = ({open, setOpen}: Props) => {
+function RedeemModal({open, setOpen}: Props) {
   return (
     <Modal visible={open} transparent={true} animationType="fade">
       <View
@@ -74,6 +74,6 @@ const RedeemModal = ({open, setOpen}: Props) => {
       </View>
     </Modal>
   );
-};
+}
 
 export default RedeemModal;

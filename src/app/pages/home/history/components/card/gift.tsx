@@ -18,20 +18,20 @@ import {styles} from '../../style';
 import stylesGlobal from '../../../../../../base/styles_global';
 import GiftModal from '../details_modal/gift';
 
-const CardGift = () => {
+function CardGift() {
   const [openDetails, setOpenDetails] = useState<boolean>(false);
 
   const textWarning =
     '*หากไม่มีผู้รับของขวัญภายใน 7 วัน \nระบบจะทำการโอน E-Gold กลับอัตโนมัติ';
 
-  const changeColorText = (status: string): string => {
+  function changeColorText(status: string): string {
     let map: any = {
       reject: colorRed,
       pending: colorBlue,
       success: colorYellow,
     };
     return map[status] || colorBlue;
-  };
+  }
 
   return (
     <View style={styles.card}>
@@ -72,6 +72,6 @@ const CardGift = () => {
       <GiftModal open={openDetails} setOpen={setOpenDetails} />
     </View>
   );
-};
+}
 
 export default CardGift;

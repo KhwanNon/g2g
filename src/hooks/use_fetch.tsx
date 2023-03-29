@@ -4,7 +4,7 @@ type Props = {
   url: string;
 };
 
-const useFetch = ({url}: Props) => {
+function useFetch({url}: Props) {
   const [data, setData] = useState(null);
 
   useEffect(() => {
@@ -14,6 +14,6 @@ const useFetch = ({url}: Props) => {
   }, [url]);
 
   return [data];
-};
+}
 
 export default useFetch;

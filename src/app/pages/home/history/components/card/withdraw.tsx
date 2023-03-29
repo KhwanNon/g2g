@@ -4,15 +4,15 @@ import RowData from '../row_data';
 import {styles} from '../../style';
 import {colorBlue, colorRed, colorYellow} from '../../../../../../base/color';
 
-const CardWithdraw = () => {
-  const changeColorText = (status: string): string => {
+function CardWithdraw() {
+  function changeColorText(status: string): string {
     let map: any = {
       reject: colorRed,
       pending: colorBlue,
       success: colorYellow,
     };
     return map[status] || colorBlue;
-  };
+  }
 
   return (
     <View style={styles.card}>
@@ -28,6 +28,6 @@ const CardWithdraw = () => {
       />
     </View>
   );
-};
+}
 
 export default CardWithdraw;

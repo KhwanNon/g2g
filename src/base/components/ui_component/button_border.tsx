@@ -11,7 +11,7 @@ type Props = {
   colorBorder?: string;
 };
 
-const ButtonBorder = ({title, width, height, colorBorder}: Props) => {
+function ButtonBorder({title, width, height, colorBorder}: Props) {
   return (
     <TouchableOpacity
       style={[
@@ -27,9 +27,7 @@ const ButtonBorder = ({title, width, height, colorBorder}: Props) => {
       <Text style={styles.textTitle}>{title}</Text>
     </TouchableOpacity>
   );
-};
-
-export default ButtonBorder;
+}
 
 const styles = StyleSheet.create({
   textTitle: {
@@ -44,3 +42,5 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
   },
 });
+
+export default ButtonBorder;

@@ -7,20 +7,20 @@ import Box from '../../../../base/components/ui_component/box';
 import Row from '../../../../base/components/ui_component/row';
 
 import {styles} from '../style';
-import {colorDarkGold2, colorYellow} from '../../../../base/color';
 import stylesGlobal from '../../../../base/styles_global';
+import {colorDarkGold2, colorYellow} from '../../../../base/color';
 
-const Notification = () => {
+function Notification() {
   const navigation: any = useNavigation();
   const goToPage = () => navigation.push('Notification');
 
-  const renderNotificationIcon = () => (
-    <Ionicons size={25} color={colorYellow} name="notifications" />
-  );
+  function renderNotificationIcon() {
+    return <Ionicons size={25} color={colorYellow} name="notifications" />;
+  }
 
-  const renderChevronIcon = () => (
-    <Ionicons size={20} color="lightgrey" name="chevron-forward" />
-  );
+  function renderChevronIcon() {
+    return <Ionicons size={20} color="lightgrey" name="chevron-forward" />;
+  }
 
   return (
     <View style={{paddingHorizontal: 15}}>
@@ -34,6 +34,6 @@ const Notification = () => {
       </TouchableOpacity>
     </View>
   );
-};
+}
 
 export default Notification;

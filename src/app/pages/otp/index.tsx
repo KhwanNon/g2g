@@ -14,9 +14,11 @@ import ButtonText from '../../../base/components/ui_component/button_text';
 import ButtonStyle from '../../../base/components/ui_component/button_style';
 import NumberPad from '../../../base/components/page_component/keyboard/number_pad';
 
-const OTPPage = () => {
+function OTPPage() {
   const navigation: any = useNavigation();
-  const { params: {phone} } = useRoute<any>();
+  const {
+    params: {phone},
+  } = useRoute<any>();
 
   const [otp, setOtp] = useState<string>('');
   const {renderTextButton} = useOtpTimer();
@@ -30,15 +32,15 @@ const OTPPage = () => {
     });
   }, []);
 
-  const goToSuccess = () => {
+  function goToSuccess() {
     if (otp.length < 6) return;
     navigation.replace('VerifySuccess', {state: 'authOtp'});
-  };
+  }
 
-  const formatPhone = (): string => {
+  function formatPhone(): string {
     if (phone.length != 10) return phone;
     return `xxx-xxx-${phone.slice(6, 10)}`;
-  };
+  }
 
   return (
     <View style={{flex: 1}}>
@@ -78,6 +80,6 @@ const OTPPage = () => {
       <NumberPad setNumber={setOtp} number={otp} maxLength={6} />
     </View>
   );
-};
+}
 
 export default OTPPage;

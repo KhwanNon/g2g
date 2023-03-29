@@ -21,7 +21,7 @@ import useTab from '../../../../hooks/use_tab';
 import {DEVICE_WIDTH} from '../../../../base/constant';
 import stylesGlobal from '../../../../base/styles_global';
 
-const GoldTradePage = () => {
+function GoldTradePage() {
   const {index, toggleValue} = useTab(0);
   const [openDetails, setOpenDetails] = useState<boolean>(false);
 
@@ -71,7 +71,7 @@ const GoldTradePage = () => {
       />
     </ScrollView>
   );
-};
+}
 
 export const styleButtonTap = (
   name: string,

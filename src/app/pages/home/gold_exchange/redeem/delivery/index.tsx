@@ -18,31 +18,33 @@ import {
 import {styles} from '../../style';
 import stylesGlobal from '../../../../../../base/styles_global';
 
-const DeliveryPage = () => {
+function DeliveryPage() {
   // Destructure the state from the route params
-  const { params: { state } } = useRoute<any>();
+  const {
+    params: {state},
+  } = useRoute<any>();
 
   //State is Self
   const isSelf = state == 'self';
 
-    // Use explicit types instead of `any`
+  // Use explicit types instead of `any`
   const navigation: any = useNavigation();
 
-    // Use the ternary operator to set the title
-    useLayoutEffect(() => {
-      navigation.setOptions({
-        title: state === 'self' ? 'รับด้วยตนเอง' : 'บริการจัดส่ง',
-      });
-    }, []);
-    
+  // Use the ternary operator to set the title
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      title: state === 'self' ? 'รับด้วยตนเอง' : 'บริการจัดส่ง',
+    });
+  }, []);
+
   // Use destructuring to declare the states
   const [openSummarySelf, setOpenSummarySelf] = useState<boolean>(false);
   const [openSummaryEms, setOpenSummaryEms] = useState<boolean>(false);
 
-  const onNext = () => {
+  function onNext() {
     // Use the ternary operator to conditionally set the state
     isSelf ? setOpenSummarySelf(true) : setOpenSummaryEms(true);
-  };
+  }
 
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
@@ -108,6 +110,6 @@ const DeliveryPage = () => {
       </View>
     </ScrollView>
   );
-};
+}
 
 export default DeliveryPage;

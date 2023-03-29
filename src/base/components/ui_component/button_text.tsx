@@ -1,4 +1,4 @@
-import {StyleProp, Text, TouchableOpacity, ViewStyle} from 'react-native';
+import {Text, TouchableOpacity} from 'react-native';
 import React from 'react';
 
 type Props = {
@@ -9,7 +9,7 @@ type Props = {
   underLine?: boolean;
 };
 
-const ButtonText = (props: Props) => {
+function ButtonText(props: Props) {
   const {title, color, onTap, fontSize, underLine} = props;
 
   return (
@@ -27,6 +27,6 @@ const ButtonText = (props: Props) => {
       </Text>
     </TouchableOpacity>
   );
-};
+}
 
 export default ButtonText;

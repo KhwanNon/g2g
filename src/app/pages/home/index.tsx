@@ -11,33 +11,38 @@ import ButtonIcon from '../../../base/components/ui_component/button_icon';
 
 import {styles} from './style';
 import {colorGold} from '../../../base/color';
+import stylesGlobal from '../../../base/styles_global';
 
-const HomePage = () => {
-  const renderTitle = (text: string) => (
-    <Text style={styles.textTitle}>{text}</Text>
-  );
+function HomePage() {
+  function renderTitle(text: string) {
+    return <Text style={styles.textTitle}>{text}</Text>;
+  }
 
-  const renderDivider = () => (
-    <View
-      style={{
-        height: 5,
-        backgroundColor: '#EFEFEF',
-      }}
-    />
-  );
-
-  const renderBalance = () => (
-    <Row>
-      <Text style={styles.textAmount}>฿ 0.00</Text>
-      <Box w={15} />
-      <ButtonIcon
-        size={24}
-        color={colorGold}
-        name="add-circle-outline"
-        onTap={() => {}}
+  function renderDivider() {
+    return (
+      <View
+        style={{
+          height: 5,
+          backgroundColor: '#EFEFEF',
+        }}
       />
-    </Row>
-  );
+    );
+  }
+
+  function renderBalance() {
+    return (
+      <Row style={stylesGlobal.alignItemsCenter}>
+        <Text style={styles.textAmount}>฿ 0.00</Text>
+        <Box w={15} />
+        <ButtonIcon
+          size={24}
+          color={colorGold}
+          onTap={() => {}}
+          name="add-circle-outline"
+        />
+      </Row>
+    );
+  }
 
   return (
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
@@ -66,6 +71,6 @@ const HomePage = () => {
       <GraphGold />
     </ScrollView>
   );
-};
+}
 
 export default HomePage;

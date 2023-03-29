@@ -19,11 +19,13 @@ import {
 import styleSetting from '../home/settings/style';
 import stylesGlobal from '../../../base/styles_global';
 
-const VerifyKYCPage = () => {
+function VerifyKYCPage() {
   const navigation: any = useNavigation();
-  const { params: {state} } = useRoute<any>();
+  const {
+    params: {state},
+  } = useRoute<any>();
 
-  const onConfirm = () => {
+  function onConfirm() {
     switch (state) {
       case 'profile':
         navigation.push('FormProfile');
@@ -31,7 +33,7 @@ const VerifyKYCPage = () => {
       default:
         break;
     }
-  };
+  }
 
   return (
     <View style={styles.container}>
@@ -71,7 +73,7 @@ const VerifyKYCPage = () => {
       />
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   textBlue: {

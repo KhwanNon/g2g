@@ -8,7 +8,7 @@ import ButtonStyle from '../../../../base/components/ui_component/button_style';
 import {styles} from '../style';
 import {colorEgg, colorGold} from '../../../../base/color';
 
-const TermConditionPage = () => {
+function TermConditionPage() {
   const navigation: any = useNavigation();
   const goBack = () => navigation.goBack();
   const goToInputPhone = () => navigation.push('InputPhone');
@@ -60,6 +60,6 @@ const TermConditionPage = () => {
       </ScrollView>
     </View>
   );
-};
+}
 
 export default TermConditionPage;

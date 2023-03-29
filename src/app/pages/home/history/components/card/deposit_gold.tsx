@@ -3,7 +3,7 @@ import {View} from 'react-native';
 import RowData from '../row_data';
 import {styles} from '../../style';
 
-const CardDepositGold = () => {
+function CardDepositGold() {
   return (
     <View style={styles.card}>
       <RowData title={'วันที่ทำรายการ'} value={'29/06/2022'} />
@@ -16,6 +16,6 @@ const CardDepositGold = () => {
       <RowData title={'รวมราคาสุทธิ'} value={'21,250 ฿'} />
     </View>
   );
-};
+}
 
 export default CardDepositGold;

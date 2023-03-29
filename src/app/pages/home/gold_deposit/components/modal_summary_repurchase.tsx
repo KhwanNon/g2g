@@ -8,34 +8,36 @@ import {colorDarkGold2, colorGold, colorGrey} from '../../../../../base/color';
 import ModalTerm from './modal_term';
 import CardSummaryDeposit from './card_summary';
 import Box from '../../../../../base/components/ui_component/box';
+import Row from '../../../../../base/components/ui_component/row';
 import ButtonIcon from '../../../../../base/components/ui_component/button_icon';
 import ButtonText from '../../../../../base/components/ui_component/button_text';
 import ButtonStyle from '../../../../../base/components/ui_component/button_style';
-import Row from '../../../../../base/components/ui_component/row';
 
 type Props = {
   open: boolean;
   setOpen: Function;
 };
 
-const ModalSummaryRepurchase = ({open, setOpen}: Props) => {
+function ModalSummaryRepurchase({open, setOpen}: Props) {
   const close = () => setOpen(false);
   const [openTerm, setOpenTerm] = useState<boolean>(false);
 
-  const renderAppBar = () => (
-    <Row style={[stylesGlobal.between, {padding: 10}]}>
-      <ButtonIcon
-        size={30}
-        color={'grey'}
-        onTap={close}
-        name={'chevron-back'}
-      />
-      <Text style={stylesGlobal.textHeader}>
-        ทำรายการเมื่อวันที่ 00 ก.ก. 0000
-      </Text>
-      <Box w={20} />
-    </Row>
-  );
+  function renderAppBar() {
+    return (
+      <Row style={[stylesGlobal.between, {padding: 10}]}>
+        <ButtonIcon
+          size={30}
+          color={'grey'}
+          onTap={close}
+          name={'chevron-back'}
+        />
+        <Text style={stylesGlobal.textHeader}>
+          ทำรายการเมื่อวันที่ 00 ก.ก. 0000
+        </Text>
+        <Box w={20} />
+      </Row>
+    );
+  }
 
   return (
     <Modal visible={open} animationType="fade">
@@ -76,6 +78,6 @@ const ModalSummaryRepurchase = ({open, setOpen}: Props) => {
       <ModalTerm open={openTerm} setOpen={setOpenTerm} />
     </Modal>
   );
-};
+}
 
 export default ModalSummaryRepurchase;

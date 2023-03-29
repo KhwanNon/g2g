@@ -15,7 +15,7 @@ type Props = {
   setOpen: Function;
 };
 
-const ModalRedeem = ({open, setOpen}: Props) => {
+function ModalRedeem({open, setOpen}: Props) {
   const navigation: any = useNavigation();
 
   const store = [
@@ -29,10 +29,10 @@ const ModalRedeem = ({open, setOpen}: Props) => {
     },
   ];
 
-  const onSelectFilter = (item: string) => {
+  function onSelectFilter(item: string) {
     setOpen(false);
     navigation.push('DetailsRedeem', {state: item});
-  };
+  }
 
   return (
     <Modal visible={open} transparent animationType="fade">
@@ -71,7 +71,7 @@ const ModalRedeem = ({open, setOpen}: Props) => {
       </View>
     </Modal>
   );
-};
+}
 
 export default ModalRedeem;
 

@@ -1,12 +1,12 @@
 import {View, Text} from 'react-native';
 import React from 'react';
 
-const NotificationPage = () => {
+function NotificationPage() {
   return (
     <View>
       <Text>NotificationPage</Text>
     </View>
   );
-};
+}
 
 export default NotificationPage;

@@ -1,6 +1,6 @@
 import {colorTextTitle} from '../../base/color';
 
-export const header: any = (name: string, color: any) => {
+export function header(name: string, color: any): any {
   return {
     title: `${name}`,
     headerShadowVisible: false,
@@ -13,6 +13,6 @@ export const header: any = (name: string, color: any) => {
       backgroundColor: color ?? 'white',
     },
   };
-};
+}
 
 export const noHeader = {headerShown: false};

@@ -11,17 +11,17 @@ import {colorGold} from '../../../../../base/color';
 import stylesGlobal from '../../../../../base/styles_global';
 import ModalSummaryGift from './components/modal_summary';
 
-const GoldTransferPage = () => {
+function GoldTransferPage() {
   const [openSummary, setOpenSummary] = useState<boolean>(false);
 
-  const renderTextAlert = () => {
+  function renderTextAlert() {
     return (
       <Row style={stylesGlobal.between}>
         <Text style={styles.textAlert}>น้ำหนักทองคำของคุณสามารถโอนได้</Text>
         <Text style={styles.textAlert}>1.2 บาท/ทองคำ</Text>
       </Row>
     );
-  };
+  }
 
   return (
     <View
@@ -61,6 +61,6 @@ const GoldTransferPage = () => {
       <ModalSummaryGift open={openSummary} setOpen={setOpenSummary} />
     </View>
   );
-};
+}
 
 export default GoldTransferPage;

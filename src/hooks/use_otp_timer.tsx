@@ -7,17 +7,17 @@ type Return = {
   renderTextButton: () => string;
 };
 
-const useOtpTimer = (): Return => {
+function useOtpTimer(): Return {
   let [time, setTime] = useState<number>(0);
   const [textButton, setTextButton] = useState<string>(TEXT_OTP_AGAIN);
   const [state, setState] = useState<'default' | 'pending'>('default');
 
-  const onRequestOtp = () => {
+  function onRequestOtp() {
     if (state == 'pending') return;
     setTextButton('ขอ OTP ได้อีกครั้งใน');
     setState('pending');
     setTime(300);
-  };
+  }
 
   //! when open page request otp
   useEffect(() => {
@@ -39,12 +39,12 @@ const useOtpTimer = (): Return => {
     return () => clearInterval(interval);
   }, [time]);
 
-  const renderTextButton = () => {
+  function renderTextButton() {
     let timer = `${textButton} ${secondsToMin(time)}`;
     return state === 'default' ? textButton : timer;
-  };
+  }
 
   return {renderTextButton};
-};
+}
 
 export default useOtpTimer;

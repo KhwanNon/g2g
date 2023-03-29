@@ -13,24 +13,25 @@ import {styles} from '../../style';
 import {colorGold, colorRed} from '../../../../../../base/color';
 import stylesGlobal from '../../../../../../base/styles_global';
 
-
-const DetailsRedeemPage = () => {
+function DetailsRedeemPage() {
   const navigation: any = useNavigation();
-  const {params: {state}} = useRoute<any>()
+  const {
+    params: {state},
+  } = useRoute<any>();
 
   const [openAlert, setOpenAlert] = useState<boolean>(false);
   const [openDropdown, setOpenDropdown] = useState<boolean>(false);
-  
+
   const goToDelivery = () => navigation.push('Delivery', {state: state});
 
-  const onExchange = () => {
+  function onExchange() {
     // setOpenAlert(true);
     goToDelivery();
-  };
+  }
 
-  const onSelectDropdown = () => {
+  function onSelectDropdown() {
     setOpenDropdown(false);
-  };
+  }
 
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
@@ -102,6 +103,6 @@ const DetailsRedeemPage = () => {
       </View>
     </ScrollView>
   );
-};
+}
 
 export default DetailsRedeemPage;

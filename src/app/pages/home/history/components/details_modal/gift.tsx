@@ -25,18 +25,18 @@ type Props = {
   setOpen: Function;
 };
 
-const GiftModal = ({open, setOpen}: Props) => {
+function GiftModal({open, setOpen}: Props) {
   const textWarning =
     '*หากไม่มีผู้รับของขวัญภายใน 7 วัน \nระบบจะทำการโอน E-Gold กลับอัตโนมัติ';
 
-  const changeColorText = (status: string): string => {
+  function changeColorText(status: string): string {
     let map: any = {
       reject: colorRed,
       pending: colorBlue,
       success: colorYellow,
     };
     return map[status] || colorBlue;
-  };
+  }
 
   return (
     <Modal visible={open} transparent={true} animationType="fade">
@@ -108,6 +108,6 @@ const GiftModal = ({open, setOpen}: Props) => {
       </View>
     </Modal>
   );
-};
+}
 
 export default GiftModal;

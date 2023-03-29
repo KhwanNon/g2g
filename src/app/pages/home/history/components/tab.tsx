@@ -12,7 +12,7 @@ type Props = {
   setIndex: Function;
 };
 
-const TabMenu = ({index, setIndex}: Props) => {
+function TabMenu({index, setIndex}: Props) {
   const tabs = [
     'Top-Up',
     'Buy',
@@ -23,12 +23,12 @@ const TabMenu = ({index, setIndex}: Props) => {
     'Withdraw',
   ];
 
-  const renderDivider = (idx: number) => {
+  function renderDivider(idx: number) {
     const isActiveTab = index === idx;
     return <View style={isActiveTab ? styles.divider : styles.dividerGrey} />;
-  };
+  }
 
-  const renderItem = () => {
+  function renderItem() {
     return tabs.map((item, idx) => (
       <TouchableOpacity
         key={`#${idx}`}
@@ -41,7 +41,7 @@ const TabMenu = ({index, setIndex}: Props) => {
         {renderDivider(idx)}
       </TouchableOpacity>
     ));
-  };
+  }
 
   return (
     <View style={{height: 30, width: '100%', backgroundColor: 'white'}}>
@@ -50,6 +50,6 @@ const TabMenu = ({index, setIndex}: Props) => {
       </ScrollView>
     </View>
   );
-};
+}
 
 export default TabMenu;

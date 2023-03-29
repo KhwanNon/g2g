@@ -6,7 +6,7 @@ type Props = {
   width: number;
 };
 
-const LineChartComponemt = ({width}: Props) => {
+function LineChartComponemt({width}: Props) {
   const data: any = [
     {value: 30000},
     {value: 29000},
@@ -50,6 +50,6 @@ const LineChartComponemt = ({width}: Props) => {
       />
     </>
   );
-};
+}
 
 export default LineChartComponemt;

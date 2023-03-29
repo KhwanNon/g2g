@@ -3,7 +3,7 @@ import {styles} from '../../../style';
 import {View, Text, TouchableOpacity} from 'react-native';
 import Box from '../../../../../../../base/components/ui_component/box';
 
-const Self = () => {
+function Self() {
   return (
     <View>
       <Text style={styles.text}>เลือกรับสินค้าที่นี่</Text>
@@ -28,6 +28,6 @@ const Self = () => {
       <Box h={20} />
     </View>
   );
-};
+}
 
 export default Self;

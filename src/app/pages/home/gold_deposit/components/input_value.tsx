@@ -8,7 +8,7 @@ import {colorGrey} from '../../../../../base/color';
 import Box from '../../../../../base/components/ui_component/box';
 import Row from '../../../../../base/components/ui_component/row';
 
-const InputValueDepositGold = () => {
+function InputValueDepositGold() {
   return (
     <View style={{minHeight: 200, backgroundColor: colorGrey, padding: 15}}>
       <Row>
@@ -43,6 +43,6 @@ const InputValueDepositGold = () => {
       </View>
     </View>
   );
-};
+}
 
 export default InputValueDepositGold;

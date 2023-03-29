@@ -16,8 +16,8 @@ import {styles} from '../style';
 import {DEVICE_WIDTH} from '../../../../base/constant';
 import stylesGlobal from '../../../../base/styles_global';
 
-const GraphGold = () => {
-  const buttonBuySell = (state: 'buy' | 'sell', value: string) => {
+function GraphGold() {
+  function buttonBuySell(state: 'buy' | 'sell', value: string) {
     return (
       <TouchableOpacity
         style={[
@@ -34,9 +34,9 @@ const GraphGold = () => {
         </Text>
       </TouchableOpacity>
     );
-  };
+  }
 
-  const rowBuySell = (title: string, value: string) => {
+  function rowBuySell(title: string, value: string) {
     return (
       <Row style={[stylesGlobal.between, {paddingHorizontal: 15}]}>
         <Row style={[{alignItems: 'flex-end'}]}>
@@ -59,7 +59,7 @@ const GraphGold = () => {
         </Row>
       </Row>
     );
-  };
+  }
 
   return (
     <View>
@@ -86,6 +86,6 @@ const GraphGold = () => {
       <Box h={50} />
     </View>
   );
-};
+}
 
 export default GraphGold;

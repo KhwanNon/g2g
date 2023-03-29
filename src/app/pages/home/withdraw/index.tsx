@@ -11,7 +11,7 @@ import ButtonBorder from '../../../../base/components/ui_component/button_border
 import {colorTextLabel} from '../../../../base/color';
 import stylesGlobal from '../../../../base/styles_global';
 
-const WithdrawPage = () => {
+function WithdrawPage() {
   const myAccount = [1, 2];
   const navigation: any = useNavigation();
   const [isEdit, setIsEdit] = useState<boolean>(false);
@@ -29,27 +29,30 @@ const WithdrawPage = () => {
     });
   }, [isEdit]);
 
-  const goToWithdraw = () => {
+  function goToWithdraw() {
     if (isEdit) return navigation.push('OTP', {phone: '0000000000'});
     navigation.push('WithdrawBank');
-  };
+  }
 
-  const swapEdit = () => {
+  function swapEdit() {
     setIsEdit(prev => !prev);
-  };
+  }
+
+  function renderListBank() {
+    return myAccount.map((item, idx) => {
+      return (
+        <ListTileMyBank
+          key={`#${idx}`}
+          onPress={goToWithdraw}
+          icon={isEdit ? 'ios-trash-outline' : 'chevron-forward'}
+        />
+      );
+    });
+  }
 
   return (
     <View>
-      {myAccount.map((item, idx) => {
-        return (
-          <ListTileMyBank
-            key={`#${idx}`}
-            onPress={goToWithdraw}
-            icon={isEdit ? 'ios-trash-outline' : 'chevron-forward'}
-          />
-        );
-      })}
-
+      {renderListBank()}
       <Box h={50} />
       <Row style={[stylesGlobal.between, {paddingLeft: 15}]}>
         <View>
@@ -70,6 +73,6 @@ const WithdrawPage = () => {
       </View>
     </View>
   );
-};
+}
 
 export default WithdrawPage;

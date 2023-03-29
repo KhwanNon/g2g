@@ -17,7 +17,7 @@ type Props = {
   setOpen: Function;
 };
 
-const DeliveryAddress = ({open, setOpen}: Props) => {
+function DeliveryAddress({open, setOpen}: Props) {
   const close = () => setOpen(false);
 
   return (
@@ -97,6 +97,6 @@ const DeliveryAddress = ({open, setOpen}: Props) => {
       </KeyboardAvoidingView>
     </Modal>
   );
-};
+}
 
 export default DeliveryAddress;
