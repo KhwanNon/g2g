@@ -94,9 +94,9 @@ android {
 
     compileSdkVersion rootProject.ext.compileSdkVersion
 
-    namespace "com.g2g_app"
+    namespace "com.minerta.g2g.mobile"
     defaultConfig {
-        applicationId "com.g2g_app"
+        applicationId "com.minerta.g2g.mobile"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
@@ -152,9 +152,9 @@ android {
 dependencies {
     // The version of react-native is set by the React Native Gradle Plugin
     implementation("com.facebook.react:react-android")
-
+    implementation platform('com.google.firebase:firebase-bom:31.3.0')
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.0.0")
-
+    implementation( 'com.google.firebase:firebase-analytics-ktx')
     debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}")
     debugImplementation("com.facebook.flipper:flipper-network-plugin:${FLIPPER_VERSION}") {
         exclude group:'com.squareup.okhttp3', module:'okhttp'

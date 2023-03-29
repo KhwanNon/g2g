@@ -1,4 +1,4 @@
-package com.g2g_app;
+package com.minerta.g2g.mobile;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;

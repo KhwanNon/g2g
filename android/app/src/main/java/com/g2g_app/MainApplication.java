@@ -1,4 +1,4 @@
-package com.g2g_app;
+package com.minerta.g2g.mobile;
 
 import android.app.Application;
 import com.facebook.react.PackageList;
