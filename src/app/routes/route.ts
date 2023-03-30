@@ -30,4 +30,5 @@ export type RootStackParamList = {
   Delivery: undefined;
   GoldTransfer: undefined;
   Notification: undefined;
+  AddressInfo:undefined;
 };

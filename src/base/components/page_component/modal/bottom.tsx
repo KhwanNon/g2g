@@ -1,63 +1,60 @@
 import React from 'react';
+import {useNavigation} from '@react-navigation/native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {StyleSheet, Text, View, Modal, TouchableOpacity} from 'react-native';
 
-import Box from '../../../../../../base/components/ui_component/box';
-import Row from '../../../../../../base/components/ui_component/row';
-import Divider from '../../../../../../base/components/ui_component/divider';
-import ButtonIcon from '../../../../../../base/components/ui_component/button_icon';
+import Box from '../../ui_component/box';
+import Row from '../../ui_component/row';
+import Divider from '../../ui_component/divider';
+import ButtonIcon from '../../ui_component/button_icon';
 
-import stylesGlobal from '../../../../../../base/styles_global';
-import {useNavigation} from '@react-navigation/native';
+import stylesGlobal from '../../../styles_global';
+
+export interface ModelDataModalBottom {
+  state: string;
+  title: string;
+}
 
 type Props = {
+  title: string;
   open: boolean;
   setOpen: Function;
+  state: 'redeem' | 'editPhone';
+  items: ModelDataModalBottom[];
 };
 
-function ModalRedeem({open, setOpen}: Props) {
+function ModalBottom({open, setOpen, items, state, title}: Props) {
   const navigation: any = useNavigation();
-
-  const store = [
-    {
-      state: 'self',
-      title: 'รับด้วยตนเองที่ร้าน',
-    },
-    {
-      state: 'ems',
-      title: 'บริการจัดส่ง',
-    },
-  ];
 
   function onSelectFilter(item: string) {
     setOpen(false);
-    navigation.push('DetailsRedeem', {state: item});
+    if (state === 'redeem') {
+      navigation.push('DetailsRedeem', {state: item});
+    }
   }
 
   return (
     <Modal visible={open} transparent animationType="fade">
       <View style={{flex: 1, backgroundColor: '#00000080'}}>
-        <View style={styles.modalRedeem}>
+        <View style={styles.modalBottom}>
           <Row style={stylesGlobal.between}>
-            <Text style={{fontSize: 16, color: 'black'}}>
-              เลือกวิธีรับทองคำ
-            </Text>
+            <Text style={{fontSize: 16, color: 'black'}}>{title}</Text>
 
             <ButtonIcon
               size={25}
-              name={'close'}
               color={'black'}
+              name={'close'}
               onTap={() => setOpen(false)}
             />
           </Row>
 
-          <Box h={15} />
-          {store.map((item, idx) => {
+          <Box h={10} />
+          {items.map((item, idx) => {
             return (
               <TouchableOpacity
                 key={`#${idx}`}
                 onPress={() => onSelectFilter(item.state)}>
-                <Box h={12} />
+                <Box h={20} />
                 <Row style={stylesGlobal.between}>
                   <Text style={{color: 'black'}}>{item.title}</Text>
                   <Ionicons size={22} color={'grey'} name={'chevron-forward'} />
@@ -73,18 +70,18 @@ function ModalRedeem({open, setOpen}: Props) {
   );
 }
 
-export default ModalRedeem;
-
 const styles = StyleSheet.create({
-  modalRedeem: {
+  modalBottom: {
     flex: 1,
     bottom: 0,
     padding: 15,
     width: '100%',
-    minHeight: 240,
+    minHeight: 200,
     position: 'absolute',
     borderTopEndRadius: 10,
     borderTopStartRadius: 10,
     backgroundColor: 'white',
   },
 });
+
+export default ModalBottom;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {View, Text, TouchableOpacity} from 'react-native';
 
@@ -9,14 +9,45 @@ import Box from '../../../../base/components/ui_component/box';
 import {
   colorRed,
   colorGold2,
-  colorDarkGold,
   colorTextTitle,
+  colorDarkGold,
 } from '../../../../base/color';
 import {styles} from '../style';
 import {DEVICE_WIDTH} from '../../../../base/constant';
 import stylesGlobal from '../../../../base/styles_global';
 
 function GraphGold() {
+  const [data, setData] = useState<any>(null);
+
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     fetchGold();
+  //   }, 1000);
+
+  //   return () => clearInterval(interval);
+  // }, []);
+
+  // function fetchGold() {
+  //   var myHeaders = new Headers();
+  //   myHeaders.append('x-access-token', 'goldapi-b8arrlftl74vk-io');
+  //   myHeaders.append('Content-Type', 'application/json');
+
+  //   var requestOptions = {
+  //     method: 'GET',
+  //     headers: myHeaders,
+  //     redirect: 'follow',
+  //   };
+  
+
+  //   fetch('https://www.goldapi.io/api/XAU/THB', requestOptions)
+  //     .then(response => response)
+  //     .then(async result => {
+  //       const json = await result.json();
+  //       setData(json);
+  //     })
+  //     .catch(error => console.log('error', error));
+  // }
+
   function buttonBuySell(state: 'buy' | 'sell', value: string) {
     return (
       <TouchableOpacity
@@ -73,7 +104,7 @@ function GraphGold() {
         <Row>
           <Ionicons size={22} color={colorRed} name={'caret-down-sharp'} />
           <Box w={5} />
-          <Text style={{color: colorRed}}>- 50</Text>
+          <Text style={{color: colorRed}}>{`-50`}</Text>
         </Row>
       </Row>
       <View style={{padding: 15}}>
