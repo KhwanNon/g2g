@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
 import {styles} from '../../style';
-import {View, Text, TouchableOpacity, Image} from 'react-native';
+import {View, Text, TouchableOpacity} from 'react-native';
 
-import ModalRedeem from './modal_redeem';
 import Box from '../../../../../../base/components/ui_component/box';
 
 import {colorGold, colorTextTitle} from '../../../../../../base/color';
+import ModalBottom, {ModelDataModalBottom} from '../../../../../../base/components/page_component/modal/bottom';
 
 type Props = {
   item: number;
@@ -13,6 +13,17 @@ type Props = {
 
 function CardRedeem({item}: Props) {
   const [openRedeem, setOpenRedeem] = useState<boolean>(false);
+
+  const store: ModelDataModalBottom[] = [
+    {
+      state: 'self',
+      title: 'รับด้วยตนเองที่ร้าน',
+    },
+    {
+      state: 'ems',
+      title: 'บริการจัดส่ง',
+    },
+  ];
 
   return (
     <View style={styles.cardRedeem}>
@@ -34,7 +45,13 @@ function CardRedeem({item}: Props) {
         </TouchableOpacity>
       </View>
 
-      <ModalRedeem open={openRedeem} setOpen={setOpenRedeem} />
+      <ModalBottom
+        items={store}
+        state={'redeem'}
+        title='เลือกวิธีรับทองคำ'
+        open={openRedeem}
+        setOpen={setOpenRedeem}
+      />
     </View>
   );
 }

@@ -1,6 +1,6 @@
 import {colorTextTitle} from '../../base/color';
 
-export function header(name: string, color: any): any {
+export function header(name: string, color?: any): any {
   return {
     title: `${name}`,
     headerShadowVisible: false,

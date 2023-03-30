@@ -37,6 +37,7 @@ import AddBankPage from '../pages/home/settings/add_bank';
 import ContactUsPage from '../pages/home/settings/contact';
 import ProfilePage from '../pages/home/settings/profile';
 import PolicyPage from '../pages/home/settings/policy';
+import AddressInfo from '../pages/home/settings/profile/address';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -186,6 +187,11 @@ function Navigation() {
           name="Notification"
           component={NotificationPage}
           options={header('แจ้งเตือน')}
+        />
+        <Stack.Screen
+          name="AddressInfo"
+          component={AddressInfo}
+          options={header('')}
         />
       </Stack.Navigator>
     </NavigationContainer>

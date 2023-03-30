@@ -12,9 +12,7 @@ import {assetVerifySuccess} from '../../../generated/assets';
 
 function VerifySuccessPage() {
   const navigation: any = useNavigation();
-  const {
-    params: {state},
-  } = useRoute<any>();
+  const {params: {state}} = useRoute<any>();
 
   function onClickButton() {
     if (state === 'authOtp') return navigation.replace('Pin');
