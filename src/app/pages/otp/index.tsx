@@ -16,9 +16,7 @@ import NumberPad from '../../../base/components/page_component/keyboard/number_p
 
 function OTPPage() {
   const navigation: any = useNavigation();
-  const {
-    params: {phone},
-  } = useRoute<any>();
+  const { params: {phone} } = useRoute<any>();
 
   const [otp, setOtp] = useState<string>('');
   const {renderTextButton} = useOtpTimer();

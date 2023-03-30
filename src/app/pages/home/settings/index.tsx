@@ -21,13 +21,13 @@ function SettingPage() {
   };
 
   function onPressMenu(state: string) {
-    const hasVerifyKYC = false;
+    const hasVerifyKYC = true;
     if (state === 'version') return;
 
     switch (state) {
       case 'profile':
-        let condition = hasVerifyKYC ? 'ProfilePage' : 'VerifyKYC';
-        return navigation.push(condition, {state: 'profile'});
+        if (hasVerifyKYC) return navigation.push('Profile');
+        return navigation.push('VerifyKYC', {state: 'profile'});
       case 'pin':
         return navigation.push('OTP', {phone: '0000000000'});
       case 'bank':
@@ -98,7 +98,7 @@ const menuItems: menuModel[] = [
   {
     state: 'profile',
     title: 'โปรไฟล์',
-    subTitle: 'แก้ไขโปรไฟลน์',
+    subTitle: 'แก้ไขโปรไฟล์',
     icon: 'person-circle',
   },
   {
