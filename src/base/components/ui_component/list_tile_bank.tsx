@@ -1,12 +1,13 @@
 import React from 'react';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import {StyleSheet, Text, TouchableOpacity} from 'react-native';
+import {Text, TouchableOpacity} from 'react-native';
 
 import stylesGlobal from '../../styles_global';
 
 import Box from './box';
 import Row from './row';
 import Divider from './divider';
+import {colorTextLabel} from '../../color';
 
 type Props = {
   title: string;
@@ -20,9 +21,9 @@ function ListTileBank({state, title, onPress}: Props) {
       <Box h={15} />
       <Row style={stylesGlobal.between}>
         <Row>
-          <Text>{title}</Text>
+          <Text style={{color: colorTextLabel}}>{title}</Text>
         </Row>
-        <Ionicons size={20} color={'lightgrey'} name={'chevron-forward'} />
+        <Ionicons size={20} color={'grey'} name={'chevron-forward'} />
       </Row>
       <Box h={15} />
       <Divider />

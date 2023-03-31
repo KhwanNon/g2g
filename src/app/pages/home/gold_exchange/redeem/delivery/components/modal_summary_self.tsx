@@ -8,6 +8,7 @@ import Box from '../../../../../../../base/components/ui_component/box';
 import ButtonStyle from '../../../../../../../base/components/ui_component/button_style';
 
 import {styles} from '../../../style';
+import {Otp} from '../../../../../../../generated/state';
 import stylesGlobal from '../../../../../../../base/styles_global';
 import {colorGold, colorLightGrey} from '../../../../../../../base/color';
 
@@ -22,7 +23,7 @@ function ModalSummarySelf({open, setOpen}: Props) {
 
   function onConfirm() {
     close();
-    navigation.push('OTP', {phone: '0989878764'});
+    navigation.push('OTP', {phone: '0989878764', state: Otp.SUMMARY_SELF});
   }
 
   return (

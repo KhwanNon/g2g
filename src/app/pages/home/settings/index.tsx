@@ -8,6 +8,7 @@ import DialogConfirm from '../../../../base/components/page_component/dialog/dia
 
 import {styles} from '../style';
 import styleSetting from './style';
+import {Otp} from '../../../../generated/state';
 
 function SettingPage() {
   const navigation: any = useNavigation();
@@ -29,13 +30,18 @@ function SettingPage() {
         if (hasVerifyKYC) return navigation.push('Profile');
         return navigation.push('VerifyKYC', {state: 'profile'});
       case 'pin':
-        return navigation.push('OTP', {phone: '0000000000'});
+        return navigation.push('OTP', {
+          phone: '0000000000',
+          state: Otp.CHANGE_PIN,
+        });
       case 'bank':
         return navigation.push('AddBank');
       case 'policy':
         return navigation.push('Policy');
       case 'contact':
         return navigation.push('Contact');
+      case 'term':
+        return navigation.push('Term', {state: 'setting'});
       default:
         break;
     }
