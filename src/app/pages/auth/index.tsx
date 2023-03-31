@@ -11,14 +11,14 @@ import {colorGold} from '../../../base/color';
 import stylesGlobal from '../../../base/styles_global';
 import {assetGFA, assetLiquid, assetLogo} from '../../../generated/assets';
 
-function AuthPage () {
+function AuthPage() {
   const navigation: any = useNavigation();
 
   const TEXT_1: string = 'Destine your own wealth';
   const TEXT_2: string = '“just click”';
   const TEXT_3: string = 'The Ultimate Gold Platform Services';
 
-  const goToTerm = () => navigation.push('Term');
+  const goToTerm = () => navigation.push('Term', {state: 'auth'});
 
   return (
     <View style={styles.container}>
@@ -52,6 +52,6 @@ function AuthPage () {
       </View>
     </View>
   );
-};
+}
 
 export default AuthPage;

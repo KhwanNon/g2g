@@ -8,21 +8,19 @@ import ButtonStyle from '../../../base/components/ui_component/button_style';
 
 import {colorGold} from '../../../base/color';
 import stylesGlobal from '../../../base/styles_global';
-import {assetVerifySuccess} from '../../../generated/assets';
+import {assetVerifySuccess} from '../../../generated/assets';;
 
 function VerifySuccessPage() {
   const navigation: any = useNavigation();
-  const {params: {state}} = useRoute<any>();
+  const { params: {state} } = useRoute<any>();
 
   function onClickButton() {
-    if (state === 'authOtp') return navigation.replace('Pin');
-    if (state === 'authPin') return navigation.replace('Home');
   }
 
   function caption(): string {
     let mapText: any = {
-      authOtp: 'เสร็จสิ้นการยืนยันเบอร์โทรศัพท์แล้ว',
-      authPin: 'เสร็จสิ้นการยืนยันรหัสพินโค้ดแล้ว',
+      INPUT_PHONE: 'เสร็จสิ้นการยืนยันเบอร์โทรศัพท์แล้ว',
+      AUTH_PIN: 'เสร็จสิ้นการยืนยันรหัสพินโค้ดแล้ว',
     };
 
     return mapText[state] || '';

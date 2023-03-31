@@ -10,6 +10,7 @@ import ButtonBorder from '../../../../base/components/ui_component/button_border
 
 import {colorTextLabel} from '../../../../base/color';
 import stylesGlobal from '../../../../base/styles_global';
+import {Otp} from '../../../../generated/state';
 
 function WithdrawPage() {
   const myAccount = [1, 2];
@@ -30,8 +31,11 @@ function WithdrawPage() {
   }, [isEdit]);
 
   function goToWithdraw() {
-    if (isEdit) return navigation.push('OTP', {phone: '0000000000'});
-    navigation.push('WithdrawBank');
+    if (!isEdit) return navigation.push('WithdrawBank');
+    navigation.push('OTP', {
+      phone: '0000000000',
+      state: Otp.WITHDRAW,
+    });
   }
 
   function swapEdit() {
