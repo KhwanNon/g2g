@@ -52,7 +52,7 @@ function AddBankPage() {
       <Box h={30} />
       <Text style={styleSetting.textTitle}>ช่องทางบริการอื่นๆ</Text>
       <Box h={15} />
-      <ButtonBorder title={'เพิ่มบัตร'} width={'100%'} height={35} />
+      <ButtonBorder title={'เพิ่มบัตร'} width={'100%'} height={40} />
     </View>
   );
 }

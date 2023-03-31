@@ -9,6 +9,7 @@ import ButtonStyle from '../../../../../base/components/ui_component/button_styl
 
 import {styles} from '../style';
 import stylesGlobal from '../../../../../base/styles_global';
+import {Otp} from '../../../../../generated/state';
 import {colorGold, colorLightGrey} from '../../../../../base/color';
 
 type Props = {
@@ -22,7 +23,7 @@ function ModalDetail({open, setOpen, isBuy}: Props) {
 
   function goToOTP() {
     setOpen(false);
-    navigation.push('OTP', {phone: '0008887765'});
+    navigation.push('OTP', {phone: '0008887765', state: Otp.DETAIL_TRADE});
   }
 
   return (

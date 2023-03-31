@@ -10,6 +10,7 @@ import ButtonStyle from '../../../../../../../base/components/ui_component/butto
 
 import {styles} from '../../../style';
 import stylesGlobal from '../../../../../../../base/styles_global';
+import {Otp} from '../../../../../../../generated/state';
 
 type Props = {
   open: boolean;
@@ -22,7 +23,7 @@ function ModalSummaryEms({open, setOpen}: Props) {
 
   function onConfirm() {
     close();
-    navigation.push('OTP', {phone: '0989878764'});
+    navigation.push('OTP', {phone: '0989878764', state: Otp.SUMMARY_EMS});
   }
 
   return (

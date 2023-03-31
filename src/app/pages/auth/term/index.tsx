@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, Text, ScrollView} from 'react-native';
-import {useNavigation} from '@react-navigation/native';
+import {useNavigation, useRoute} from '@react-navigation/native';
 
 import Box from '../../../../base/components/ui_component/box';
 import ButtonStyle from '../../../../base/components/ui_component/button_style';
@@ -9,9 +9,36 @@ import {styles} from '../style';
 import {colorEgg, colorGold} from '../../../../base/color';
 
 function TermConditionPage() {
+  const {params: {state}} = useRoute<any>();
   const navigation: any = useNavigation();
+  
   const goBack = () => navigation.goBack();
   const goToInputPhone = () => navigation.push('InputPhone');
+
+  function renderButton() {
+    return (
+      <>
+        <Box h={30} />
+        <ButtonStyle
+          height={45}
+          width={'100%'}
+          title={'ยินยอม'}
+          colorTxt={'white'}
+          onTap={goToInputPhone}
+          backgroundColor={colorGold}
+        />
+        <Box h={15} />
+        <ButtonStyle
+          height={45}
+          width={'100%'}
+          onTap={goBack}
+          title={'ไม่ยินยอม'}
+          colorTxt={colorGold}
+          backgroundColor={colorEgg}
+        />
+      </>
+    );
+  }
 
   return (
     <View style={styles.containerWhite}>
@@ -37,25 +64,7 @@ function TermConditionPage() {
             </Text>
           );
         })}
-
-        <Box h={30} />
-        <ButtonStyle
-          height={45}
-          width={'100%'}
-          title={'ยินยอม'}
-          colorTxt={'white'}
-          onTap={goToInputPhone}
-          backgroundColor={colorGold}
-        />
-        <Box h={15} />
-        <ButtonStyle
-          height={45}
-          width={'100%'}
-          onTap={goBack}
-          title={'ไม่ยินยอม'}
-          colorTxt={colorGold}
-          backgroundColor={colorEgg}
-        />
+        {state === 'auth' ? renderButton() : null}
         <Box h={30} />
       </ScrollView>
     </View>

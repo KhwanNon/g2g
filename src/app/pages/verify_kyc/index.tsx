@@ -21,9 +21,7 @@ import stylesGlobal from '../../../base/styles_global';
 
 function VerifyKYCPage() {
   const navigation: any = useNavigation();
-  const {
-    params: {state},
-  } = useRoute<any>();
+  const { params: {state} } = useRoute<any>();
 
   function onConfirm() {
     switch (state) {
