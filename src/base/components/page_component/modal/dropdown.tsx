@@ -1,24 +1,46 @@
 import React from 'react';
 import {colorGrey} from '../../../color';
 import Box from '../../ui_component/box';
-import {Modal, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import Row from '../../ui_component/row';
+import ButtonIcon from '../../ui_component/button_icon';
+
+import {
+  Text,
+  View,
+  Modal,
+  ScrollView,
+  StyleSheet,
+  TouchableOpacity,
+} from 'react-native';
+import stylesGlobal from '../../../styles_global';
 
 type Props = {
-  items: any[];
-  open: boolean;
   title: string;
+  items: any[];
+  state?: string;
+  open: boolean;
   setOpen: Function;
-  onPress: () => void;
+  setData: Function;
+  maxHeight?: number;
 };
 
-function Dropdown({open, setOpen, items, onPress, title}: Props) {
+function Dropdown({title, open, state, items, setOpen, setData}: Props) {
+  function onSetData(data: any) {
+    setData(data);
+    setOpen(false);
+  }
+
   function renderItem() {
     return items.map((item, idx) => {
       return (
-        <TouchableOpacity onPress={onPress} key={`#${idx}`} style={styles.row}>
+        <TouchableOpacity
+          onPress={() => onSetData(item)}
+          key={`#${idx}`}
+          style={styles.row}>
           <Box h={12} />
-          <Text style={{color: 'black'}}>{item}</Text>
+          <Text style={{color: 'black'}}>
+            {state === 'address' ? item.name_th : item}
+          </Text>
           <Box h={12} />
         </TouchableOpacity>
       );
@@ -28,14 +50,23 @@ function Dropdown({open, setOpen, items, onPress, title}: Props) {
   return (
     <Modal visible={open} transparent animationType="fade">
       <View style={styles.container}>
-        <View style={styles.card}>
+        <View style={{...styles.card, maxHeight: items.length * 40 + 70}}>
           <Box h={12} />
-          <Row style={[{paddingLeft: 20}]}>
+          <Row
+            style={[stylesGlobal.between, {paddingLeft: 20, paddingRight: 10}]}>
             <Text style={{fontSize: 18, color: 'black'}}>{title}</Text>
+            <ButtonIcon
+              size={25}
+              color={'grey'}
+              name={'close'}
+              onTap={() => setOpen(false)}
+            />
           </Row>
           <Box h={10} />
           <View style={styles.divider} />
-          {renderItem()}
+          <ScrollView showsVerticalScrollIndicator={false} style={{flex: 1}}>
+            {renderItem()}
+          </ScrollView>
         </View>
       </View>
     </Modal>
@@ -45,7 +76,7 @@ function Dropdown({open, setOpen, items, onPress, title}: Props) {
 const styles = StyleSheet.create({
   divider: {
     height: 1,
-    minWidth: '80%',
+    minWidth: '90%',
     backgroundColor: colorGrey,
   },
   row: {
@@ -54,7 +85,6 @@ const styles = StyleSheet.create({
     paddingLeft: 20,
   },
   card: {
-    maxHeight: 400,
     minWidth: '80%',
     elevation: 5,
     borderRadius: 10,

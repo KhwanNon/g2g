@@ -2,14 +2,14 @@ import React, {useState} from 'react';
 import {View, Text} from 'react-native';
 
 import {renderInput} from '../../address';
+import ModalBottom, {
+  ModelDataModalBottom,
+} from '../../../../../../../base/components/page_component/modal/bottom';
 import Box from '../../../../../../../base/components/ui_component/box';
 import ButtonStyle from '../../../../../../../base/components/ui_component/button_style';
 
 import {colorGold} from '../../../../../../../base/color';
 import stylesGlobal from '../../../../../../../base/styles_global';
-import ModalBottom, {
-  ModelDataModalBottom,
-} from '../../../../../../../base/components/page_component/modal/bottom';
 
 function EditPhonePage() {
   const [openChanel, setOpenChanel] = useState<boolean>(false);
@@ -33,16 +33,44 @@ function EditPhonePage() {
         stylesGlobal.containerWhite,
       ]}>
       <View>
-        {renderInput('หมายเลขเบอร์โทรศัพท์', '000-000-0000')}
+        {renderInput(
+          'หมายเลขเบอร์โทรศัพท์',
+          '',
+          true,
+          '000-000-0000',
+          '',
+          () => {},
+        )}
 
         <Box h={15} />
-        {renderInput('หมายเลขเบอร์โทรศัพท์ ใหม่', 'กรอกหมายเลขเบอร์โทรศัพท์')}
+        {renderInput(
+          'หมายเลขเบอร์โทรศัพท์ ใหม่',
+          '',
+          true,
+          'กรอกหมายเลขเบอร์โทรศัพท์',
+          '',
+          () => {},
+        )}
 
         <Box h={15} />
-        {renderInput('ชื่อ - นามสกุล', 'กรอกชื่อที่ลงทะเบียนหมายเลขโทรศัพท์')}
+        {renderInput(
+          'ชื่อ - นามสกุล',
+          '',
+          true,
+          'กรอกชื่อที่ลงทะเบียนหมายเลขโทรศัพท์',
+          '',
+          () => {},
+        )}
 
         <Box h={15} />
-        {renderInput('หมายเลขบัตรประจำตัวประชาชน', 'กรอกหมายเลข 13 หลัก')}
+        {renderInput(
+          'หมายเลขบัตรประจำตัวประชาชน',
+          '',
+          true,
+          'กรอกหมายเลข 13 หลัก',
+          '',
+          () => {},
+        )}
       </View>
 
       <ButtonStyle

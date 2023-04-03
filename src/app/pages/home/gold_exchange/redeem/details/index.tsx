@@ -21,6 +21,7 @@ function DetailsRedeemPage() {
 
   const [openAlert, setOpenAlert] = useState<boolean>(false);
   const [openDropdown, setOpenDropdown] = useState<boolean>(false);
+  const [data, setData] = useState<string>('');
 
   const goToDelivery = () => navigation.push('Delivery', {state: state});
 
@@ -84,7 +85,7 @@ function DetailsRedeemPage() {
             open={openDropdown}
             title={'เลือกน้ำหนักทอง'}
             setOpen={setOpenDropdown}
-            onPress={onSelectDropdown}
+            setData={setData}
           />
 
           <DialogConfirm
