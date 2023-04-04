@@ -1,13 +1,19 @@
+import React, {useEffect, useState} from 'react';
+import DatePicker from 'react-native-date-picker';
+import {useIsFocused, useNavigation} from '@react-navigation/native';
 import {
   View,
   Text,
+  Image,
   TextInput,
   ScrollView,
   TouchableOpacity,
-  Image,
 } from 'react-native';
-import React, {useEffect, useState} from 'react';
-import {useIsFocused, useNavigation} from '@react-navigation/native';
+
+import {styles} from './style';
+import stylesGlobal from '../../../../../base/styles_global';
+import {colorGold, colorYellow} from '../../../../../base/color';
+import {imagePicker} from '../../../../../base/functions/image_picker';
 
 import Box from '../../../../../base/components/ui_component/box';
 import Row from '../../../../../base/components/ui_component/row';
@@ -15,20 +21,18 @@ import Divider from '../../../../../base/components/ui_component/divider';
 import ButtonText from '../../../../../base/components/ui_component/button_text';
 import ButtonIcon from '../../../../../base/components/ui_component/button_icon';
 import ButtonStyle from '../../../../../base/components/ui_component/button_style';
-
-import {styles} from './style';
-import stylesGlobal from '../../../../../base/styles_global';
-import {colorGold, colorYellow} from '../../../../../base/color';
 import Dropdown from '../../../../../base/components/page_component/modal/dropdown';
-
-import {launchImageLibrary} from 'react-native-image-picker';
+import {formatDate} from '../../../../../base/functions/format_date';
+import {convertDateStringToDate} from '../../../../../base/functions/convert_string_to_date';
 
 function ProfilePage() {
   const isFocused = useIsFocused();
   const navigation: any = useNavigation();
+
   const [indexGender, setIndexGender] = useState<number>(0);
   const [openModalJob, setOpenModalJob] = useState<boolean>(false);
   const [selectedImage, setSelectedImage] = useState<any>(null);
+  const [openPickerDate, setOpenPickerDate] = useState<boolean>(false);
 
   const [userInfo, setUserInfo] = useState({
     idCard: '',
@@ -126,17 +130,10 @@ function ProfilePage() {
   }
 
   async function onSelectProfile() {
-    const options: any = {
-      mediaType: 'Images',
-      allowsEditing: false,
-      quality: 0.8,
-    };
+    const result: any = await imagePicker();
 
-    const result: any = await launchImageLibrary(options);
-    if (result.canceled) return;
-
-    const source: any = {uri: result.assets[0].uri};
-    setSelectedImage(source);
+    if (!result) return;
+    setSelectedImage({uri: result.assets[0].uri});
   }
 
   function renderImageProfile() {
@@ -208,8 +205,8 @@ function ProfilePage() {
       {renderInput(
         'วัน/เดือน/ปี',
         'วัน/เดือน/ปี',
-        () => {},
-        '',
+        () => setOpenPickerDate(true),
+        userInfo.birthDate,
         false,
         'icon',
         'chevron-down',
@@ -292,8 +289,19 @@ function ProfilePage() {
         title={'เลือกอาชีพ'}
         open={openModalJob}
         setOpen={setOpenModalJob}
-        setData={(job: string) => setUserInfo({...userInfo, job})}
         items={['Programmer', 'Doctor', 'Teacher']}
+        setData={(job: string) => setUserInfo({...userInfo, job})}
+      />
+
+      <DatePicker
+        modal
+        open={openPickerDate}
+        onCancel={() => setOpenPickerDate(false)}
+        date={convertDateStringToDate(userInfo.birthDate)}
+        onConfirm={(date: Date) => {
+          setOpenPickerDate(false);
+          setUserInfo({...userInfo, birthDate: formatDate(date)});
+        }}
       />
     </ScrollView>
   );
